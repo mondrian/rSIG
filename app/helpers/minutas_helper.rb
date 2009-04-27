@@ -1,0 +1,2 @@
+module MinutasHelper
+end

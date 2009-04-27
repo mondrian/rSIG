@@ -1,0 +1,36 @@
+<h1>Listing minutas</h1>
+
+<table>
+  <tr>
+    <th>Data</th>
+    <th>Fechamento</th>
+    <th>Operador fechamento</th>
+    <th>Saida</th>
+    <th>Obs</th>
+    <th>Veiculo</th>
+    <th>Fechamento financeiro</th>
+    <th>Funcionario fechamento financeiro</th>
+    <th>Roteiro</th>
+  </tr>
+
+<% @minutas.each do |minuta| %>
+  <tr>
+    <td><%=h minuta.data %></td>
+    <td><%=h minuta.fechamento %></td>
+    <td><%=h minuta.operador_fechamento_id %></td>
+    <td><%=h minuta.saida %></td>
+    <td><%=h minuta.obs %></td>
+    <td><%=h minuta.veiculo_id %></td>
+    <td><%=h minuta.fechamento_financeiro %></td>
+    <td><%=h minuta.funcionario_fechamento_financeiro_id %></td>
+    <td><%=h minuta.roteiro_id %></td>
+    <td><%= link_to 'Show', minuta %></td>
+    <td><%= link_to 'Edit', edit_minuta_path(minuta) %></td>
+    <td><%= link_to 'Destroy', minuta, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New minuta', new_minuta_path %>

@@ -1,0 +1,48 @@
+<h1>Editing minuta</h1>
+
+<% form_for(@minuta) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :data %><br />
+    <%= f.date_select :data %>
+  </p>
+  <p>
+    <%= f.label :fechamento %><br />
+    <%= f.date_select :fechamento %>
+  </p>
+  <p>
+    <%= f.label :operador_fechamento_id %><br />
+    <%= f.text_field :operador_fechamento_id %>
+  </p>
+  <p>
+    <%= f.label :saida %><br />
+    <%= f.date_select :saida %>
+  </p>
+  <p>
+    <%= f.label :obs %><br />
+    <%= f.text_area :obs %>
+  </p>
+  <p>
+    <%= f.label :veiculo_id %><br />
+    <%= f.text_field :veiculo_id %>
+  </p>
+  <p>
+    <%= f.label :fechamento_financeiro %><br />
+    <%= f.date_select :fechamento_financeiro %>
+  </p>
+  <p>
+    <%= f.label :funcionario_fechamento_financeiro_id %><br />
+    <%= f.text_field :funcionario_fechamento_financeiro_id %>
+  </p>
+  <p>
+    <%= f.label :roteiro_id %><br />
+    <%= f.text_field :roteiro_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @minuta %> |
+<%= link_to 'Back', minutas_path %>

@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :minutas
+
   map.resources :itensnotasfiscais
 
   map.resources :notasfiscais
