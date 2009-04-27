@@ -1,0 +1,24 @@
+<h1>Listing roteiros</h1>
+
+<table>
+  <tr>
+    <th>Descricao</th>
+    <th>Funcionario</th>
+    <th>Regiao</th>
+  </tr>
+
+<% @roteiros.each do |roteiro| %>
+  <tr>
+    <td><%=h roteiro.descricao %></td>
+    <td><%=h roteiro.funcionario_id %></td>
+    <td><%=h roteiro.regiao_id %></td>
+    <td><%= link_to 'Show', roteiro %></td>
+    <td><%= link_to 'Edit', edit_roteiro_path(roteiro) %></td>
+    <td><%= link_to 'Destroy', roteiro, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New roteiro', new_roteiro_path %>

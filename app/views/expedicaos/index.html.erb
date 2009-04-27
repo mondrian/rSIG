@@ -1,0 +1,30 @@
+<h1>Listing expedicaos</h1>
+
+<table>
+  <tr>
+    <th>Minuta</th>
+    <th>Produto</th>
+    <th>Numero do volume</th>
+    <th>Qtd carregada</th>
+    <th>Qtd minuta</th>
+    <th>Vidro</th>
+  </tr>
+
+<% @expedicaos.each do |expedicao| %>
+  <tr>
+    <td><%=h expedicao.minuta_id %></td>
+    <td><%=h expedicao.produto_id %></td>
+    <td><%=h expedicao.numero_do_volume %></td>
+    <td><%=h expedicao.qtd_carregada %></td>
+    <td><%=h expedicao.qtd_minuta %></td>
+    <td><%=h expedicao.vidro %></td>
+    <td><%= link_to 'Show', expedicao %></td>
+    <td><%= link_to 'Edit', edit_expedicao_path(expedicao) %></td>
+    <td><%= link_to 'Destroy', expedicao, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New expedicao', new_expedicao_path %>

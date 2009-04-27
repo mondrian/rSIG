@@ -1,0 +1,28 @@
+<p>
+  <b>Mes:</b>
+  <%=h @meta_produto.mes %>
+</p>
+
+<p>
+  <b>Ano:</b>
+  <%=h @meta_produto.ano %>
+</p>
+
+<p>
+  <b>Qdt dias uteis:</b>
+  <%=h @meta_produto.qdt_dias_uteis %>
+</p>
+
+<p>
+  <b>Data ini:</b>
+  <%=h @meta_produto.data_ini %>
+</p>
+
+<p>
+  <b>Data fim:</b>
+  <%=h @meta_produto.data_fim %>
+</p>
+
+
+<%= link_to 'Edit', edit_meta_produto_path(@meta_produto) %> |
+<%= link_to 'Back', meta_produtos_path %>

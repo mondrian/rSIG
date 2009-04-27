@@ -1,0 +1,24 @@
+<h1>Listing areas</h1>
+
+<table>
+  <tr>
+    <th>Descricao</th>
+    <th>Cidade</th>
+    <th>Roteiro</th>
+  </tr>
+
+<% @areas.each do |area| %>
+  <tr>
+    <td><%=h area.descricao %></td>
+    <td><%=h area.cidade_id %></td>
+    <td><%=h area.roteiro_id %></td>
+    <td><%= link_to 'Show', area %></td>
+    <td><%= link_to 'Edit', edit_area_path(area) %></td>
+    <td><%= link_to 'Destroy', area, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New area', new_area_path %>

@@ -1,0 +1,33 @@
+<p>
+  <b>Minuta:</b>
+  <%=h @expedicao.minuta_id %>
+</p>
+
+<p>
+  <b>Produto:</b>
+  <%=h @expedicao.produto_id %>
+</p>
+
+<p>
+  <b>Numero do volume:</b>
+  <%=h @expedicao.numero_do_volume %>
+</p>
+
+<p>
+  <b>Qtd carregada:</b>
+  <%=h @expedicao.qtd_carregada %>
+</p>
+
+<p>
+  <b>Qtd minuta:</b>
+  <%=h @expedicao.qtd_minuta %>
+</p>
+
+<p>
+  <b>Vidro:</b>
+  <%=h @expedicao.vidro %>
+</p>
+
+
+<%= link_to 'Edit', edit_expedicao_path(@expedicao) %> |
+<%= link_to 'Back', expedicaos_path %>

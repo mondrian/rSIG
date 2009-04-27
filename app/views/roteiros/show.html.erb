@@ -1,0 +1,18 @@
+<p>
+  <b>Descricao:</b>
+  <%=h @roteiro.descricao %>
+</p>
+
+<p>
+  <b>Funcionario:</b>
+  <%=h @roteiro.funcionario_id %>
+</p>
+
+<p>
+  <b>Regiao:</b>
+  <%=h @roteiro.regiao_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_roteiro_path(@roteiro) %> |
+<%= link_to 'Back', roteiros_path %>

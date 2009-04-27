@@ -1,0 +1,36 @@
+<h1>Editing expedicao</h1>
+
+<% form_for(@expedicao) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :minuta_id %><br />
+    <%= f.text_field :minuta_id %>
+  </p>
+  <p>
+    <%= f.label :produto_id %><br />
+    <%= f.text_field :produto_id %>
+  </p>
+  <p>
+    <%= f.label :numero_do_volume %><br />
+    <%= f.text_field :numero_do_volume %>
+  </p>
+  <p>
+    <%= f.label :qtd_carregada %><br />
+    <%= f.text_field :qtd_carregada %>
+  </p>
+  <p>
+    <%= f.label :qtd_minuta %><br />
+    <%= f.text_field :qtd_minuta %>
+  </p>
+  <p>
+    <%= f.label :vidro %><br />
+    <%= f.check_box :vidro %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @expedicao %> |
+<%= link_to 'Back', expedicaos_path %>

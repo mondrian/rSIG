@@ -1,0 +1,24 @@
+<h1>Editing roteiro</h1>
+
+<% form_for(@roteiro) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :descricao %><br />
+    <%= f.text_field :descricao %>
+  </p>
+  <p>
+    <%= f.label :funcionario_id %><br />
+    <%= f.text_field :funcionario_id %>
+  </p>
+  <p>
+    <%= f.label :regiao_id %><br />
+    <%= f.text_field :regiao_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @roteiro %> |
+<%= link_to 'Back', roteiros_path %>

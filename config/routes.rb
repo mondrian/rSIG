@@ -1,4 +1,16 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :expedicaos
+
+  map.resources :meta_produtos
+
+  map.resources :regiaos
+
+  map.resources :cidades
+
+  map.resources :areas
+
+  map.resources :roteiros
+
   map.resources :cores
 
   map.resources :funcionarios

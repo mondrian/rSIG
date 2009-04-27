@@ -1,0 +1,31 @@
+<h1>New meta_produto</h1>
+
+<% form_for(@meta_produto) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :mes %><br />
+    <%= f.text_field :mes %>
+  </p>
+  <p>
+    <%= f.label :ano %><br />
+    <%= f.text_field :ano %>
+  </p>
+  <p>
+    <%= f.label :qdt_dias_uteis %><br />
+    <%= f.text_field :qdt_dias_uteis %>
+  </p>
+  <p>
+    <%= f.label :data_ini %><br />
+    <%= f.date_select :data_ini %>
+  </p>
+  <p>
+    <%= f.label :data_fim %><br />
+    <%= f.date_select :data_fim %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', meta_produtos_path %>

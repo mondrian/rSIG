@@ -9,7 +9,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090424200003) do
+ActiveRecord::Schema.define(:version => 20090427140326) do
+
+  create_table "areas", :force => true do |t|
+    t.string   "descricao"
+    t.integer  "cidade_id"
+    t.integer  "roteiro_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cidades", :force => true do |t|
+    t.string   "descricao"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "clientes", :force => true do |t|
     t.string   "tipo_cliente",               :limit => 1
@@ -49,6 +63,17 @@ ActiveRecord::Schema.define(:version => 20090424200003) do
 
   create_table "cores", :force => true do |t|
     t.string   "descricao"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "expedicaos", :force => true do |t|
+    t.integer  "minuta_id"
+    t.integer  "produto_id"
+    t.string   "numero_do_volume"
+    t.decimal  "qtd_carregada"
+    t.decimal  "qtd_minuta"
+    t.boolean  "vidro"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -95,6 +120,16 @@ ActiveRecord::Schema.define(:version => 20090424200003) do
     t.string   "descricao"
     t.decimal  "margem_lucro"
     t.boolean  "unificado"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "meta_produtos", :force => true do |t|
+    t.integer  "mes"
+    t.integer  "ano"
+    t.integer  "qdt_dias_uteis"
+    t.date     "data_ini"
+    t.date     "data_fim"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -155,6 +190,20 @@ ActiveRecord::Schema.define(:version => 20090424200003) do
     t.decimal  "custo"
     t.date     "cadastro_custo"
     t.boolean  "kit"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "regiaos", :force => true do |t|
+    t.string   "descricao"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roteiros", :force => true do |t|
+    t.string   "descricao"
+    t.integer  "funcionario_id"
+    t.integer  "regiao_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

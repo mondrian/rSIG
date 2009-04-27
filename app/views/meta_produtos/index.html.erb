@@ -1,0 +1,28 @@
+<h1>Listing meta_produtos</h1>
+
+<table>
+  <tr>
+    <th>Mes</th>
+    <th>Ano</th>
+    <th>Qdt dias uteis</th>
+    <th>Data ini</th>
+    <th>Data fim</th>
+  </tr>
+
+<% @meta_produtos.each do |meta_produto| %>
+  <tr>
+    <td><%=h meta_produto.mes %></td>
+    <td><%=h meta_produto.ano %></td>
+    <td><%=h meta_produto.qdt_dias_uteis %></td>
+    <td><%=h meta_produto.data_ini %></td>
+    <td><%=h meta_produto.data_fim %></td>
+    <td><%= link_to 'Show', meta_produto %></td>
+    <td><%= link_to 'Edit', edit_meta_produto_path(meta_produto) %></td>
+    <td><%= link_to 'Destroy', meta_produto, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New meta_produto', new_meta_produto_path %>
