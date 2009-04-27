@@ -61,3 +61,67 @@ Migrating to CreateExpedicaos (20090427140326)
   [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090427140326')[0m
   [4;36;1mSQL (1.1ms)[0m   [0;1mCOMMIT[0m
   [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePedidos (20090424125922)
+Migrating to CreateClientes (20090424184002)
+Migrating to CreateProdutos (20090424195513)
+Migrating to CreateGrupos (20090424195522)
+Migrating to CreateFuncionarios (20090424195642)
+Migrating to CreateCores (20090424200003)
+Migrating to CreateRoteiros (20090427135556)
+Migrating to CreateAreas (20090427135631)
+Migrating to CreateCidades (20090427135712)
+Migrating to CreateRegiaos (20090427135726)
+Migrating to CreateMetaProdutos (20090427140058)
+Migrating to CreateExpedicaos (20090427140326)
+Migrating to CreateItemPedidos (20090427180121)
+Migrating to CreateNotaFiscals (20090427193229)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePedidos (20090424125922)
+Migrating to CreateClientes (20090424184002)
+Migrating to CreateProdutos (20090424195513)
+Migrating to CreateGrupos (20090424195522)
+Migrating to CreateFuncionarios (20090424195642)
+Migrating to CreateCores (20090424200003)
+Migrating to CreateRoteiros (20090427135556)
+Migrating to CreateAreas (20090427135631)
+Migrating to CreateCidades (20090427135712)
+Migrating to CreateRegiaos (20090427135726)
+Migrating to CreateMetaProdutos (20090427140058)
+Migrating to CreateExpedicaos (20090427140326)
+Migrating to CreateItemPedidos (20090427180121)
+Migrating to CreateNotasfiscais (20090427194625)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (11.4ms)[0m   [0;1mCREATE TABLE "notasfiscais" ("id" serial primary key, "numero_nota" integer, "numero_pedido_id" integer, "numero_selo" character varying(255), "numero_serie" character varying(255), "cliente_id" character varying(255), "percentual_icms" decimal, "emissao" date, "total_mercadoria" decimal, "valor_frete" decimal, "cfop" character varying(255), "natureza_operacao" character varying(255), "valor_ipi" decimal, "valor_desconto" decimal, "valor_acrescimo" decimal, "total_nota" decimal, "status" character varying(255), "base_calculo_icms" decimal, "valor_icms" decimal, "qtde_volumes" integer, "entrada" timestamp, "saida" timestamp, "transportadora_id" integer, "percentual_desconto" decimal, "observacao" text, "base_calculo_icms_substituicao_tributaria" decimal, "percentual_icms_substituicao_tributaria" decimal, "valor_icms_substituicao_tributaria" decimal, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090427194625')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePedidos (20090424125922)
+Migrating to CreateClientes (20090424184002)
+Migrating to CreateProdutos (20090424195513)
+Migrating to CreateGrupos (20090424195522)
+Migrating to CreateFuncionarios (20090424195642)
+Migrating to CreateCores (20090424200003)
+Migrating to CreateRoteiros (20090427135556)
+Migrating to CreateAreas (20090427135631)
+Migrating to CreateCidades (20090427135712)
+Migrating to CreateRegiaos (20090427135726)
+Migrating to CreateMetaProdutos (20090427140058)
+Migrating to CreateExpedicaos (20090427140326)
+Migrating to CreateItemPedidos (20090427180121)
+Migrating to CreateNotasfiscais (20090427194625)
+Migrating to CreateItensnotasfiscais (20090427194739)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (8.2ms)[0m   [0;1mCREATE TABLE "itensnotasfiscais" ("id" serial primary key, "numero_nota" integer, "produto_id" integer, "unidade_medida" character varying(255), "quantidade" decimal, "valor_item_faturado" decimal, "valor_item_original" decimal, "situacao_tributaria_item" character varying(255), "percentual_icms_item" decimal, "percentual_ipi_item" decimal, "peso_liquido" decimal, "cod_emissao_nf" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090427194739')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m

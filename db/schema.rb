@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090427140326) do
+ActiveRecord::Schema.define(:version => 20090427194739) do
 
   create_table "areas", :force => true do |t|
     t.string   "descricao"
@@ -124,12 +124,70 @@ ActiveRecord::Schema.define(:version => 20090427140326) do
     t.datetime "updated_at"
   end
 
+  create_table "item_pedidos", :force => true do |t|
+    t.integer  "kit_id"
+    t.decimal  "quantidade"
+    t.decimal  "valor_tabela"
+    t.decimal  "valor_venda"
+    t.decimal  "desconto"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "itensnotasfiscais", :force => true do |t|
+    t.integer  "numero_nota"
+    t.integer  "produto_id"
+    t.string   "unidade_medida"
+    t.decimal  "quantidade"
+    t.decimal  "valor_item_faturado"
+    t.decimal  "valor_item_original"
+    t.string   "situacao_tributaria_item"
+    t.decimal  "percentual_icms_item"
+    t.decimal  "percentual_ipi_item"
+    t.decimal  "peso_liquido"
+    t.integer  "cod_emissao_nf"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "meta_produtos", :force => true do |t|
     t.integer  "mes"
     t.integer  "ano"
     t.integer  "qdt_dias_uteis"
     t.date     "data_ini"
     t.date     "data_fim"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "notasfiscais", :force => true do |t|
+    t.integer  "numero_nota"
+    t.integer  "numero_pedido_id"
+    t.string   "numero_selo"
+    t.string   "numero_serie"
+    t.string   "cliente_id"
+    t.decimal  "percentual_icms"
+    t.date     "emissao"
+    t.decimal  "total_mercadoria"
+    t.decimal  "valor_frete"
+    t.string   "cfop"
+    t.string   "natureza_operacao"
+    t.decimal  "valor_ipi"
+    t.decimal  "valor_desconto"
+    t.decimal  "valor_acrescimo"
+    t.decimal  "total_nota"
+    t.string   "status"
+    t.decimal  "base_calculo_icms"
+    t.decimal  "valor_icms"
+    t.integer  "qtde_volumes"
+    t.datetime "entrada"
+    t.datetime "saida"
+    t.integer  "transportadora_id"
+    t.decimal  "percentual_desconto"
+    t.text     "observacao"
+    t.decimal  "base_calculo_icms_substituicao_tributaria"
+    t.decimal  "percentual_icms_substituicao_tributaria"
+    t.decimal  "valor_icms_substituicao_tributaria"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

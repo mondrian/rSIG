@@ -1,0 +1,40 @@
+<h1>Listing itensnotasfiscais</h1>
+
+<table>
+  <tr>
+    <th>Numero nota</th>
+    <th>Produto</th>
+    <th>Unidade medida</th>
+    <th>Quantidade</th>
+    <th>Valor item faturado</th>
+    <th>Valor item original</th>
+    <th>Situacao tributaria item</th>
+    <th>Percentual icms item</th>
+    <th>Percentual ipi item</th>
+    <th>Peso liquido</th>
+    <th>Cod emissao nf</th>
+  </tr>
+
+<% @itensnotasfiscais.each do |itemnotafiscal| %>
+  <tr>
+    <td><%=h itemnotafiscal.numero_nota %></td>
+    <td><%=h itemnotafiscal.produto_id %></td>
+    <td><%=h itemnotafiscal.unidade_medida %></td>
+    <td><%=h itemnotafiscal.quantidade %></td>
+    <td><%=h itemnotafiscal.valor_item_faturado %></td>
+    <td><%=h itemnotafiscal.valor_item_original %></td>
+    <td><%=h itemnotafiscal.situacao_tributaria_item %></td>
+    <td><%=h itemnotafiscal.percentual_icms_item %></td>
+    <td><%=h itemnotafiscal.percentual_ipi_item %></td>
+    <td><%=h itemnotafiscal.peso_liquido %></td>
+    <td><%=h itemnotafiscal.cod_emissao_nf %></td>
+    <td><%= link_to 'Show', itemnotafiscal %></td>
+    <td><%= link_to 'Edit', edit_itemnotafiscal_path(itemnotafiscal) %></td>
+    <td><%= link_to 'Destroy', itemnotafiscal, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New itemnotafiscal', new_itemnotafiscal_path %>

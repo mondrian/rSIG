@@ -1,0 +1,56 @@
+<h1>Editing itemnotafiscal</h1>
+
+<% form_for(@itemnotafiscal) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :numero_nota %><br />
+    <%= f.text_field :numero_nota %>
+  </p>
+  <p>
+    <%= f.label :produto_id %><br />
+    <%= f.text_field :produto_id %>
+  </p>
+  <p>
+    <%= f.label :unidade_medida %><br />
+    <%= f.text_field :unidade_medida %>
+  </p>
+  <p>
+    <%= f.label :quantidade %><br />
+    <%= f.text_field :quantidade %>
+  </p>
+  <p>
+    <%= f.label :valor_item_faturado %><br />
+    <%= f.text_field :valor_item_faturado %>
+  </p>
+  <p>
+    <%= f.label :valor_item_original %><br />
+    <%= f.text_field :valor_item_original %>
+  </p>
+  <p>
+    <%= f.label :situacao_tributaria_item %><br />
+    <%= f.text_field :situacao_tributaria_item %>
+  </p>
+  <p>
+    <%= f.label :percentual_icms_item %><br />
+    <%= f.text_field :percentual_icms_item %>
+  </p>
+  <p>
+    <%= f.label :percentual_ipi_item %><br />
+    <%= f.text_field :percentual_ipi_item %>
+  </p>
+  <p>
+    <%= f.label :peso_liquido %><br />
+    <%= f.text_field :peso_liquido %>
+  </p>
+  <p>
+    <%= f.label :cod_emissao_nf %><br />
+    <%= f.text_field :cod_emissao_nf %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @itemnotafiscal %> |
+<%= link_to 'Back', itensnotasfiscais_path %>
