@@ -1,18 +1,18 @@
 require 'test_helper'
 
 class FuncionariosControllerTest < ActionController::TestCase
-  def test_should_get_index
+  test "should get index" do
     get :index
     assert_response :success
     assert_not_nil assigns(:funcionarios)
   end
 
-  def test_should_get_new
+  test "should get new" do
     get :new
     assert_response :success
   end
 
-  def test_should_create_funcionario
+  test "should create funcionario" do
     assert_difference('Funcionario.count') do
       post :create, :funcionario => { }
     end
@@ -20,24 +20,24 @@ class FuncionariosControllerTest < ActionController::TestCase
     assert_redirected_to funcionario_path(assigns(:funcionario))
   end
 
-  def test_should_show_funcionario
-    get :show, :id => funcionarios(:one).id
+  test "should show funcionario" do
+    get :show, :id => funcionarios(:one).to_param
     assert_response :success
   end
 
-  def test_should_get_edit
-    get :edit, :id => funcionarios(:one).id
+  test "should get edit" do
+    get :edit, :id => funcionarios(:one).to_param
     assert_response :success
   end
 
-  def test_should_update_funcionario
-    put :update, :id => funcionarios(:one).id, :funcionario => { }
+  test "should update funcionario" do
+    put :update, :id => funcionarios(:one).to_param, :funcionario => { }
     assert_redirected_to funcionario_path(assigns(:funcionario))
   end
 
-  def test_should_destroy_funcionario
+  test "should destroy funcionario" do
     assert_difference('Funcionario.count', -1) do
-      delete :destroy, :id => funcionarios(:one).id
+      delete :destroy, :id => funcionarios(:one).to_param
     end
 
     assert_redirected_to funcionarios_path

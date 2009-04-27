@@ -5,7 +5,7 @@
     <th>Descricao</th>
   </tr>
 
-<% for cor in @cores %>
+<% @cores.each do |cor| %>
   <tr>
     <td><%=h cor.descricao %></td>
     <td><%= link_to 'Show', cor %></td>

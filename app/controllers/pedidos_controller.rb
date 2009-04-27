@@ -2,7 +2,7 @@ class PedidosController < ApplicationController
   # GET /pedidos
   # GET /pedidos.xml
   def index
-    @pedidos = Pedido.find(:all)
+    @pedidos = Pedido.all
 
     respond_to do |format|
       format.html # index.html.erb

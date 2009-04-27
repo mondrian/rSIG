@@ -2,7 +2,7 @@ class CoresController < ApplicationController
   # GET /cores
   # GET /cores.xml
   def index
-    @cores = Cor.find(:all)
+    @cores = Cor.all
 
     respond_to do |format|
       format.html # index.html.erb

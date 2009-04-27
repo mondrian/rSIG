@@ -1,18 +1,18 @@
 require 'test_helper'
 
 class CoresControllerTest < ActionController::TestCase
-  def test_should_get_index
+  test "should get index" do
     get :index
     assert_response :success
     assert_not_nil assigns(:cores)
   end
 
-  def test_should_get_new
+  test "should get new" do
     get :new
     assert_response :success
   end
 
-  def test_should_create_cor
+  test "should create cor" do
     assert_difference('Cor.count') do
       post :create, :cor => { }
     end
@@ -20,24 +20,24 @@ class CoresControllerTest < ActionController::TestCase
     assert_redirected_to cor_path(assigns(:cor))
   end
 
-  def test_should_show_cor
-    get :show, :id => cores(:one).id
+  test "should show cor" do
+    get :show, :id => cores(:one).to_param
     assert_response :success
   end
 
-  def test_should_get_edit
-    get :edit, :id => cores(:one).id
+  test "should get edit" do
+    get :edit, :id => cores(:one).to_param
     assert_response :success
   end
 
-  def test_should_update_cor
-    put :update, :id => cores(:one).id, :cor => { }
+  test "should update cor" do
+    put :update, :id => cores(:one).to_param, :cor => { }
     assert_redirected_to cor_path(assigns(:cor))
   end
 
-  def test_should_destroy_cor
+  test "should destroy cor" do
     assert_difference('Cor.count', -1) do
-      delete :destroy, :id => cores(:one).id
+      delete :destroy, :id => cores(:one).to_param
     end
 
     assert_redirected_to cores_path

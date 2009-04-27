@@ -1,4 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :item_pedidos
+
+  map.resources :pedidos
+
+  map.resources :funcionarios
+
+  map.resources :cores
+
   map.resources :expedicaos
 
   map.resources :meta_produtos

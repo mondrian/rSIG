@@ -2,7 +2,7 @@ class FuncionariosController < ApplicationController
   # GET /funcionarios
   # GET /funcionarios.xml
   def index
-    @funcionarios = Funcionario.find(:all)
+    @funcionarios = Funcionario.all
 
     respond_to do |format|
       format.html # index.html.erb

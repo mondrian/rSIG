@@ -37,7 +37,7 @@
     <th>Email</th>
   </tr>
 
-<% for funcionario in @funcionarios %>
+<% @funcionarios.each do |funcionario| %>
   <tr>
     <td><%=h funcionario.tipo %></td>
     <td><%=h funcionario.nome %></td>
