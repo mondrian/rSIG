@@ -22,14 +22,12 @@ one:
   minuta_id: 1
   area_id: 1
   preco_especial: false
-  empresa_id: 1
   status: MyString
   estorno: 2009-04-24
   funcionario_estorno_id: 1
   comissao_vendedor: 9.99
   comissao_telemarketing: 9.99
   venda_externa: false
-  desconto_complemetar: 9.99
   autorizador_desconto_id: 1
 
 two:
@@ -54,12 +52,10 @@ two:
   minuta_id: 1
   area_id: 1
   preco_especial: false
-  empresa_id: 1
   status: MyString
   estorno: 2009-04-24
   funcionario_estorno_id: 1
   comissao_vendedor: 9.99
   comissao_telemarketing: 9.99
   venda_externa: false
-  desconto_complemetar: 9.99
   autorizador_desconto_id: 1
