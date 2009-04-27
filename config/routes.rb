@@ -1,6 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :item_pedidos
 
+  map.resources :item_pedidos
+
   map.resources :pedidos
 
   map.resources :funcionarios
