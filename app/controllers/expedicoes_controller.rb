@@ -1,17 +1,17 @@
-class ExpedicaosController < ApplicationController
-  # GET /expedicaos
-  # GET /expedicaos.xml
+class ExpedicoesController < ApplicationController
+  # GET /expedicoes
+  # GET /expedicoes.xml
   def index
-    @expedicaos = Expedicao.all
+    @expedicoes = Expedicao.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @expedicaos }
+      format.xml  { render :xml => @expedicoes }
     end
   end
 
-  # GET /expedicaos/1
-  # GET /expedicaos/1.xml
+  # GET /expedicoes/1
+  # GET /expedicoes/1.xml
   def show
     @expedicao = Expedicao.find(params[:id])
 
@@ -21,8 +21,8 @@ class ExpedicaosController < ApplicationController
     end
   end
 
-  # GET /expedicaos/new
-  # GET /expedicaos/new.xml
+  # GET /expedicoes/new
+  # GET /expedicoes/new.xml
   def new
     @expedicao = Expedicao.new
 
@@ -32,13 +32,13 @@ class ExpedicaosController < ApplicationController
     end
   end
 
-  # GET /expedicaos/1/edit
+  # GET /expedicoes/1/edit
   def edit
     @expedicao = Expedicao.find(params[:id])
   end
 
-  # POST /expedicaos
-  # POST /expedicaos.xml
+  # POST /expedicoes
+  # POST /expedicoes.xml
   def create
     @expedicao = Expedicao.new(params[:expedicao])
 
@@ -54,8 +54,8 @@ class ExpedicaosController < ApplicationController
     end
   end
 
-  # PUT /expedicaos/1
-  # PUT /expedicaos/1.xml
+  # PUT /expedicoes/1
+  # PUT /expedicoes/1.xml
   def update
     @expedicao = Expedicao.find(params[:id])
 
@@ -71,14 +71,14 @@ class ExpedicaosController < ApplicationController
     end
   end
 
-  # DELETE /expedicaos/1
-  # DELETE /expedicaos/1.xml
+  # DELETE /expedicoes/1
+  # DELETE /expedicoes/1.xml
   def destroy
     @expedicao = Expedicao.find(params[:id])
     @expedicao.destroy
 
     respond_to do |format|
-      format.html { redirect_to(expedicaos_url) }
+      format.html { redirect_to(expedicoes_url) }
       format.xml  { head :ok }
     end
   end

@@ -1,10 +1,10 @@
 require 'test_helper'
 
-class RegiaosControllerTest < ActionController::TestCase
+class RegioesControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:regiaos)
+    assert_not_nil assigns(:regioes)
   end
 
   test "should get new" do
@@ -21,25 +21,25 @@ class RegiaosControllerTest < ActionController::TestCase
   end
 
   test "should show regiao" do
-    get :show, :id => regiaos(:one).to_param
+    get :show, :id => regioes(:one).to_param
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :id => regiaos(:one).to_param
+    get :edit, :id => regioes(:one).to_param
     assert_response :success
   end
 
   test "should update regiao" do
-    put :update, :id => regiaos(:one).to_param, :regiao => { }
+    put :update, :id => regioes(:one).to_param, :regiao => { }
     assert_redirected_to regiao_path(assigns(:regiao))
   end
 
   test "should destroy regiao" do
     assert_difference('Regiao.count', -1) do
-      delete :destroy, :id => regiaos(:one).to_param
+      delete :destroy, :id => regioes(:one).to_param
     end
 
-    assert_redirected_to regiaos_path
+    assert_redirected_to regioes_path
   end
 end
