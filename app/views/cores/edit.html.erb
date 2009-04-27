@@ -1,0 +1,16 @@
+<h1>Editing cor</h1>
+
+<% form_for(@cor) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :descricao %><br />
+    <%= f.text_field :descricao %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @cor %> |
+<%= link_to 'Back', cores_path %>

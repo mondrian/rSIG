@@ -1,0 +1,24 @@
+<h1>Editing grupo</h1>
+
+<% form_for(@grupo) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :descricao %><br />
+    <%= f.text_field :descricao %>
+  </p>
+  <p>
+    <%= f.label :margem_lucro %><br />
+    <%= f.text_field :margem_lucro %>
+  </p>
+  <p>
+    <%= f.label :unificado %><br />
+    <%= f.check_box :unificado %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @grupo %> |
+<%= link_to 'Back', grupos_path %>

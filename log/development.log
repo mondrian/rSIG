@@ -1,0 +1,13 @@
+
+
+Processing ProdutosController#index (for 127.0.0.1 at 2009-04-27 09:33:58) [GET]
+  [4;36;1mProduto Load (5.0ms)[0m   [0;1mSELECT * FROM "produtos" [0m
+Rendering template within layouts/produtos
+Rendering produtos/index
+Completed in 115ms (View: 69, DB: 5) | 200 OK [http://localhost/produtos]
+
+
+Processing ProdutosController#new (for 127.0.0.1 at 2009-04-27 09:34:06) [GET]
+Rendering template within layouts/produtos
+Rendering produtos/new
+Completed in 410ms (View: 368, DB: 0) | 200 OK [http://localhost/produtos/new]

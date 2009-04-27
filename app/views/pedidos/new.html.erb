@@ -1,0 +1,131 @@
+<h1>New pedido</h1>
+
+<% form_for(@pedido) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :oficial %><br />
+    <%= f.check_box :oficial %>
+  </p>
+  <p>
+    <%= f.label :data %><br />
+    <%= f.date_select :data %>
+  </p>
+  <p>
+    <%= f.label :previsao_entrega %><br />
+    <%= f.date_select :previsao_entrega %>
+  </p>
+  <p>
+    <%= f.label :entrega %><br />
+    <%= f.date_select :entrega %>
+  </p>
+  <p>
+    <%= f.label :programacao %><br />
+    <%= f.date_select :programacao %>
+  </p>
+  <p>
+    <%= f.label :cliente_id %><br />
+    <%= f.text_field :cliente_id %>
+  </p>
+  <p>
+    <%= f.label :valor %><br />
+    <%= f.text_field :valor %>
+  </p>
+  <p>
+    <%= f.label :preco_tabela %><br />
+    <%= f.text_field :preco_tabela %>
+  </p>
+  <p>
+    <%= f.label :acrescimo %><br />
+    <%= f.text_field :acrescimo %>
+  </p>
+  <p>
+    <%= f.label :desconto %><br />
+    <%= f.text_field :desconto %>
+  </p>
+  <p>
+    <%= f.label :transportadora_id %><br />
+    <%= f.text_field :transportadora_id %>
+  </p>
+  <p>
+    <%= f.label :nome_comprador %><br />
+    <%= f.text_field :nome_comprador %>
+  </p>
+  <p>
+    <%= f.label :observacao %><br />
+    <%= f.text_area :observacao %>
+  </p>
+  <p>
+    <%= f.label :vendedor_id %><br />
+    <%= f.text_field :vendedor_id %>
+  </p>
+  <p>
+    <%= f.label :operador_id %><br />
+    <%= f.text_field :operador_id %>
+  </p>
+  <p>
+    <%= f.label :telemarketing_id %><br />
+    <%= f.text_field :telemarketing_id %>
+  </p>
+  <p>
+    <%= f.label :plano_pagamento_id %><br />
+    <%= f.text_field :plano_pagamento_id %>
+  </p>
+  <p>
+    <%= f.label :endereco_entrega %><br />
+    <%= f.text_field :endereco_entrega %>
+  </p>
+  <p>
+    <%= f.label :minuta_id %><br />
+    <%= f.text_field :minuta_id %>
+  </p>
+  <p>
+    <%= f.label :area_id %><br />
+    <%= f.text_field :area_id %>
+  </p>
+  <p>
+    <%= f.label :preco_especial %><br />
+    <%= f.check_box :preco_especial %>
+  </p>
+  <p>
+    <%= f.label :empresa_id %><br />
+    <%= f.text_field :empresa_id %>
+  </p>
+  <p>
+    <%= f.label :status %><br />
+    <%= f.text_field :status %>
+  </p>
+  <p>
+    <%= f.label :estorno %><br />
+    <%= f.date_select :estorno %>
+  </p>
+  <p>
+    <%= f.label :funcionario_estorno_id %><br />
+    <%= f.text_field :funcionario_estorno_id %>
+  </p>
+  <p>
+    <%= f.label :comissao_vendedor %><br />
+    <%= f.text_field :comissao_vendedor %>
+  </p>
+  <p>
+    <%= f.label :comissao_telemarketing %><br />
+    <%= f.text_field :comissao_telemarketing %>
+  </p>
+  <p>
+    <%= f.label :venda_externa %><br />
+    <%= f.check_box :venda_externa %>
+  </p>
+  <p>
+    <%= f.label :desconto_complemetar %><br />
+    <%= f.text_field :desconto_complemetar %>
+  </p>
+  <p>
+    <%= f.label :autorizador_desconto_id %><br />
+    <%= f.text_field :autorizador_desconto_id %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', pedidos_path %>

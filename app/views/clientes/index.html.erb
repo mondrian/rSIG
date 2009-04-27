@@ -1,0 +1,80 @@
+<h1>Listing clientes</h1>
+
+<table>
+  <tr>
+    <th>Tipo cliente</th>
+    <th>Cpf cnpj</th>
+    <th>Razao social</th>
+    <th>Nome fantasia</th>
+    <th>Documento</th>
+    <th>Endereco</th>
+    <th>Complemento</th>
+    <th>Cidade</th>
+    <th>Uf</th>
+    <th>Cep</th>
+    <th>Referencia</th>
+    <th>Fone pessoal</th>
+    <th>Fone comercial</th>
+    <th>Fone celular</th>
+    <th>Endereco entrega</th>
+    <th>Regiao entrega</th>
+    <th>Cidade entrega</th>
+    <th>Area</th>
+    <th>Referencias bancaria</th>
+    <th>Referencias comerciais</th>
+    <th>Observacao</th>
+    <th>Info serasa</th>
+    <th>Data nascimento</th>
+    <th>Nome comprador</th>
+    <th>Vendas suspensas</th>
+    <th>Observacao suspensao venda</th>
+    <th>Limite credito</th>
+    <th>Saldo devedor</th>
+    <th>Status</th>
+    <th>Prazo medio maximo</th>
+    <th>Data inclusao prazo medio</th>
+  </tr>
+
+<% for cliente in @clientes %>
+  <tr>
+    <td><%=h cliente.tipo_cliente %></td>
+    <td><%=h cliente.cpf_cnpj %></td>
+    <td><%=h cliente.razao_social %></td>
+    <td><%=h cliente.nome_fantasia %></td>
+    <td><%=h cliente.documento %></td>
+    <td><%=h cliente.endereco %></td>
+    <td><%=h cliente.complemento %></td>
+    <td><%=h cliente.cidade_id %></td>
+    <td><%=h cliente.uf_id %></td>
+    <td><%=h cliente.cep %></td>
+    <td><%=h cliente.referencia %></td>
+    <td><%=h cliente.fone_pessoal %></td>
+    <td><%=h cliente.fone_comercial %></td>
+    <td><%=h cliente.fone_celular %></td>
+    <td><%=h cliente.endereco_entrega %></td>
+    <td><%=h cliente.regiao_entrega_id %></td>
+    <td><%=h cliente.cidade_entrega_id %></td>
+    <td><%=h cliente.area_id %></td>
+    <td><%=h cliente.referencias_bancaria %></td>
+    <td><%=h cliente.referencias_comerciais %></td>
+    <td><%=h cliente.observacao %></td>
+    <td><%=h cliente.info_serasa %></td>
+    <td><%=h cliente.data_nascimento %></td>
+    <td><%=h cliente.nome_comprador %></td>
+    <td><%=h cliente.vendas_suspensas %></td>
+    <td><%=h cliente.observacao_suspensao_venda %></td>
+    <td><%=h cliente.limite_credito %></td>
+    <td><%=h cliente.saldo_devedor %></td>
+    <td><%=h cliente.status %></td>
+    <td><%=h cliente.prazo_medio_maximo %></td>
+    <td><%=h cliente.data_inclusao_prazo_medio %></td>
+    <td><%= link_to 'Show', cliente %></td>
+    <td><%= link_to 'Edit', edit_cliente_path(cliente) %></td>
+    <td><%= link_to 'Destroy', cliente, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New cliente', new_cliente_path %>

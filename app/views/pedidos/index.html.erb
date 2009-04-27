@@ -1,0 +1,78 @@
+<h1>Listing pedidos</h1>
+
+<table>
+  <tr>
+    <th>Oficial</th>
+    <th>Data</th>
+    <th>Previsao entrega</th>
+    <th>Entrega</th>
+    <th>Programacao</th>
+    <th>Cliente</th>
+    <th>Valor</th>
+    <th>Preco tabela</th>
+    <th>Acrescimo</th>
+    <th>Desconto</th>
+    <th>Transportadora</th>
+    <th>Nome comprador</th>
+    <th>Observacao</th>
+    <th>Vendedor</th>
+    <th>Operador</th>
+    <th>Telemarketing</th>
+    <th>Plano pagamento</th>
+    <th>Endereco entrega</th>
+    <th>Minuta</th>
+    <th>Area</th>
+    <th>Preco especial</th>
+    <th>Empresa</th>
+    <th>Status</th>
+    <th>Estorno</th>
+    <th>Funcionario estorno</th>
+    <th>Comissao vendedor</th>
+    <th>Comissao telemarketing</th>
+    <th>Venda externa</th>
+    <th>Desconto complemetar</th>
+    <th>Autorizador desconto</th>
+  </tr>
+
+<% for pedido in @pedidos %>
+  <tr>
+    <td><%=h pedido.oficial %></td>
+    <td><%=h pedido.data %></td>
+    <td><%=h pedido.previsao_entrega %></td>
+    <td><%=h pedido.entrega %></td>
+    <td><%=h pedido.programacao %></td>
+    <td><%=h pedido.cliente_id %></td>
+    <td><%=h pedido.valor %></td>
+    <td><%=h pedido.preco_tabela %></td>
+    <td><%=h pedido.acrescimo %></td>
+    <td><%=h pedido.desconto %></td>
+    <td><%=h pedido.transportadora_id %></td>
+    <td><%=h pedido.nome_comprador %></td>
+    <td><%=h pedido.observacao %></td>
+    <td><%=h pedido.vendedor_id %></td>
+    <td><%=h pedido.operador_id %></td>
+    <td><%=h pedido.telemarketing_id %></td>
+    <td><%=h pedido.plano_pagamento_id %></td>
+    <td><%=h pedido.endereco_entrega %></td>
+    <td><%=h pedido.minuta_id %></td>
+    <td><%=h pedido.area_id %></td>
+    <td><%=h pedido.preco_especial %></td>
+    <td><%=h pedido.empresa_id %></td>
+    <td><%=h pedido.status %></td>
+    <td><%=h pedido.estorno %></td>
+    <td><%=h pedido.funcionario_estorno_id %></td>
+    <td><%=h pedido.comissao_vendedor %></td>
+    <td><%=h pedido.comissao_telemarketing %></td>
+    <td><%=h pedido.venda_externa %></td>
+    <td><%=h pedido.desconto_complemetar %></td>
+    <td><%=h pedido.autorizador_desconto_id %></td>
+    <td><%= link_to 'Show', pedido %></td>
+    <td><%= link_to 'Edit', edit_pedido_path(pedido) %></td>
+    <td><%= link_to 'Destroy', pedido, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New pedido', new_pedido_path %>

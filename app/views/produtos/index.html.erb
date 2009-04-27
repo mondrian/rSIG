@@ -1,0 +1,60 @@
+<h1>Listing produtos</h1>
+
+<table>
+  <tr>
+    <th>Descricao</th>
+    <th>Cor</th>
+    <th>Valor especial</th>
+    <th>Valor normal</th>
+    <th>Classe</th>
+    <th>Grupo</th>
+    <th>Status</th>
+    <th>Situacao tributaria</th>
+    <th>Preco minimo nota fiscal</th>
+    <th>Ipi</th>
+    <th>Classificacao fiscal</th>
+    <th>Peso liquido</th>
+    <th>Cod emissao nota fiscal</th>
+    <th>Descricao nota fiscal</th>
+    <th>Preco normal zona1</th>
+    <th>Preco especial zona1</th>
+    <th>Funcionario</th>
+    <th>Emissao relatorio</th>
+    <th>Custo</th>
+    <th>Cadastro custo</th>
+    <th>Kit</th>
+  </tr>
+
+<% for produto in @produtos %>
+  <tr>
+    <td><%=h produto.descricao %></td>
+    <td><%=h produto.cor_id %></td>
+    <td><%=h produto.valor_especial %></td>
+    <td><%=h produto.valor_normal %></td>
+    <td><%=h produto.classe_id %></td>
+    <td><%=h produto.grupo_id %></td>
+    <td><%=h produto.status %></td>
+    <td><%=h produto.situacao_tributaria %></td>
+    <td><%=h produto.preco_minimo_nota_fiscal %></td>
+    <td><%=h produto.ipi %></td>
+    <td><%=h produto.classificacao_fiscal %></td>
+    <td><%=h produto.peso_liquido %></td>
+    <td><%=h produto.cod_emissao_nota_fiscal %></td>
+    <td><%=h produto.descricao_nota_fiscal %></td>
+    <td><%=h produto.preco_normal_zona1 %></td>
+    <td><%=h produto.preco_especial_zona1 %></td>
+    <td><%=h produto.funcionario_id %></td>
+    <td><%=h produto.emissao_relatorio %></td>
+    <td><%=h produto.custo %></td>
+    <td><%=h produto.cadastro_custo %></td>
+    <td><%=h produto.kit %></td>
+    <td><%= link_to 'Show', produto %></td>
+    <td><%= link_to 'Edit', edit_produto_path(produto) %></td>
+    <td><%= link_to 'Destroy', produto, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New produto', new_produto_path %>

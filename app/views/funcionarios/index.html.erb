@@ -1,0 +1,84 @@
+<h1>Listing funcionarios</h1>
+
+<table>
+  <tr>
+    <th>Tipo</th>
+    <th>Nome</th>
+    <th>Endereco</th>
+    <th>Complemento</th>
+    <th>Cep</th>
+    <th>Cidade</th>
+    <th>Uf</th>
+    <th>Fone</th>
+    <th>Cpf</th>
+    <th>Rg</th>
+    <th>Pai</th>
+    <th>Mae</th>
+    <th>Numero carteira trabalho</th>
+    <th>Serie carteira trabalho</th>
+    <th>Titulo eleitor</th>
+    <th>Zona eleitoral</th>
+    <th>Admissao</th>
+    <th>Registro</th>
+    <th>Nascimento</th>
+    <th>Naturalidade</th>
+    <th>Estado civil</th>
+    <th>Grau instrucao</th>
+    <th>Cadastro pis</th>
+    <th>Numero pis</th>
+    <th>Cod banco pis</th>
+    <th>Nome banco pis</th>
+    <th>Cod agencia pis</th>
+    <th>Nome agencia pis</th>
+    <th>Endereco banco pis</th>
+    <th>Demissao</th>
+    <th>Observacao</th>
+    <th>Aci</th>
+    <th>Email</th>
+  </tr>
+
+<% for funcionario in @funcionarios %>
+  <tr>
+    <td><%=h funcionario.tipo %></td>
+    <td><%=h funcionario.nome %></td>
+    <td><%=h funcionario.endereco %></td>
+    <td><%=h funcionario.complemento %></td>
+    <td><%=h funcionario.cep %></td>
+    <td><%=h funcionario.cidade_id %></td>
+    <td><%=h funcionario.uf %></td>
+    <td><%=h funcionario.fone %></td>
+    <td><%=h funcionario.cpf %></td>
+    <td><%=h funcionario.rg %></td>
+    <td><%=h funcionario.pai %></td>
+    <td><%=h funcionario.mae %></td>
+    <td><%=h funcionario.numero_carteira_trabalho %></td>
+    <td><%=h funcionario.serie_carteira_trabalho %></td>
+    <td><%=h funcionario.titulo_eleitor %></td>
+    <td><%=h funcionario.zona_eleitoral %></td>
+    <td><%=h funcionario.admissao %></td>
+    <td><%=h funcionario.registro %></td>
+    <td><%=h funcionario.nascimento %></td>
+    <td><%=h funcionario.naturalidade %></td>
+    <td><%=h funcionario.estado_civil %></td>
+    <td><%=h funcionario.grau_instrucao %></td>
+    <td><%=h funcionario.cadastro_pis %></td>
+    <td><%=h funcionario.numero_pis %></td>
+    <td><%=h funcionario.cod_banco_pis %></td>
+    <td><%=h funcionario.nome_banco_pis %></td>
+    <td><%=h funcionario.cod_agencia_pis %></td>
+    <td><%=h funcionario.nome_agencia_pis %></td>
+    <td><%=h funcionario.endereco_banco_pis %></td>
+    <td><%=h funcionario.demissao %></td>
+    <td><%=h funcionario.observacao %></td>
+    <td><%=h funcionario.aci %></td>
+    <td><%=h funcionario.email %></td>
+    <td><%= link_to 'Show', funcionario %></td>
+    <td><%= link_to 'Edit', edit_funcionario_path(funcionario) %></td>
+    <td><%= link_to 'Destroy', funcionario, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New funcionario', new_funcionario_path %>
