@@ -1,0 +1,48 @@
+<p>
+  <b>Data:</b>
+  <%=h @minuta.data %>
+</p>
+
+<p>
+  <b>Fechamento:</b>
+  <%=h @minuta.fechamento %>
+</p>
+
+<p>
+  <b>Operador fechamento:</b>
+  <%=h @minuta.operador_fechamento_id %>
+</p>
+
+<p>
+  <b>Saida:</b>
+  <%=h @minuta.saida %>
+</p>
+
+<p>
+  <b>Obs:</b>
+  <%=h @minuta.obs %>
+</p>
+
+<p>
+  <b>Veiculo:</b>
+  <%=h @minuta.veiculo_id %>
+</p>
+
+<p>
+  <b>Fechamento financeiro:</b>
+  <%=h @minuta.fechamento_financeiro %>
+</p>
+
+<p>
+  <b>Funcionario fechamento financeiro:</b>
+  <%=h @minuta.funcionario_fechamento_financeiro_id %>
+</p>
+
+<p>
+  <b>Roteiro:</b>
+  <%=h @minuta.roteiro_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_minuta_path(@minuta) %> |
+<%= link_to 'Back', minutas_path %>
