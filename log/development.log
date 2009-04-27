@@ -125,3 +125,189 @@ Migrating to CreateItensnotasfiscais (20090427194739)
   [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090427194739')[0m
   [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
   [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2009-04-27 19:31:09) [GET]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Completed in 85ms (View: 10, DB: 1) | 200 OK [http://localhost/rails/info/properties]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ProdutosController#index (for 127.0.0.1 at 2009-04-27 19:31:17) [GET]
+  [4;35;1mProduto Load (1.5ms)[0m   [0mSELECT * FROM "produtos" [0m
+Rendering template within layouts/produtos
+Rendering produtos/index
+Completed in 55ms (View: 45, DB: 2) | 200 OK [http://localhost/produtos]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2009-04-27 19:31:26) [GET]
+  [4;36;1mCliente Load (1.6ms)[0m   [0;1mSELECT * FROM "clientes" [0m
+Rendering template within layouts/clientes
+Rendering clientes/index
+Completed in 104ms (View: 74, DB: 2) | 200 OK [http://localhost/clientes]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ClientesController#new (for 127.0.0.1 at 2009-04-27 19:31:31) [GET]
+Rendering template within layouts/clientes
+Rendering clientes/new
+Completed in 145ms (View: 129, DB: 0) | 200 OK [http://localhost/clientes/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ClientesController#create (for 127.0.0.1 at 2009-04-27 19:33:03) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"l1A5uQRex8uUnufGF1i2rpxT0ku0yecOkCympFNsDi0=", "cliente"=>{"observacao_suspensao_venda"=>"", "info_serasa"=>"", "complemento"=>"LAGOA PARQUE", "endereco"=>"RUA MARIA DOLORES BANDEIRA, 44", "documento"=>"145096", "cpf_cnpj"=>"51955326304", "vendas_suspensas"=>"0", "data_inclusao_prazo_medio(1i)"=>"2009", "prazo_medio_maximo"=>"", "data_nascimento(1i)"=>"2009", "uf_id"=>"CE", "cidade_id"=>"IGUATU", "data_inclusao_prazo_medio(2i)"=>"4", "saldo_devedor"=>"", "nome_comprador"=>"", "data_nascimento(2i)"=>"4", "referencias_comerciais"=>"", "cep"=>"63500000", "data_inclusao_prazo_medio(3i)"=>"27", "data_nascimento(3i)"=>"27", "area_id"=>"", "endereco_entrega"=>"O MESMO", "fone_comercial"=>"883581-1077", "limite_credito"=>"", "observacao"=>"", "tipo_cliente"=>"1", "referencias_bancaria"=>"", "razao_social"=>"LUCIANO BEZERRA", "status"=>"", "cidade_entrega_id"=>"", "referencia"=>"PROXIMO A AG VEICULOS", "regiao_entrega_id"=>"", "fone_celular"=>"889217-6936", "fone_pessoal"=>"889217-6936", "nome_fantasia"=>"LUCIANO BEZERRA"}}
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCliente Exists (1.2ms)[0m   [0;1mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" = E'51955326304') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/clientes
+Rendering clientes/new
+Completed in 55ms (View: 19, DB: 2) | 200 OK [http://localhost/clientes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ClientesController#create (for 127.0.0.1 at 2009-04-27 19:34:44) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"l1A5uQRex8uUnufGF1i2rpxT0ku0yecOkCympFNsDi0=", "cliente"=>{"observacao_suspensao_venda"=>"", "info_serasa"=>"", "complemento"=>"LAGOA PARQUE", "endereco"=>"RUA MARIA DOLORES BANDEIRA, 44", "documento"=>"145096", "cpf_cnpj"=>"51955326304", "vendas_suspensas"=>"0", "data_inclusao_prazo_medio(1i)"=>"2009", "prazo_medio_maximo"=>"15", "data_nascimento(1i)"=>"2005", "uf_id"=>"CE", "cidade_id"=>"IGUATU", "data_inclusao_prazo_medio(2i)"=>"4", "saldo_devedor"=>"500", "nome_comprador"=>"O PROPRIO", "data_nascimento(2i)"=>"4", "referencias_comerciais"=>"ZENIR MOVEIS", "cep"=>"63500000", "data_inclusao_prazo_medio(3i)"=>"27", "data_nascimento(3i)"=>"27", "area_id"=>"", "endereco_entrega"=>"O MESMO", "fone_comercial"=>"883581-1077", "limite_credito"=>"1000", "observacao"=>"", "tipo_cliente"=>"1", "referencias_bancaria"=>"BB LIMITE ZERO", "razao_social"=>"LUCIANO BEZERRA", "status"=>"A", "cidade_entrega_id"=>"", "referencia"=>"PROXIMO A AG VEICULOS", "regiao_entrega_id"=>"", "fone_celular"=>"889217-6936", "fone_pessoal"=>"889217-6936", "nome_fantasia"=>"LUCIANO BEZERRA"}}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCliente Exists (1.2ms)[0m   [0mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" = E'51955326304') LIMIT 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO "clientes" ("cpf_cnpj", "documento", "endereco", "complemento", "info_serasa", "observacao_suspensao_venda", "vendas_suspensas", "created_at", "cidade_id", "uf_id", "prazo_medio_maximo", "cep", "referencias_comerciais", "nome_comprador", "saldo_devedor", "data_inclusao_prazo_medio", "updated_at", "fone_comercial", "endereco_entrega", "area_id", "observacao", "limite_credito", "tipo_cliente", "data_nascimento", "referencias_bancaria", "razao_social", "referencia", "cidade_entrega_id", "status", "nome_fantasia", "fone_pessoal", "fone_celular", "regiao_entrega_id") VALUES(E'51955326304', E'145096', E'RUA MARIA DOLORES BANDEIRA, 44', E'LAGOA PARQUE', E'', E'', 'f', '2009-04-27 22:34:44.803450', 0, 0, 15, E'63500000', E'ZENIR MOVEIS', E'O PROPRIO', 500.0, '2009-04-27', '2009-04-27 22:34:44.803450', E'883581-1077', E'O MESMO', E'', E'', 1000.0, E'1', '2005-04-27', E'BB LIMITE ZERO', E'LUCIANO BEZERRA', E'PROXIMO A AG VEICULOS', E'', E'A', E'LUCIANO BEZERRA', E'889217-6936', E'889217-6936', NULL) RETURNING "id"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/clientes/1
+Completed in 68ms (DB: 3) | 302 Found [http://localhost/clientes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ClientesController#show (for 127.0.0.1 at 2009-04-27 19:34:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCliente Load (0.9ms)[0m   [0;1mSELECT * FROM "clientes" WHERE ("clientes"."id" = 1) [0m
+Rendering template within layouts/clientes
+Rendering clientes/show
+Completed in 33ms (View: 15, DB: 1) | 200 OK [http://localhost/clientes/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ClientesController#index (for 127.0.0.1 at 2009-04-27 19:34:49) [GET]
+  [4;35;1mCliente Load (1.7ms)[0m   [0mSELECT * FROM "clientes" [0m
+Rendering template within layouts/clientes
+Rendering clientes/index
+Completed in 28ms (View: 17, DB: 2) | 200 OK [http://localhost/clientes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing NotasfiscaisController#index (for 127.0.0.1 at 2009-04-27 19:35:50) [GET]
+
+SyntaxError (/home/luciano/tub_form/rSIG/app/models/notafiscal.rb:12: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+  numero_serie character varying(255),
+                        ^
+/home/luciano/tub_form/rSIG/app/models/notafiscal.rb:13: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+  cliente_id character varying(255),
+                      ^
+/home/luciano/tub_form/rSIG/app/models/notafiscal.rb:14: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+  percentual_icms numeric,
+                         ^
+/home/luciano/tub_form/rSIG/app/models/notafiscal.rb:15: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+  emissao date,
+              ^
+/home/luciano/tub_form/rSIG/app/models/notafiscal.rb:16: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+  total_mercadoria numeric,
+                          ^
+/home/luciano/tub_form/rSIG/app/models/notafiscal.rb:17: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+  valor_frete numeric,
+                     ^
+/home/luciano/tub_form/rSIG/app/models/notafiscal.rb:18: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+  cfop character varying(255),
+                ^
+/home/luciano/tub_form/rSIG/app/models/notafiscal.rb:19: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+  natureza_operacao character varying(255),
+                             ^
+/home/luciano/tub_form/rSIG/app/models/notafiscal.rb:20: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+  valor_ipi numeric,
+                   ^
+/home/luciano/tub_form/rSIG/app/models/notafiscal.rb:21: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+  valor_desconto numeric,
+                        ^
+/home/luciano/tub_form/rSIG/app/models/notafiscal.rb:22: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+  valor_acrescimo numeric,
+                         ^
+/home/luciano/tub_form/rSIG/app/models/notafiscal.rb:23: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+  total_nota numeric,
+                    ^
+/home/luciano/tub_form/rSIG/app/models/notafiscal.rb:24: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+  status character varying(255),
+                  ^
+/home/luciano/tub_form/rSIG/app/models/notafiscal.rb:25: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+  base_calculo_icms numeric,
+                           ^
+/home/luciano/tub_form/rSIG/app/models/notafiscal.rb:26: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+  valor_icms numeric,
+                    ^
+/home/luciano/tub_form/rSIG/app/models/notafiscal.rb:27: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+  qtde_volumes integer,
+                      ^
+/home/luciano/tub_form/rSIG/app/models/notafiscal.rb:28: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+  entrada timestamp without time zone,
+                   ^
+/home/luciano/tub_form/rSIG/app/models/notafiscal.rb:29: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+  saida timestamp without time zone,
+                 ^
+/home/luciano/tub_form/rSIG/app/models/notafiscal.rb:30: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+  transportadora_id integer,
+                           ^
+/home/luciano/tub_form/rSIG/app/models/notafiscal.rb:31: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+  percentual_desconto numeric,
+                             ^
+/home/luciano/tub_form/rSIG/app/models/notafiscal.rb:32: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+  observacao text,
+                 ^
+/home/luciano/tub_form/rSIG/app/models/notafiscal.rb:33: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+  base_calculo_icms_substituicao_tributaria numeric,
+                                                   ^
+/home/luciano/tub_form/rSIG/app/models/notafiscal.rb:34: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+  percentual_icms_substituicao_tributaria numeric,
+                                                 ^
+/home/luciano/tub_form/rSIG/app/models/notafiscal.rb:35: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+  valor_icms_substituicao_tributaria numeric,
+                                            ^):
+  app/controllers/notasfiscais_controller.rb:5:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (122.4ms)
+Rendered rescues/_request_and_response (1.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing NotasfiscaisController#index (for 127.0.0.1 at 2009-04-27 19:36:35) [GET]
+  [4;36;1mNotafiscal Load (1.5ms)[0m   [0;1mSELECT * FROM "notasfiscais" [0m
+Rendering template within layouts/notasfiscais
+Rendering notasfiscais/index
+Completed in 44ms (View: 15, DB: 2) | 200 OK [http://localhost/notasfiscais]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing NotasfiscaisController#new (for 127.0.0.1 at 2009-04-27 19:36:37) [GET]
+Rendering template within layouts/notasfiscais
+Rendering notasfiscais/new
+Completed in 53ms (View: 39, DB: 0) | 200 OK [http://localhost/notasfiscais/new]
