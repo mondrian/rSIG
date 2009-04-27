@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090427194739) do
+ActiveRecord::Schema.define(:version => 20090427225739) do
 
   create_table "areas", :force => true do |t|
     t.string   "descricao"
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(:version => 20090427194739) do
     t.datetime "updated_at"
   end
 
-  create_table "expedicaos", :force => true do |t|
+  create_table "expedicoes", :force => true do |t|
     t.integer  "minuta_id"
     t.integer  "produto_id"
     t.string   "numero_do_volume"
@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(:version => 20090427194739) do
   end
 
   create_table "funcionarios", :force => true do |t|
-    t.boolean  "tipo"
+    t.string   "tipo",                     :limit => 1
     t.string   "nome"
     t.string   "endereco"
     t.string   "complemento"
@@ -134,6 +134,13 @@ ActiveRecord::Schema.define(:version => 20090427194739) do
     t.datetime "updated_at"
   end
 
+  create_table "itens_minutas", :force => true do |t|
+    t.integer  "produto_id"
+    t.integer  "qtde"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "itensnotasfiscais", :force => true do |t|
     t.integer  "numero_nota"
     t.integer  "produto_id"
@@ -156,6 +163,20 @@ ActiveRecord::Schema.define(:version => 20090427194739) do
     t.integer  "qdt_dias_uteis"
     t.date     "data_ini"
     t.date     "data_fim"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "minutas", :force => true do |t|
+    t.date     "data"
+    t.date     "fechamento"
+    t.integer  "operador_fechamento_id"
+    t.date     "saida"
+    t.text     "obs"
+    t.integer  "veiculo_id"
+    t.date     "fechamento_financeiro"
+    t.integer  "funcionario_fechamento_financeiro_id"
+    t.integer  "roteiro_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -252,7 +273,7 @@ ActiveRecord::Schema.define(:version => 20090427194739) do
     t.datetime "updated_at"
   end
 
-  create_table "regiaos", :force => true do |t|
+  create_table "regioes", :force => true do |t|
     t.string   "descricao"
     t.datetime "created_at"
     t.datetime "updated_at"
