@@ -6,7 +6,7 @@ ActiveSupport::Inflector.inflections do |inflect|
 #   inflect.plural /^(ox)$/i, '\1en'
 #   inflect.singular /^(ox)en/i, '\1'
   inflect.irregular 'cor', 'cores'
-  inflect.irregular 'nota_fiscal', 'notas_fiscais'
-  inflect.irregular 'item_nota_fiscal', 'itens_notas_fiscais'
+  inflect.irregular 'notafiscal', 'notasfiscais'
+  inflect.irregular 'itemnotafiscal', 'itensnotasfiscais'
 #   inflect.uncountable %w( fish sheep )
 end
