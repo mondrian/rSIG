@@ -1,0 +1,22 @@
+<h1>Listing itens_minutas</h1>
+
+<table>
+  <tr>
+    <th>Produto</th>
+    <th>Qtde</th>
+  </tr>
+
+<% @itens_minutas.each do |itens_minuta| %>
+  <tr>
+    <td><%=h itens_minuta.produto_id %></td>
+    <td><%=h itens_minuta.qtde %></td>
+    <td><%= link_to 'Show', itens_minuta %></td>
+    <td><%= link_to 'Edit', edit_itens_minuta_path(itens_minuta) %></td>
+    <td><%= link_to 'Destroy', itens_minuta, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New itens_minuta', new_itens_minuta_path %>

@@ -1,0 +1,13 @@
+<p>
+  <b>Produto:</b>
+  <%=h @itens_minuta.produto_id %>
+</p>
+
+<p>
+  <b>Qtde:</b>
+  <%=h @itens_minuta.qtde %>
+</p>
+
+
+<%= link_to 'Edit', edit_itens_minuta_path(@itens_minuta) %> |
+<%= link_to 'Back', itens_minutas_path %>

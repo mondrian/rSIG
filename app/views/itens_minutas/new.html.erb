@@ -1,0 +1,19 @@
+<h1>New itens_minuta</h1>
+
+<% form_for(@itens_minuta) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :produto_id %><br />
+    <%= f.text_field :produto_id %>
+  </p>
+  <p>
+    <%= f.label :qtde %><br />
+    <%= f.text_field :qtde %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', itens_minutas_path %>
