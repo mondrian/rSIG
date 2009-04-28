@@ -6,4 +6,13 @@ class MinutaTest < ActiveSupport::TestCase
     m = Minuta.new
     assert !m.save
   end
+
+  test "relacao minuta com itens" do 
+    m = Minuta.new
+    for i in 1..10
+      i = ItensMinuta.new
+      m.itens << i
+    end
+    assert (m.itens > 0)
+  end
 end

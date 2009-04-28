@@ -6,4 +6,23 @@ class PedidoTest < ActiveSupport::TestCase
     p = Pedido.new
     assert !p.save
   end
+
+  test "relacao com itens" do
+    p = Pedido.new
+    p.cliente = Cliente.find(:first)
+    p.vendedor = Vendedor.find(:first)
+    p.transportadora = Transportador.find(:first)
+    p.operador = Operador.find(:first)
+    p.minuta = Minuta.find(:first)
+    p.telemarketing = Telemarketing.find(:first)
+    p.plano_pagamento = PlanoPagamento.find(:first)
+    p.area = Area.find(:first)
+    for i in 1..10
+       i = ItemPedido.new
+       i.produto = Produto.find(:first)
+       i.quantidade = i.valor_tabela = i.valor_venda = i.desconto = 3.5
+       p.itens << i
+    end
+    assert (p.itens.size > 0)
+  end
 end

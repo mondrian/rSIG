@@ -6,4 +6,5 @@ class ItemPedidoTest < ActiveSupport::TestCase
     ip = ItemPedido.new
     assert !ip.save
   end
+
 end
