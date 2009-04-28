@@ -311,3 +311,184 @@ Processing NotasfiscaisController#new (for 127.0.0.1 at 2009-04-27 19:36:37) [GE
 Rendering template within layouts/notasfiscais
 Rendering notasfiscais/new
 Completed in 53ms (View: 39, DB: 0) | 200 OK [http://localhost/notasfiscais/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePedidos (20090424125922)
+Migrating to CreateClientes (20090424184002)
+Migrating to CreateProdutos (20090424195513)
+Migrating to CreateGrupos (20090424195522)
+Migrating to CreateFuncionarios (20090424195642)
+Migrating to CreateCores (20090424200003)
+Migrating to CreateRoteiros (20090427135556)
+Migrating to CreateAreas (20090427135631)
+Migrating to CreateCidades (20090427135712)
+Migrating to CreateRegiaos (20090427135726)
+Migrating to CreateMetaProdutos (20090427140058)
+Migrating to CreateExpedicaos (20090427140326)
+Migrating to CreateItemPedidos (20090427180121)
+Migrating to CreateNotasfiscais (20090427194625)
+Migrating to CreateItensnotasfiscais (20090427194739)
+Migrating to AlterarFuncionarioTipo (20090427215555)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (22.1ms)[0m   [0;1mALTER TABLE "funcionarios" ALTER COLUMN "tipo" TYPE character varying(1)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090427215555')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateMinutas (20090427220350)
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (5.4ms)[0m   [0;1mCREATE TABLE "minutas" ("id" serial primary key, "data" date, "fechamento" date, "operador_fechamento_id" integer, "saida" date, "obs" text, "veiculo_id" integer, "fechamento_financeiro" date, "funcionario_fechamento_financeiro_id" integer, "roteiro_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090427220350')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateItensMinutas (20090427220624)
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (4.2ms)[0m   [0;1mCREATE TABLE "itens_minutas" ("id" serial primary key, "produto_id" integer, "qtde" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090427220624')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Migrating to AlterarColunaNotaFiscal (20090427230903)
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePedidos (20090424125922)
+Migrating to CreateClientes (20090424184002)
+Migrating to CreateProdutos (20090424195513)
+Migrating to CreateGrupos (20090424195522)
+Migrating to CreateFuncionarios (20090424195642)
+Migrating to CreateCores (20090424200003)
+Migrating to CreateRoteiros (20090427135556)
+Migrating to CreateAreas (20090427135631)
+Migrating to CreateCidades (20090427135712)
+Migrating to CreateRegiaos (20090427135726)
+Migrating to CreateMetaProdutos (20090427140058)
+Migrating to CreateExpedicaos (20090427140326)
+Migrating to CreateItemPedidos (20090427180121)
+Migrating to CreateNotasfiscais (20090427194625)
+Migrating to CreateItensnotasfiscais (20090427194739)
+Migrating to AlterarFuncionarioTipo (20090427215555)
+Migrating to CreateMinutas (20090427220350)
+Migrating to CreateItensMinutas (20090427220624)
+Migrating to AlterarColunaNotaFiscal (20090427230903)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPGError: ERROR: relation "notasfiscals" does not exist
+: ALTER TABLE "notasfiscals" DROP "percentual_icms"[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePedidos (20090424125922)
+Migrating to CreateClientes (20090424184002)
+Migrating to CreateProdutos (20090424195513)
+Migrating to CreateGrupos (20090424195522)
+Migrating to CreateFuncionarios (20090424195642)
+Migrating to CreateCores (20090424200003)
+Migrating to CreateRoteiros (20090427135556)
+Migrating to CreateAreas (20090427135631)
+Migrating to CreateCidades (20090427135712)
+Migrating to CreateRegiaos (20090427135726)
+Migrating to CreateMetaProdutos (20090427140058)
+Migrating to CreateExpedicaos (20090427140326)
+Migrating to CreateItemPedidos (20090427180121)
+Migrating to CreateNotasfiscais (20090427194625)
+Migrating to CreateItensnotasfiscais (20090427194739)
+Migrating to AlterarFuncionarioTipo (20090427215555)
+Migrating to CreateMinutas (20090427220350)
+Migrating to CreateItensMinutas (20090427220624)
+Migrating to AlterarColunaNotaFiscal (20090427230903)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mALTER TABLE "notasfiscais" DROP "percentual_icms"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "notasfiscais" ADD COLUMN "percentual_icms" decimal(5,2)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090427230903')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePedidos (20090424125922)
+Migrating to CreateClientes (20090424184002)
+Migrating to CreateProdutos (20090424195513)
+Migrating to CreateGrupos (20090424195522)
+Migrating to CreateFuncionarios (20090424195642)
+Migrating to CreateCores (20090424200003)
+Migrating to CreateRoteiros (20090427135556)
+Migrating to CreateAreas (20090427135631)
+Migrating to CreateCidades (20090427135712)
+Migrating to CreateRegiaos (20090427135726)
+Migrating to CreateMetaProdutos (20090427140058)
+Migrating to CreateExpedicaos (20090427140326)
+Migrating to CreateItemPedidos (20090427180121)
+Migrating to CreateNotasfiscais (20090427194625)
+Migrating to CreateItensnotasfiscais (20090427194739)
+Migrating to AlterarFuncionarioTipo (20090427215555)
+Migrating to CreateMinutas (20090427220350)
+Migrating to CreateItensMinutas (20090427220624)
+Migrating to AlterarColunaNotaFiscal (20090427230903)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mALTER TABLE "notasfiscais" DROP "valor_icms"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "notasfiscais" DROP "valor_ipi"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "notasfiscais" DROP "valor_desconto"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "notasfiscais" DROP "valor_acrescimo"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "notasfiscais" DROP "valor_icms_substituicao_tributaria"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "notasfiscais" DROP "valor_frete"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "notasfiscais" DROP "total_nota"[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "notasfiscais" DROP "total_mercadoria"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "notasfiscais" DROP "base_calculo_icms"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "notasfiscais" DROP "base_calculo_icms_substituicao_tributaria"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "notasfiscais" DROP "percentual_icms"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "notasfiscais" DROP "percentual_desconto"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "notasfiscais" DROP "percentual_icms_substituicao_tributaria"[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPGError: ERROR: column "percentual_acrescimo" of relation "notasfiscais" does not exist
+: ALTER TABLE "notasfiscais" DROP "percentual_acrescimo"[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePedidos (20090424125922)
+Migrating to CreateClientes (20090424184002)
+Migrating to CreateProdutos (20090424195513)
+Migrating to CreateGrupos (20090424195522)
+Migrating to CreateFuncionarios (20090424195642)
+Migrating to CreateCores (20090424200003)
+Migrating to CreateRoteiros (20090427135556)
+Migrating to CreateAreas (20090427135631)
+Migrating to CreateCidades (20090427135712)
+Migrating to CreateRegiaos (20090427135726)
+Migrating to CreateMetaProdutos (20090427140058)
+Migrating to CreateExpedicaos (20090427140326)
+Migrating to CreateItemPedidos (20090427180121)
+Migrating to CreateNotasfiscais (20090427194625)
+Migrating to CreateItensnotasfiscais (20090427194739)
+Migrating to AlterarFuncionarioTipo (20090427215555)
+Migrating to CreateMinutas (20090427220350)
+Migrating to CreateItensMinutas (20090427220624)
+Migrating to AlterarColunaNotaFiscal (20090427230903)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mALTER TABLE "notasfiscais" DROP "valor_icms"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "notasfiscais" DROP "valor_ipi"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "notasfiscais" DROP "valor_desconto"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "notasfiscais" DROP "valor_acrescimo"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "notasfiscais" DROP "valor_icms_substituicao_tributaria"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "notasfiscais" DROP "valor_frete"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "notasfiscais" DROP "total_nota"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "notasfiscais" DROP "total_mercadoria"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "notasfiscais" DROP "base_calculo_icms"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "notasfiscais" DROP "base_calculo_icms_substituicao_tributaria"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "notasfiscais" DROP "percentual_icms"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "notasfiscais" DROP "percentual_desconto"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "notasfiscais" DROP "percentual_icms_substituicao_tributaria"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "notasfiscais" ADD COLUMN "valor_icms" decimal(12,2)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "notasfiscais" ADD COLUMN "valor_ipi" decimal(12,2)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "notasfiscais" ADD COLUMN "valor_desconto" decimal(12,2)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "notasfiscais" ADD COLUMN "valor_acrescimo" decimal(12,2)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "notasfiscais" ADD COLUMN "valor_icms_substituicao_tributaria" decimal(12,2)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "notasfiscais" ADD COLUMN "valor_frete" decimal(12,2)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "notasfiscais" ADD COLUMN "total_nota" decimal(12,2)[0m
+  [4;36;1mSQL (4.4ms)[0m   [0;1mALTER TABLE "notasfiscais" ADD COLUMN "total_mercadoria" decimal(12,2)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "notasfiscais" ADD COLUMN "base_calculo_icms" decimal(12,2)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "notasfiscais" ADD COLUMN "base_calculo_icms_substituicao_tributaria" decimal(12,2)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "notasfiscais" ADD COLUMN "percentual_icms" decimal(6,2)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "notasfiscais" ADD COLUMN "percentual_icms_substituicao_tributaria" decimal(6,2)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "notasfiscais" ADD COLUMN "percentual_desconto" decimal(6,2)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090427230903')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m

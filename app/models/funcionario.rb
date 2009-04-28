@@ -1,5 +1,6 @@
 class Funcionario < ActiveRecord::Base
-
+    has_many :notasfiscais
+    
   validates_presence_of :tipo, :nome
   validates_presence_of :endereco
   validates_uniqueness_of :cpf, :rg

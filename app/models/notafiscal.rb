@@ -1,6 +1,8 @@
 class Notafiscal < ActiveRecord::Base
     validates_uniqueness_of :numero_nota
-    has_many :itemnotafiscal
+    has_many :itensnotasfiscais
+    belongs_to :cliente
+    belongs_to :funcionario
     validates_presence_of :numero_nota,     :message => "Informe o Número da Nota"
     validates_presence_of :numero_selo,     :message => "Informe o Número do Selo"
     validates_presence_of :numero_serie,    :message => "Informe a Série do Selo"

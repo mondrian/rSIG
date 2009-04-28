@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090427194739) do
+ActiveRecord::Schema.define(:version => 20090427230903) do
 
   create_table "areas", :force => true do |t|
     t.string   "descricao"
@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(:version => 20090427194739) do
   end
 
   create_table "funcionarios", :force => true do |t|
-    t.boolean  "tipo"
+    t.string   "tipo",                     :limit => 1
     t.string   "nome"
     t.string   "endereco"
     t.string   "complemento"
@@ -134,6 +134,13 @@ ActiveRecord::Schema.define(:version => 20090427194739) do
     t.datetime "updated_at"
   end
 
+  create_table "itens_minutas", :force => true do |t|
+    t.integer  "produto_id"
+    t.integer  "qtde"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "itensnotasfiscais", :force => true do |t|
     t.integer  "numero_nota"
     t.integer  "produto_id"
@@ -160,36 +167,50 @@ ActiveRecord::Schema.define(:version => 20090427194739) do
     t.datetime "updated_at"
   end
 
+  create_table "minutas", :force => true do |t|
+    t.date     "data"
+    t.date     "fechamento"
+    t.integer  "operador_fechamento_id"
+    t.date     "saida"
+    t.text     "obs"
+    t.integer  "veiculo_id"
+    t.date     "fechamento_financeiro"
+    t.integer  "funcionario_fechamento_financeiro_id"
+    t.integer  "roteiro_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "notasfiscais", :force => true do |t|
     t.integer  "numero_nota"
     t.integer  "numero_pedido_id"
     t.string   "numero_selo"
     t.string   "numero_serie"
     t.string   "cliente_id"
-    t.decimal  "percentual_icms"
     t.date     "emissao"
-    t.decimal  "total_mercadoria"
-    t.decimal  "valor_frete"
     t.string   "cfop"
     t.string   "natureza_operacao"
-    t.decimal  "valor_ipi"
-    t.decimal  "valor_desconto"
-    t.decimal  "valor_acrescimo"
-    t.decimal  "total_nota"
     t.string   "status"
-    t.decimal  "base_calculo_icms"
-    t.decimal  "valor_icms"
     t.integer  "qtde_volumes"
     t.datetime "entrada"
     t.datetime "saida"
     t.integer  "transportadora_id"
-    t.decimal  "percentual_desconto"
     t.text     "observacao"
-    t.decimal  "base_calculo_icms_substituicao_tributaria"
-    t.decimal  "percentual_icms_substituicao_tributaria"
-    t.decimal  "valor_icms_substituicao_tributaria"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "valor_icms",                                :precision => 12, :scale => 2
+    t.decimal  "valor_ipi",                                 :precision => 12, :scale => 2
+    t.decimal  "valor_desconto",                            :precision => 12, :scale => 2
+    t.decimal  "valor_acrescimo",                           :precision => 12, :scale => 2
+    t.decimal  "valor_icms_substituicao_tributaria",        :precision => 12, :scale => 2
+    t.decimal  "valor_frete",                               :precision => 12, :scale => 2
+    t.decimal  "total_nota",                                :precision => 12, :scale => 2
+    t.decimal  "total_mercadoria",                          :precision => 12, :scale => 2
+    t.decimal  "base_calculo_icms",                         :precision => 12, :scale => 2
+    t.decimal  "base_calculo_icms_substituicao_tributaria", :precision => 12, :scale => 2
+    t.decimal  "percentual_icms",                           :precision => 6,  :scale => 2
+    t.decimal  "percentual_icms_substituicao_tributaria",   :precision => 6,  :scale => 2
+    t.decimal  "percentual_desconto",                       :precision => 6,  :scale => 2
   end
 
   create_table "pedidos", :force => true do |t|
