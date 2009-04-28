@@ -6,4 +6,14 @@ class FuncionarioTest < ActiveSupport::TestCase
     f = Funcionario.new
     assert !f.save
   end
+
+  test "relacoes do model funcionario" do
+    f = FUncionario.new
+    f.tipo = '1'
+    f.nome = f.endereco = f.cep = '00000'
+    f.cpf = '34173341601' # cpf valido
+    f.rg = '99999'
+    f.cidade = Cidade.find(:first)
+    assert f.valid?
+  end
 end
