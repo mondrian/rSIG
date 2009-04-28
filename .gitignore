@@ -1,0 +1,14 @@
+# Lines starting with '#' are considered comments.
+# Ignore any file named foo.txt.
+conf/database.yml
+log/development.log
+log/test.log
+log/mongrel.log
+log/production.log
+log/mongrel.pid
+# Ignore (generated) html files,
+*.html
+# except foo.html which is maintained by hand.
+!foo.html
+# Ignore objects and archives.
+*.[oa]
