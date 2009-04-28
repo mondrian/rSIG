@@ -1,8 +1,15 @@
-<<<<<<< HEAD:db/schema.rb
-ActiveRecord::Schema.define(:version => 20090427230903) do
-=======
-ActiveRecord::Schema.define(:version => 20090427225739) do
->>>>>>> 84c0e447829df9c1d3fb8871cbc170e47e9321eb:db/schema.rb
+# This file is auto-generated from the current state of the database. Instead of editing this file, 
+# please use the migrations feature of Active Record to incrementally modify your database, and
+# then regenerate this schema definition.
+#
+# Note that this schema.rb definition is the authoritative source for your database schema. If you need
+# to create the application database on another system, you should be using db:schema:load, not running
+# all the migrations from scratch. The latter is a flawed and unsustainable approach (the more migrations
+# you'll amass, the slower it'll run and the greater likelihood for issues).
+#
+# It's strongly recommended to check this file into your version control system.
+
+ActiveRecord::Schema.define(:version => 20090428005707) do
 
   create_table "areas", :force => true do |t|
     t.string   "descricao"
@@ -139,15 +146,15 @@ ActiveRecord::Schema.define(:version => 20090427225739) do
     t.integer  "produto_id"
     t.string   "unidade_medida"
     t.decimal  "quantidade"
-    t.decimal  "valor_item_faturado"
-    t.decimal  "valor_item_original"
     t.string   "situacao_tributaria_item"
-    t.decimal  "percentual_icms_item"
-    t.decimal  "percentual_ipi_item"
     t.decimal  "peso_liquido"
     t.integer  "cod_emissao_nf"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "valor_item_faturado",      :precision => 12, :scale => 2
+    t.decimal  "valor_item_original",      :precision => 12, :scale => 2
+    t.decimal  "percentual_icms_item",     :precision => 6,  :scale => 2
+    t.decimal  "percentual_ipi_item",      :precision => 6,  :scale => 2
   end
 
   create_table "meta_produtos", :force => true do |t|
