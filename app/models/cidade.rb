@@ -1,3 +1,5 @@
 class Cidade < ActiveRecord::Base
-    has_one :areas
+  has_many :areas
+
+  validates_presence_of :descricao
 end

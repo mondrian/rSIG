@@ -2,6 +2,7 @@ class Cliente < ActiveRecord::Base
 
   has_many :pedidos
   has_many :notasfiscais
+  has_one  :cidade
   
   validates_presence_of :razao_social, :nome_fantasia, :documento, :endereco, :cep, :referencia, :fone_pessoal, :fone_comercial, :fone_celular
   validates_presence_of :endereco_entrega, :referencias_bancaria, :referencias_comerciais, :data_nascimento, :nome_comprador, :limite_credito

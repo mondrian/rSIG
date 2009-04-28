@@ -13,7 +13,7 @@ class ClienteTest < ActiveSupport::TestCase
     c.cpf_cnpj = '59322069000184' # cnpj valido
     c.razao_social = c.nome_fantasia = '------------'
     c.cidade = Cidade.find(:first)
-    c.uf = Uf.find(:first)
+    c.uf = 'CE'
     c.regiao_entrega = Regiao.find(:first)
     c.cidade_entrega = Cidade.find(:first)
     c.area = Area.find(:first)

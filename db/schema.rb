@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090428005707) do
+ActiveRecord::Schema.define(:version => 20090428135218) do
 
   create_table "areas", :force => true do |t|
     t.string   "descricao"
@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(:version => 20090428005707) do
     t.string   "endereco"
     t.string   "complemento"
     t.integer  "cidade_id"
-    t.integer  "uf_id"
     t.string   "cep"
     t.string   "referencia"
     t.string   "fone_pessoal"
@@ -59,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20090428005707) do
     t.date     "data_inclusao_prazo_medio"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "uf"
   end
 
   create_table "cores", :force => true do |t|
@@ -146,15 +146,15 @@ ActiveRecord::Schema.define(:version => 20090428005707) do
     t.integer  "produto_id"
     t.string   "unidade_medida"
     t.decimal  "quantidade"
+    t.decimal  "valor_item_faturado"
+    t.decimal  "valor_item_original"
     t.string   "situacao_tributaria_item"
+    t.decimal  "percentual_icms_item"
+    t.decimal  "percentual_ipi_item"
     t.decimal  "peso_liquido"
     t.integer  "cod_emissao_nf"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "valor_item_faturado",      :precision => 12, :scale => 2
-    t.decimal  "valor_item_original",      :precision => 12, :scale => 2
-    t.decimal  "percentual_icms_item",     :precision => 6,  :scale => 2
-    t.decimal  "percentual_ipi_item",      :precision => 6,  :scale => 2
   end
 
   create_table "meta_produtos", :force => true do |t|
@@ -285,6 +285,7 @@ ActiveRecord::Schema.define(:version => 20090428005707) do
     t.integer  "regiao_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "area_id"
   end
 
 end

@@ -10,9 +10,9 @@ class PedidoTest < ActiveSupport::TestCase
   test "relacao com itens" do
     p = Pedido.new
     p.cliente = Cliente.find(:first)
-    p.vendedor = Vendedor.find(:first)
+    p.vendedor = Funcionario.find(:first)
     p.transportadora = Transportador.find(:first)
-    p.operador = Operador.find(:first)
+    p.operador = Funcionario.find(:first)
     p.minuta = Minuta.find(:first)
     p.telemarketing = Telemarketing.find(:first)
     p.plano_pagamento = PlanoPagamento.find(:first)

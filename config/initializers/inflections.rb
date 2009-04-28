@@ -10,5 +10,6 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'itemnotafiscal', 'itensnotasfiscais'
   inflect.irregular 'expedicao','expedicoes'
   inflect.irregular 'regiao','regioes'
+  inflect.irregular 'item', 'itens'
 #   inflect.uncountable %w( fish sheep )
 end

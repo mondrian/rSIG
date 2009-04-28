@@ -9,7 +9,7 @@ one:
   endereco: MyString
   complemento: MyString
   cidade_id: 1
-  uf_id: 1
+  uf: MyString
   cep: MyString
   referencia: MyString
   fone_pessoal: MyString
@@ -42,7 +42,7 @@ two:
   endereco: MyString
   complemento: MyString
   cidade_id: 1
-  uf_id: 1
+  uf: MyString
   cep: MyString
   referencia: MyString
   fone_pessoal: MyString
