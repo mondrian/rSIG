@@ -2,7 +2,8 @@ require 'test_helper'
 
 class AreaTest < ActiveSupport::TestCase
   # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  test "teste basico de validacao" do
+    a = Area.new
+    assert !a.save
   end
 end

@@ -17,11 +17,11 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :cores
 
-  map.resources :expedicaos
+  map.resources :expedicoes
 
   map.resources :meta_produtos
 
-  map.resources :regiaos
+  map.resources :regioes
 
   map.resources :cidades
 

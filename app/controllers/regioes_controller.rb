@@ -1,17 +1,17 @@
-class RegiaosController < ApplicationController
-  # GET /regiaos
-  # GET /regiaos.xml
+class RegioesController < ApplicationController
+  # GET /regioes
+  # GET /regioes.xml
   def index
-    @regiaos = Regiao.all
+    @regioes = Regiao.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @regiaos }
+      format.xml  { render :xml => @regioes }
     end
   end
 
-  # GET /regiaos/1
-  # GET /regiaos/1.xml
+  # GET /regioes/1
+  # GET /regioes/1.xml
   def show
     @regiao = Regiao.find(params[:id])
 
@@ -21,8 +21,8 @@ class RegiaosController < ApplicationController
     end
   end
 
-  # GET /regiaos/new
-  # GET /regiaos/new.xml
+  # GET /regioes/new
+  # GET /regioes/new.xml
   def new
     @regiao = Regiao.new
 
@@ -32,13 +32,13 @@ class RegiaosController < ApplicationController
     end
   end
 
-  # GET /regiaos/1/edit
+  # GET /regioes/1/edit
   def edit
     @regiao = Regiao.find(params[:id])
   end
 
-  # POST /regiaos
-  # POST /regiaos.xml
+  # POST /regioes
+  # POST /regioes.xml
   def create
     @regiao = Regiao.new(params[:regiao])
 
@@ -54,8 +54,8 @@ class RegiaosController < ApplicationController
     end
   end
 
-  # PUT /regiaos/1
-  # PUT /regiaos/1.xml
+  # PUT /regioes/1
+  # PUT /regioes/1.xml
   def update
     @regiao = Regiao.find(params[:id])
 
@@ -71,14 +71,14 @@ class RegiaosController < ApplicationController
     end
   end
 
-  # DELETE /regiaos/1
-  # DELETE /regiaos/1.xml
+  # DELETE /regioes/1
+  # DELETE /regioes/1.xml
   def destroy
     @regiao = Regiao.find(params[:id])
     @regiao.destroy
 
     respond_to do |format|
-      format.html { redirect_to(regiaos_url) }
+      format.html { redirect_to(regioes_url) }
       format.xml  { head :ok }
     end
   end
