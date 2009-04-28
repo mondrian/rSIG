@@ -2,7 +2,8 @@ require 'test_helper'
 
 class GrupoTest < ActiveSupport::TestCase
   # Replace this with your real tests.
-  def test_truth
-    assert true
+  test "teste de validacoes" do
+    c = Grupo.new
+    assert !c.save
   end
 end

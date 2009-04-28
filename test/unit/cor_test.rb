@@ -2,7 +2,8 @@ require 'test_helper'
 
 class CorTest < ActiveSupport::TestCase
   # Replace this with your real tests.
-  def test_truth
-    assert true
+  test "teste de validacoes" do
+   c = Cor.new
+   assert !c.save
   end
 end
