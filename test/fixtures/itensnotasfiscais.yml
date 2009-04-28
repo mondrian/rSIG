@@ -1,7 +1,7 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  numero_nota: 1
+  nota_fiscal_id: 1
   produto_id: 1
   unidade_medida: MyString
   quantidade: 9.99
@@ -14,7 +14,7 @@ one:
   cod_emissao_nf: 1
 
 two:
-  numero_nota: 1
+  nota_fiscal_id: 1
   produto_id: 1
   unidade_medida: MyString
   quantidade: 9.99

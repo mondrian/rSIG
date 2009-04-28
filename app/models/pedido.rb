@@ -1,6 +1,6 @@
 class Pedido < ActiveRecord::Base
   belongs_to :cliente
-  belongs_to :funcionario, :foreign_key=> 'vendedor_id'
+  belongs_to :vendedor, :class_name => 'Funcionario', :foreign_key=> 'vendedor_id'
   has_many   :itemPedidos
 
   validates_presence_of :tipo

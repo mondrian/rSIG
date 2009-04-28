@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090428135218) do
+ActiveRecord::Schema.define(:version => 20090428142250) do
 
   create_table "areas", :force => true do |t|
     t.string   "descricao"
@@ -142,7 +142,6 @@ ActiveRecord::Schema.define(:version => 20090428135218) do
   end
 
   create_table "itensnotasfiscais", :force => true do |t|
-    t.integer  "numero_nota"
     t.integer  "produto_id"
     t.string   "unidade_medida"
     t.decimal  "quantidade"
@@ -155,6 +154,7 @@ ActiveRecord::Schema.define(:version => 20090428135218) do
     t.integer  "cod_emissao_nf"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "nota_fiscal_id"
   end
 
   create_table "meta_produtos", :force => true do |t|
