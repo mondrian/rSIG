@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090428142250) do
+ActiveRecord::Schema.define(:version => 20090428191302) do
 
   create_table "areas", :force => true do |t|
     t.string   "descricao"
@@ -285,7 +285,6 @@ ActiveRecord::Schema.define(:version => 20090428142250) do
     t.integer  "regiao_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "area_id"
   end
 
 end

@@ -14,9 +14,9 @@ class NotafiscalTest < ActiveSupport::TestCase
       i.produto = Produto.find(:first)
       i.unidade_medida = '1'
       i.quantidade = 1
-      i.valor_item_faturado = inf.valor_item_original = inf.percentual_icms_item = inf.percentual_ipi_item = inf.peso_liquido = 9.9
-      nf.itens << i
+      i.valor_item_faturado = i.valor_item_original = i.percentual_icms_item = i.percentual_ipi_item = i.peso_liquido = 9.9
+      nf.itensnotasfiscais << i
     end
-    assert (nf.itens.size > 0)
+    assert (nf.itensnotasfiscais.size > 0)
   end
 end

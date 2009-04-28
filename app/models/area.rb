@@ -1,6 +1,6 @@
 class Area < ActiveRecord::Base
-    has_one :cidade
-    has_one :roteiro
+    belongs_to :cidade
+    belongs_to :roteiro
 
     validates_presence_of :descricao
     validates_presence_of :cidade_id
