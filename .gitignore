@@ -1,6 +1,6 @@
 # Lines starting with '#' are considered comments.
 # Ignore any file named foo.txt.
-conf/database.yml
+config/database.yml
 log/development.log
 log/test.log
 log/mongrel.log
