@@ -2,7 +2,8 @@ require 'test_helper'
 
 class PedidoTest < ActiveSupport::TestCase
   # Replace this with your real tests.
-  def test_truth
-    assert true
+  test "teste basico de validacao" do
+    p = Pedido.new
+    assert !p.save
   end
 end
