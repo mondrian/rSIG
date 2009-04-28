@@ -1,0 +1,16 @@
+<h1>Editing planodepagamento</h1>
+
+<% form_for(@planodepagamento) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :descricao %><br />
+    <%= f.text_field :descricao %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @planodepagamento %> |
+<%= link_to 'Back', planosdepagamento_path %>

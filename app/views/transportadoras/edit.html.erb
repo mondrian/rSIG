@@ -1,0 +1,16 @@
+<h1>Editing transportadora</h1>
+
+<% form_for(@transportadora) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :razao_social %><br />
+    <%= f.text_field :razao_social %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @transportadora %> |
+<%= link_to 'Back', transportadoras_path %>

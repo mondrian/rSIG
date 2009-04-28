@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :planosdepagamento
+
+  map.resources :transportadoras
+
   map.resources :itens_minutas
 
   map.resources :minutas

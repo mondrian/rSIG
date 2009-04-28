@@ -11,5 +11,6 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'expedicao','expedicoes'
   inflect.irregular 'regiao','regioes'
   inflect.irregular 'item', 'itens'
+  inflect.irregular 'planodepagamento','planosdepagamento'
 #   inflect.uncountable %w( fish sheep )
 end
