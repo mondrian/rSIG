@@ -7209,3 +7209,531 @@ Completed in 11ms (View: 6, DB: 1) | 200 OK [http://test.host/roteiros/953125641
   [4;36;1mCliente Load (1.5ms)[0m   [0;1mSELECT * FROM "clientes" LIMIT 1[0m
   [4;35;1mFuncionario Load (1.5ms)[0m   [0mSELECT * FROM "funcionarios" LIMIT 1[0m
   [4;36;1mRegiao Exists (0.3ms)[0m   [0;1mSELECT "regioes".id FROM "regioes" WHERE ("regioes"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.6ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mRoteiro Load (0.6ms)[0m   [0mSELECT * FROM "roteiros" LIMIT 1[0m
+  [4;36;1mArea Create (0.5ms)[0m   [0;1mINSERT INTO "areas" ("created_at", "cidade_id", "updated_at", "roteiro_id", "descricao") VALUES('2009-04-28 19:27:01', 953125641, '2009-04-28 19:27:01', 953125641, 'roteito1240946821')[0m
+  [4;35;1mCidade Load (0.5ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mRegiao Load (0.5ms)[0m   [0;1mSELECT * FROM "regioes" LIMIT 1[0m
+  [4;35;1mCidade Load (0.5ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mArea Load (0.6ms)[0m   [0;1mSELECT * FROM "areas" LIMIT 1[0m
+  [4;35;1mCliente Exists (0.3ms)[0m   [0mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" = '59322069000184') LIMIT 1[0m
+  [4;36;1mCliente Exists (0.3ms)[0m   [0;1mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" IS NULL) LIMIT 1[0m
+  [4;35;1mCor Exists (0.3ms)[0m   [0mSELECT "cores".id FROM "cores" WHERE ("cores"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.5ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.3ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" = '34173341601') LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.4ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" = '99999') LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.3ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" IS NULL) LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.2ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" IS NULL) LIMIT 1[0m
+  [4;35;1mGrupo Exists (0.3ms)[0m   [0mSELECT "grupos".id FROM "grupos" WHERE ("grupos"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mNotafiscal Load (0.4ms)[0m   [0mSELECT * FROM "notasfiscais" LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.2ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.3ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.2ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mCliente Load (1.6ms)[0m   [0;1mSELECT * FROM "clientes" LIMIT 1[0m
+  [4;35;1mFuncionario Load (1.4ms)[0m   [0mSELECT * FROM "funcionarios" LIMIT 1[0m
+  [4;36;1mRegiao Exists (0.3ms)[0m   [0;1mSELECT "regioes".id FROM "regioes" WHERE ("regioes"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.6ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mRoteiro Load (0.6ms)[0m   [0mSELECT * FROM "roteiros" LIMIT 1[0m
+  [4;36;1mArea Create (0.5ms)[0m   [0;1mINSERT INTO "areas" ("created_at", "cidade_id", "updated_at", "roteiro_id", "descricao") VALUES('2009-04-28 19:44:16', 953125641, '2009-04-28 19:44:16', 953125641, 'roteito1240947856')[0m
+  [4;35;1mCidade Load (0.5ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mRegiao Load (0.5ms)[0m   [0;1mSELECT * FROM "regioes" LIMIT 1[0m
+  [4;35;1mCidade Load (0.5ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mArea Load (0.6ms)[0m   [0;1mSELECT * FROM "areas" LIMIT 1[0m
+  [4;35;1mCliente Exists (0.3ms)[0m   [0mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" = '59322069000184') LIMIT 1[0m
+  [4;36;1mCliente Exists (0.3ms)[0m   [0;1mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" IS NULL) LIMIT 1[0m
+  [4;35;1mCor Exists (0.3ms)[0m   [0mSELECT "cores".id FROM "cores" WHERE ("cores"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.6ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.2ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" = '34173341601') LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.2ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" = '99999') LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.3ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" IS NULL) LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.2ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" IS NULL) LIMIT 1[0m
+  [4;35;1mGrupo Exists (0.3ms)[0m   [0mSELECT "grupos".id FROM "grupos" WHERE ("grupos"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mNotafiscal Load (0.4ms)[0m   [0mSELECT * FROM "notasfiscais" LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (3.9ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.2ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.2ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.3ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mCliente Load (1.5ms)[0m   [0;1mSELECT * FROM "clientes" LIMIT 1[0m
+  [4;35;1mFuncionario Load (1.4ms)[0m   [0mSELECT * FROM "funcionarios" LIMIT 1[0m
+  [4;36;1mRegiao Exists (0.3ms)[0m   [0;1mSELECT "regioes".id FROM "regioes" WHERE ("regioes"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.6ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mRoteiro Load (0.6ms)[0m   [0mSELECT * FROM "roteiros" LIMIT 1[0m
+  [4;36;1mArea Create (0.5ms)[0m   [0;1mINSERT INTO "areas" ("created_at", "cidade_id", "updated_at", "roteiro_id", "descricao") VALUES('2009-04-28 19:48:22', 953125641, '2009-04-28 19:48:22', 953125641, 'roteito1240948102')[0m
+  [4;35;1mCidade Load (0.6ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mRegiao Load (0.5ms)[0m   [0;1mSELECT * FROM "regioes" LIMIT 1[0m
+  [4;35;1mCidade Load (0.5ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mArea Load (0.6ms)[0m   [0;1mSELECT * FROM "areas" LIMIT 1[0m
+  [4;35;1mCliente Exists (0.3ms)[0m   [0mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" = '59322069000184') LIMIT 1[0m
+  [4;36;1mCliente Exists (0.3ms)[0m   [0;1mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" IS NULL) LIMIT 1[0m
+  [4;35;1mCor Exists (0.3ms)[0m   [0mSELECT "cores".id FROM "cores" WHERE ("cores"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.5ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.2ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" = '34173341601') LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.2ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" = '99999') LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.3ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" IS NULL) LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.2ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" IS NULL) LIMIT 1[0m
+  [4;35;1mGrupo Exists (0.3ms)[0m   [0mSELECT "grupos".id FROM "grupos" WHERE ("grupos"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mNotafiscal Load (0.4ms)[0m   [0mSELECT * FROM "notasfiscais" LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.4ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mCliente Load (1.5ms)[0m   [0;1mSELECT * FROM "clientes" LIMIT 1[0m
+  [4;35;1mFuncionario Load (1.7ms)[0m   [0mSELECT * FROM "funcionarios" LIMIT 1[0m
+  [4;36;1mRegiao Exists (0.3ms)[0m   [0;1mSELECT "regioes".id FROM "regioes" WHERE ("regioes"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.6ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mRoteiro Load (0.6ms)[0m   [0mSELECT * FROM "roteiros" LIMIT 1[0m
+  [4;36;1mArea Create (0.5ms)[0m   [0;1mINSERT INTO "areas" ("created_at", "cidade_id", "updated_at", "roteiro_id", "descricao") VALUES('2009-04-28 19:49:36', 953125641, '2009-04-28 19:49:36', 953125641, 'roteito1240948176')[0m
+  [4;35;1mCidade Load (0.6ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mRegiao Load (0.5ms)[0m   [0;1mSELECT * FROM "regioes" LIMIT 1[0m
+  [4;35;1mCidade Load (0.5ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mArea Load (0.6ms)[0m   [0;1mSELECT * FROM "areas" LIMIT 1[0m
+  [4;35;1mCliente Exists (0.3ms)[0m   [0mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" = '59322069000184') LIMIT 1[0m
+  [4;36;1mCliente Exists (0.3ms)[0m   [0;1mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" IS NULL) LIMIT 1[0m
+  [4;35;1mCor Exists (0.3ms)[0m   [0mSELECT "cores".id FROM "cores" WHERE ("cores"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.5ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.2ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" = '34173341601') LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.2ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" = '99999') LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.5ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" IS NULL) LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.4ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" IS NULL) LIMIT 1[0m
+  [4;35;1mGrupo Exists (0.3ms)[0m   [0mSELECT "grupos".id FROM "grupos" WHERE ("grupos"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mNotafiscal Load (0.5ms)[0m   [0mSELECT * FROM "notasfiscais" LIMIT 1[0m
+  [4;36;1mProduto Load (1.7ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.9ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.2ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mCliente Load (1.5ms)[0m   [0;1mSELECT * FROM "clientes" LIMIT 1[0m
+  [4;35;1mFuncionario Load (1.5ms)[0m   [0mSELECT * FROM "funcionarios" LIMIT 1[0m
+  [4;36;1mRegiao Exists (0.3ms)[0m   [0;1mSELECT "regioes".id FROM "regioes" WHERE ("regioes"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.5ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mRoteiro Load (0.6ms)[0m   [0mSELECT * FROM "roteiros" LIMIT 1[0m
+  [4;36;1mArea Create (0.4ms)[0m   [0;1mINSERT INTO "areas" ("created_at", "cidade_id", "updated_at", "roteiro_id", "descricao") VALUES('2009-04-28 19:50:43', 953125641, '2009-04-28 19:50:43', 953125641, 'roteito1240948243')[0m
+  [4;35;1mCidade Load (0.6ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mRegiao Load (0.5ms)[0m   [0;1mSELECT * FROM "regioes" LIMIT 1[0m
+  [4;35;1mCidade Load (0.5ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mArea Load (0.5ms)[0m   [0;1mSELECT * FROM "areas" LIMIT 1[0m
+  [4;35;1mCliente Exists (0.3ms)[0m   [0mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" = '59322069000184') LIMIT 1[0m
+  [4;36;1mCliente Exists (0.3ms)[0m   [0;1mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" IS NULL) LIMIT 1[0m
+  [4;35;1mCor Exists (0.3ms)[0m   [0mSELECT "cores".id FROM "cores" WHERE ("cores"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.5ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.3ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" = '34173341601') LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.2ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" = '99999') LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.3ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" IS NULL) LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.2ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" IS NULL) LIMIT 1[0m
+  [4;35;1mGrupo Exists (0.3ms)[0m   [0mSELECT "grupos".id FROM "grupos" WHERE ("grupos"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mNotafiscal Load (0.4ms)[0m   [0mSELECT * FROM "notasfiscais" LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.2ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.2ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.2ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mCliente Load (1.5ms)[0m   [0;1mSELECT * FROM "clientes" LIMIT 1[0m
+  [4;35;1mFuncionario Load (1.4ms)[0m   [0mSELECT * FROM "funcionarios" LIMIT 1[0m
+  [4;36;1mRegiao Exists (0.3ms)[0m   [0;1mSELECT "regioes".id FROM "regioes" WHERE ("regioes"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.5ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mRoteiro Load (0.6ms)[0m   [0mSELECT * FROM "roteiros" LIMIT 1[0m
+  [4;36;1mArea Create (0.5ms)[0m   [0;1mINSERT INTO "areas" ("created_at", "cidade_id", "updated_at", "roteiro_id", "descricao") VALUES('2009-04-28 19:52:49', 953125641, '2009-04-28 19:52:49', 953125641, 'roteito1240948369')[0m
+  [4;35;1mCidade Load (0.5ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mRegiao Load (0.5ms)[0m   [0;1mSELECT * FROM "regioes" LIMIT 1[0m
+  [4;35;1mCidade Load (0.5ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mArea Load (0.6ms)[0m   [0;1mSELECT * FROM "areas" LIMIT 1[0m
+  [4;35;1mCliente Exists (0.3ms)[0m   [0mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" = '59322069000184') LIMIT 1[0m
+  [4;36;1mCliente Exists (0.3ms)[0m   [0;1mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" IS NULL) LIMIT 1[0m
+  [4;35;1mCor Exists (0.5ms)[0m   [0mSELECT "cores".id FROM "cores" WHERE ("cores"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.5ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.2ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" = '34173341601') LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.2ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" = '99999') LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.3ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" IS NULL) LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.2ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" IS NULL) LIMIT 1[0m
+  [4;35;1mGrupo Exists (0.3ms)[0m   [0mSELECT "grupos".id FROM "grupos" WHERE ("grupos"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mNotafiscal Load (0.5ms)[0m   [0mSELECT * FROM "notasfiscais" LIMIT 1[0m
+  [4;36;1mCliente Load (1.5ms)[0m   [0;1mSELECT * FROM "clientes" LIMIT 1[0m
+  [4;35;1mFuncionario Load (1.5ms)[0m   [0mSELECT * FROM "funcionarios" LIMIT 1[0m
+  [4;36;1mRegiao Exists (0.3ms)[0m   [0;1mSELECT "regioes".id FROM "regioes" WHERE ("regioes"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.6ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mRoteiro Load (0.6ms)[0m   [0mSELECT * FROM "roteiros" LIMIT 1[0m
+  [4;36;1mArea Create (0.4ms)[0m   [0;1mINSERT INTO "areas" ("created_at", "cidade_id", "updated_at", "roteiro_id", "descricao") VALUES('2009-04-28 19:53:18', 953125641, '2009-04-28 19:53:18', 953125641, 'roteito1240948398')[0m
+  [4;35;1mCidade Load (0.6ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mRegiao Load (0.5ms)[0m   [0;1mSELECT * FROM "regioes" LIMIT 1[0m
+  [4;35;1mCidade Load (0.5ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mArea Load (0.6ms)[0m   [0;1mSELECT * FROM "areas" LIMIT 1[0m
+  [4;35;1mCliente Exists (0.3ms)[0m   [0mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" = '59322069000184') LIMIT 1[0m
+  [4;36;1mCliente Exists (0.3ms)[0m   [0;1mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" IS NULL) LIMIT 1[0m
+  [4;35;1mCor Exists (0.3ms)[0m   [0mSELECT "cores".id FROM "cores" WHERE ("cores"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.5ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.2ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" = '34173341601') LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.2ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" = '99999') LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.3ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" IS NULL) LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.2ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" IS NULL) LIMIT 1[0m
+  [4;35;1mGrupo Exists (0.3ms)[0m   [0mSELECT "grupos".id FROM "grupos" WHERE ("grupos"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mNotafiscal Load (0.5ms)[0m   [0mSELECT * FROM "notasfiscais" LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.3ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mNotafiscal Exists (0.3ms)[0m   [0;1mSELECT "notasfiscais".id FROM "notasfiscais" WHERE ("notasfiscais"."numero_nota" IS NULL) LIMIT 1[0m
+  [4;35;1mCliente Load (1.7ms)[0m   [0mSELECT * FROM "clientes" LIMIT 1[0m
+  [4;36;1mFuncionario Load (1.4ms)[0m   [0;1mSELECT * FROM "funcionarios" LIMIT 1[0m
+  [4;35;1mRegiao Exists (0.3ms)[0m   [0mSELECT "regioes".id FROM "regioes" WHERE ("regioes"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.5ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mRoteiro Load (0.6ms)[0m   [0mSELECT * FROM "roteiros" LIMIT 1[0m
+  [4;36;1mArea Create (0.4ms)[0m   [0;1mINSERT INTO "areas" ("created_at", "cidade_id", "updated_at", "roteiro_id", "descricao") VALUES('2009-04-28 19:59:25', 953125641, '2009-04-28 19:59:25', 953125641, 'roteito1240948765')[0m
+  [4;35;1mCidade Load (0.5ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mRegiao Load (0.5ms)[0m   [0;1mSELECT * FROM "regioes" LIMIT 1[0m
+  [4;35;1mCidade Load (0.5ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mArea Load (0.6ms)[0m   [0;1mSELECT * FROM "areas" LIMIT 1[0m
+  [4;35;1mCliente Exists (0.3ms)[0m   [0mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" = '59322069000184') LIMIT 1[0m
+  [4;36;1mCliente Exists (0.3ms)[0m   [0;1mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" IS NULL) LIMIT 1[0m
+  [4;35;1mCor Exists (0.3ms)[0m   [0mSELECT "cores".id FROM "cores" WHERE ("cores"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.5ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.2ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" = '34173341601') LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.2ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" = '99999') LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.3ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" IS NULL) LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.2ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" IS NULL) LIMIT 1[0m
+  [4;35;1mGrupo Exists (0.3ms)[0m   [0mSELECT "grupos".id FROM "grupos" WHERE ("grupos"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mNotafiscal Load (0.4ms)[0m   [0mSELECT * FROM "notasfiscais" LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (4.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mNotafiscal Exists (0.3ms)[0m   [0;1mSELECT "notasfiscais".id FROM "notasfiscais" WHERE ("notasfiscais"."numero_nota" IS NULL) LIMIT 1[0m
+  [4;35;1mCliente Load (1.5ms)[0m   [0mSELECT * FROM "clientes" LIMIT 1[0m
+  [4;36;1mFuncionario Load (1.5ms)[0m   [0;1mSELECT * FROM "funcionarios" LIMIT 1[0m
+  [4;35;1mRegiao Exists (0.3ms)[0m   [0mSELECT "regioes".id FROM "regioes" WHERE ("regioes"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.5ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mRoteiro Load (0.6ms)[0m   [0mSELECT * FROM "roteiros" LIMIT 1[0m
+  [4;36;1mArea Create (0.5ms)[0m   [0;1mINSERT INTO "areas" ("created_at", "cidade_id", "updated_at", "roteiro_id", "descricao") VALUES('2009-04-28 20:01:08', 953125641, '2009-04-28 20:01:08', 953125641, 'roteito1240948868')[0m
+  [4;35;1mCidade Load (0.6ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mRegiao Load (0.5ms)[0m   [0;1mSELECT * FROM "regioes" LIMIT 1[0m
+  [4;35;1mCidade Load (0.5ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mArea Load (0.6ms)[0m   [0;1mSELECT * FROM "areas" LIMIT 1[0m
+  [4;35;1mCliente Exists (0.3ms)[0m   [0mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" = '59322069000184') LIMIT 1[0m
+  [4;36;1mCliente Exists (0.3ms)[0m   [0;1mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" IS NULL) LIMIT 1[0m
+  [4;35;1mCor Exists (0.3ms)[0m   [0mSELECT "cores".id FROM "cores" WHERE ("cores"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.5ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.2ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" = '34173341601') LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.2ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" = '99999') LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.3ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" IS NULL) LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.3ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" IS NULL) LIMIT 1[0m
+  [4;35;1mGrupo Exists (0.3ms)[0m   [0mSELECT "grupos".id FROM "grupos" WHERE ("grupos"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mNotafiscal Load (0.4ms)[0m   [0mSELECT * FROM "notasfiscais" LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.2ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.3ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mNotafiscal Exists (0.3ms)[0m   [0;1mSELECT "notasfiscais".id FROM "notasfiscais" WHERE ("notasfiscais"."numero_nota" IS NULL) LIMIT 1[0m
+  [4;35;1mCliente Load (1.5ms)[0m   [0mSELECT * FROM "clientes" LIMIT 1[0m
+  [4;36;1mFuncionario Load (1.4ms)[0m   [0;1mSELECT * FROM "funcionarios" LIMIT 1[0m
+  [4;35;1mRegiao Exists (0.3ms)[0m   [0mSELECT "regioes".id FROM "regioes" WHERE ("regioes"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.6ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mRoteiro Load (0.6ms)[0m   [0mSELECT * FROM "roteiros" LIMIT 1[0m
+  [4;36;1mArea Create (0.5ms)[0m   [0;1mINSERT INTO "areas" ("created_at", "cidade_id", "updated_at", "roteiro_id", "descricao") VALUES('2009-04-28 20:03:42', 953125641, '2009-04-28 20:03:42', 953125641, 'roteito1240949022')[0m
+  [4;35;1mCidade Load (0.6ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mRegiao Load (0.5ms)[0m   [0;1mSELECT * FROM "regioes" LIMIT 1[0m
+  [4;35;1mCidade Load (0.5ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mArea Load (0.9ms)[0m   [0;1mSELECT * FROM "areas" LIMIT 1[0m
+  [4;35;1mCliente Exists (0.3ms)[0m   [0mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" = '59322069000184') LIMIT 1[0m
+  [4;36;1mCliente Exists (0.3ms)[0m   [0;1mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" IS NULL) LIMIT 1[0m
+  [4;35;1mCor Exists (0.5ms)[0m   [0mSELECT "cores".id FROM "cores" WHERE ("cores"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.5ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.2ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" = '34173341601') LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.2ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" = '99999') LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.5ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" IS NULL) LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.2ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" IS NULL) LIMIT 1[0m
+  [4;35;1mGrupo Exists (0.3ms)[0m   [0mSELECT "grupos".id FROM "grupos" WHERE ("grupos"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mNotafiscal Load (0.4ms)[0m   [0mSELECT * FROM "notasfiscais" LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.2ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.6ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mNotafiscal Exists (0.3ms)[0m   [0;1mSELECT "notasfiscais".id FROM "notasfiscais" WHERE ("notasfiscais"."numero_nota" IS NULL) LIMIT 1[0m
+  [4;35;1mCliente Load (1.5ms)[0m   [0mSELECT * FROM "clientes" LIMIT 1[0m
+  [4;36;1mFuncionario Load (1.5ms)[0m   [0;1mSELECT * FROM "funcionarios" LIMIT 1[0m
+  [4;35;1mRegiao Exists (0.3ms)[0m   [0mSELECT "regioes".id FROM "regioes" WHERE ("regioes"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.6ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mRoteiro Load (0.6ms)[0m   [0mSELECT * FROM "roteiros" LIMIT 1[0m
+  [4;36;1mArea Create (0.5ms)[0m   [0;1mINSERT INTO "areas" ("created_at", "cidade_id", "updated_at", "roteiro_id", "descricao") VALUES('2009-04-28 20:04:51', 953125641, '2009-04-28 20:04:51', 953125641, 'roteito1240949091')[0m
+  [4;35;1mCidade Load (0.5ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mRegiao Load (0.5ms)[0m   [0;1mSELECT * FROM "regioes" LIMIT 1[0m
+  [4;35;1mCidade Load (0.5ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mArea Load (0.6ms)[0m   [0;1mSELECT * FROM "areas" LIMIT 1[0m
+  [4;35;1mCliente Exists (0.3ms)[0m   [0mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" = '59322069000184') LIMIT 1[0m
+  [4;36;1mCliente Exists (0.3ms)[0m   [0;1mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" IS NULL) LIMIT 1[0m
+  [4;35;1mCor Exists (0.3ms)[0m   [0mSELECT "cores".id FROM "cores" WHERE ("cores"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.6ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.2ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" = '34173341601') LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.2ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" = '99999') LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.3ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" IS NULL) LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.2ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" IS NULL) LIMIT 1[0m
+  [4;35;1mGrupo Exists (0.3ms)[0m   [0mSELECT "grupos".id FROM "grupos" WHERE ("grupos"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mProduto Load (1.5ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mNotafiscal Load (0.4ms)[0m   [0mSELECT * FROM "notasfiscais" LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.2ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.2ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mNotafiscal Exists (0.3ms)[0m   [0;1mSELECT "notasfiscais".id FROM "notasfiscais" WHERE ("notasfiscais"."numero_nota" IS NULL) LIMIT 1[0m
+  [4;35;1mCliente Load (2.0ms)[0m   [0mSELECT * FROM "clientes" LIMIT 1[0m
+  [4;36;1mFuncionario Load (1.5ms)[0m   [0;1mSELECT * FROM "funcionarios" LIMIT 1[0m
+  [4;35;1mRegiao Exists (0.3ms)[0m   [0mSELECT "regioes".id FROM "regioes" WHERE ("regioes"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.5ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mRoteiro Load (0.6ms)[0m   [0mSELECT * FROM "roteiros" LIMIT 1[0m
+  [4;36;1mArea Create (0.4ms)[0m   [0;1mINSERT INTO "areas" ("created_at", "cidade_id", "updated_at", "roteiro_id", "descricao") VALUES('2009-04-28 20:06:25', 953125641, '2009-04-28 20:06:25', 953125641, 'roteito1240949185')[0m
+  [4;35;1mCidade Load (0.5ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mRegiao Load (0.5ms)[0m   [0;1mSELECT * FROM "regioes" LIMIT 1[0m
+  [4;35;1mCidade Load (0.5ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mArea Load (0.6ms)[0m   [0;1mSELECT * FROM "areas" LIMIT 1[0m
+  [4;35;1mCliente Exists (0.3ms)[0m   [0mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" = '59322069000184') LIMIT 1[0m
+  [4;36;1mCliente Exists (0.3ms)[0m   [0;1mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" IS NULL) LIMIT 1[0m
+  [4;35;1mCor Exists (0.3ms)[0m   [0mSELECT "cores".id FROM "cores" WHERE ("cores"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.6ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.2ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" = '34173341601') LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.2ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" = '99999') LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.3ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" IS NULL) LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.2ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" IS NULL) LIMIT 1[0m
+  [4;35;1mGrupo Exists (0.3ms)[0m   [0mSELECT "grupos".id FROM "grupos" WHERE ("grupos"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mProduto Load (1.3ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mNotafiscal Load (0.4ms)[0m   [0mSELECT * FROM "notasfiscais" LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.2ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.2ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.2ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mNotafiscal Exists (0.3ms)[0m   [0;1mSELECT "notasfiscais".id FROM "notasfiscais" WHERE ("notasfiscais"."numero_nota" IS NULL) LIMIT 1[0m
+  [4;35;1mCliente Load (1.4ms)[0m   [0mSELECT * FROM "clientes" LIMIT 1[0m
+  [4;36;1mFuncionario Load (1.5ms)[0m   [0;1mSELECT * FROM "funcionarios" LIMIT 1[0m
+  [4;35;1mRegiao Exists (0.3ms)[0m   [0mSELECT "regioes".id FROM "regioes" WHERE ("regioes"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.6ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mRoteiro Load (0.6ms)[0m   [0mSELECT * FROM "roteiros" LIMIT 1[0m
+  [4;36;1mArea Create (0.5ms)[0m   [0;1mINSERT INTO "areas" ("created_at", "cidade_id", "updated_at", "roteiro_id", "descricao") VALUES('2009-04-28 20:07:29', 953125641, '2009-04-28 20:07:29', 953125641, 'roteito1240949249')[0m
+  [4;35;1mCidade Load (0.6ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mRegiao Load (0.5ms)[0m   [0;1mSELECT * FROM "regioes" LIMIT 1[0m
+  [4;35;1mCidade Load (0.5ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mArea Load (0.6ms)[0m   [0;1mSELECT * FROM "areas" LIMIT 1[0m
+  [4;35;1mCliente Exists (0.3ms)[0m   [0mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" = '59322069000184') LIMIT 1[0m
+  [4;36;1mCliente Exists (0.3ms)[0m   [0;1mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" IS NULL) LIMIT 1[0m
+  [4;35;1mCor Exists (0.3ms)[0m   [0mSELECT "cores".id FROM "cores" WHERE ("cores"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.5ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.2ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" = '34173341601') LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.2ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" = '99999') LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.3ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" IS NULL) LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.2ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" IS NULL) LIMIT 1[0m
+  [4;35;1mGrupo Exists (0.3ms)[0m   [0mSELECT "grupos".id FROM "grupos" WHERE ("grupos"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mNotafiscal Load (0.4ms)[0m   [0mSELECT * FROM "notasfiscais" LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.6ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (4.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mNotafiscal Exists (0.3ms)[0m   [0;1mSELECT "notasfiscais".id FROM "notasfiscais" WHERE ("notasfiscais"."numero_nota" IS NULL) LIMIT 1[0m
+  [4;35;1mCliente Load (1.9ms)[0m   [0mSELECT * FROM "clientes" LIMIT 1[0m
+  [4;36;1mFuncionario Load (5.0ms)[0m   [0;1mSELECT * FROM "funcionarios" LIMIT 1[0m
+  [4;35;1mRegiao Exists (0.3ms)[0m   [0mSELECT "regioes".id FROM "regioes" WHERE ("regioes"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.5ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mRoteiro Load (0.6ms)[0m   [0mSELECT * FROM "roteiros" LIMIT 1[0m
+  [4;36;1mArea Create (0.5ms)[0m   [0;1mINSERT INTO "areas" ("created_at", "cidade_id", "updated_at", "roteiro_id", "descricao") VALUES('2009-04-28 20:09:35', 953125641, '2009-04-28 20:09:35', 953125641, 'roteito1240949375')[0m
+  [4;35;1mCidade Load (0.5ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mRegiao Load (0.5ms)[0m   [0;1mSELECT * FROM "regioes" LIMIT 1[0m
+  [4;35;1mCidade Load (0.5ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mArea Load (0.6ms)[0m   [0;1mSELECT * FROM "areas" LIMIT 1[0m
+  [4;35;1mCliente Exists (0.3ms)[0m   [0mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" = '59322069000184') LIMIT 1[0m
+  [4;36;1mCliente Exists (0.3ms)[0m   [0;1mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" IS NULL) LIMIT 1[0m
+  [4;35;1mCor Exists (0.5ms)[0m   [0mSELECT "cores".id FROM "cores" WHERE ("cores"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.5ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.3ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" = '34173341601') LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.2ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" = '99999') LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.3ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" IS NULL) LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.2ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" IS NULL) LIMIT 1[0m
+  [4;35;1mGrupo Exists (0.3ms)[0m   [0mSELECT "grupos".id FROM "grupos" WHERE ("grupos"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mNotafiscal Load (0.4ms)[0m   [0mSELECT * FROM "notasfiscais" LIMIT 1[0m
+  [4;36;1mProduto Load (1.5ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.5ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mNotafiscal Exists (0.3ms)[0m   [0;1mSELECT "notasfiscais".id FROM "notasfiscais" WHERE ("notasfiscais"."numero_nota" IS NULL) LIMIT 1[0m
+  [4;35;1mCliente Load (1.5ms)[0m   [0mSELECT * FROM "clientes" LIMIT 1[0m
+  [4;36;1mFuncionario Load (1.5ms)[0m   [0;1mSELECT * FROM "funcionarios" LIMIT 1[0m
+  [4;35;1mRegiao Exists (0.3ms)[0m   [0mSELECT "regioes".id FROM "regioes" WHERE ("regioes"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.6ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mRoteiro Load (0.6ms)[0m   [0mSELECT * FROM "roteiros" LIMIT 1[0m
+  [4;36;1mArea Create (0.5ms)[0m   [0;1mINSERT INTO "areas" ("created_at", "cidade_id", "updated_at", "roteiro_id", "descricao") VALUES('2009-04-28 20:10:25', 953125641, '2009-04-28 20:10:25', 953125641, 'roteito1240949425')[0m
+  [4;35;1mCidade Load (0.6ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mRegiao Load (0.5ms)[0m   [0;1mSELECT * FROM "regioes" LIMIT 1[0m
+  [4;35;1mCidade Load (0.5ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mArea Load (0.6ms)[0m   [0;1mSELECT * FROM "areas" LIMIT 1[0m
+  [4;35;1mCliente Exists (0.3ms)[0m   [0mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" = '59322069000184') LIMIT 1[0m
+  [4;36;1mCliente Exists (0.3ms)[0m   [0;1mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" IS NULL) LIMIT 1[0m
+  [4;35;1mCor Exists (0.3ms)[0m   [0mSELECT "cores".id FROM "cores" WHERE ("cores"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.5ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.3ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" = '34173341601') LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.2ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" = '99999') LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.3ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" IS NULL) LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.2ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" IS NULL) LIMIT 1[0m
+  [4;35;1mGrupo Exists (0.3ms)[0m   [0mSELECT "grupos".id FROM "grupos" WHERE ("grupos"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mProduto Load (1.3ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mNotafiscal Load (0.4ms)[0m   [0mSELECT * FROM "notasfiscais" LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (2.0ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.3ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.7ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mNotafiscal Exists (0.3ms)[0m   [0;1mSELECT "notasfiscais".id FROM "notasfiscais" WHERE ("notasfiscais"."numero_nota" IS NULL) LIMIT 1[0m
+  [4;35;1mCliente Load (1.5ms)[0m   [0mSELECT * FROM "clientes" LIMIT 1[0m
+  [4;36;1mFuncionario Load (1.5ms)[0m   [0;1mSELECT * FROM "funcionarios" LIMIT 1[0m
+  [4;35;1mRegiao Exists (0.3ms)[0m   [0mSELECT "regioes".id FROM "regioes" WHERE ("regioes"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.5ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mRoteiro Load (0.6ms)[0m   [0mSELECT * FROM "roteiros" LIMIT 1[0m
+  [4;36;1mArea Create (0.7ms)[0m   [0;1mINSERT INTO "areas" ("created_at", "cidade_id", "updated_at", "roteiro_id", "descricao") VALUES('2009-04-28 20:13:14', 953125641, '2009-04-28 20:13:14', 953125641, 'roteito1240949594')[0m
+  [4;35;1mCidade Load (0.5ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mRegiao Load (0.5ms)[0m   [0;1mSELECT * FROM "regioes" LIMIT 1[0m
+  [4;35;1mCidade Load (0.8ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mArea Load (0.6ms)[0m   [0;1mSELECT * FROM "areas" LIMIT 1[0m
+  [4;35;1mCliente Exists (0.3ms)[0m   [0mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" = '59322069000184') LIMIT 1[0m
+  [4;36;1mCliente Exists (0.3ms)[0m   [0;1mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" IS NULL) LIMIT 1[0m
+  [4;35;1mCor Exists (0.3ms)[0m   [0mSELECT "cores".id FROM "cores" WHERE ("cores"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.5ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.2ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" = '34173341601') LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.2ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" = '99999') LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.3ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" IS NULL) LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.2ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" IS NULL) LIMIT 1[0m
+  [4;35;1mGrupo Exists (0.3ms)[0m   [0mSELECT "grupos".id FROM "grupos" WHERE ("grupos"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mNotafiscal Load (0.4ms)[0m   [0mSELECT * FROM "notasfiscais" LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.2ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.4ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mNotafiscal Exists (0.3ms)[0m   [0;1mSELECT "notasfiscais".id FROM "notasfiscais" WHERE ("notasfiscais"."numero_nota" IS NULL) LIMIT 1[0m
+  [4;35;1mCliente Load (1.4ms)[0m   [0mSELECT * FROM "clientes" LIMIT 1[0m
+  [4;36;1mFuncionario Load (1.5ms)[0m   [0;1mSELECT * FROM "funcionarios" LIMIT 1[0m
+  [4;35;1mRegiao Exists (0.7ms)[0m   [0mSELECT "regioes".id FROM "regioes" WHERE ("regioes"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.5ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mRoteiro Load (0.6ms)[0m   [0mSELECT * FROM "roteiros" LIMIT 1[0m
+  [4;36;1mArea Create (0.5ms)[0m   [0;1mINSERT INTO "areas" ("created_at", "cidade_id", "updated_at", "roteiro_id", "descricao") VALUES('2009-04-28 22:36:28', 953125641, '2009-04-28 22:36:28', 953125641, 'roteito1240958188')[0m
+  [4;35;1mCidade Load (0.7ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mRegiao Load (0.5ms)[0m   [0;1mSELECT * FROM "regioes" LIMIT 1[0m
+  [4;35;1mCidade Load (0.5ms)[0m   [0mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;36;1mArea Load (0.6ms)[0m   [0;1mSELECT * FROM "areas" LIMIT 1[0m
+  [4;35;1mCliente Exists (0.3ms)[0m   [0mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" = '59322069000184') LIMIT 1[0m
+  [4;36;1mCliente Exists (0.3ms)[0m   [0;1mSELECT "clientes".id FROM "clientes" WHERE ("clientes"."cpf_cnpj" IS NULL) LIMIT 1[0m
+  [4;35;1mCor Exists (0.5ms)[0m   [0mSELECT "cores".id FROM "cores" WHERE ("cores"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mCidade Load (0.5ms)[0m   [0;1mSELECT * FROM "cidades" LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.2ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" = '34173341601') LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.3ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" = '99999') LIMIT 1[0m
+  [4;35;1mFuncionario Exists (0.7ms)[0m   [0mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."cpf" IS NULL) LIMIT 1[0m
+  [4;36;1mFuncionario Exists (0.4ms)[0m   [0;1mSELECT "funcionarios".id FROM "funcionarios" WHERE ("funcionarios"."rg" IS NULL) LIMIT 1[0m
+  [4;35;1mGrupo Exists (0.3ms)[0m   [0mSELECT "grupos".id FROM "grupos" WHERE ("grupos"."descricao" IS NULL) LIMIT 1[0m
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mNotafiscal Load (0.5ms)[0m   [0mSELECT * FROM "notasfiscais" LIMIT 1[0m
+  [4;36;1mProduto Load (1.3ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.2ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.3ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mProduto Load (1.1ms)[0m   [0;1mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;35;1mProduto Load (1.1ms)[0m   [0mSELECT * FROM "produtos" LIMIT 1[0m
+  [4;36;1mNotafiscal Exists (0.3ms)[0m   [0;1mSELECT "notasfiscais".id FROM "notasfiscais" WHERE ("notasfiscais"."numero_nota" IS NULL) LIMIT 1[0m
+  [4;35;1mCliente Load (1.5ms)[0m   [0mSELECT * FROM "clientes" LIMIT 1[0m
+  [4;36;1mFuncionario Load (1.4ms)[0m   [0;1mSELECT * FROM "funcionarios" LIMIT 1[0m
+  [4;35;1mRegiao Exists (0.3ms)[0m   [0mSELECT "regioes".id FROM "regioes" WHERE ("regioes"."descricao" IS NULL) LIMIT 1[0m
