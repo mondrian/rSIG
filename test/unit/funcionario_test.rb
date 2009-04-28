@@ -8,7 +8,7 @@ class FuncionarioTest < ActiveSupport::TestCase
   end
 
   test "relacoes do model funcionario" do
-    f = FUncionario.new
+    f = Funcionario.new
     f.tipo = '1'
     f.nome = f.endereco = f.cep = '00000'
     f.cpf = '34173341601' # cpf valido
