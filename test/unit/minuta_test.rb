@@ -11,8 +11,8 @@ class MinutaTest < ActiveSupport::TestCase
     m = Minuta.new
     for i in 1..10
       i = ItensMinuta.new
-      m.itensminutas << i
+      m.itens_minutas << i
     end
-    assert (m.itensminutas > 0)
+    assert (m.itens_minutas.size > 0)
   end
 end

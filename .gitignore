@@ -7,8 +7,8 @@ log/mongrel.log
 log/production.log
 log/mongrel.pid
 # Ignore (generated) html files,
-*.html
+#*.html
 # except foo.html which is maintained by hand.
-!foo.html
+#!foo.html
 # Ignore objects and archives.
-*.[oa]
+#*.[oa]
