@@ -1,8 +1,15 @@
-<<<<<<< HEAD:db/schema.rb
-ActiveRecord::Schema.define(:version => 20090427230903) do
-=======
+# This file is auto-generated from the current state of the database. Instead of editing this file, 
+# please use the migrations feature of Active Record to incrementally modify your database, and
+# then regenerate this schema definition.
+#
+# Note that this schema.rb definition is the authoritative source for your database schema. If you need
+# to create the application database on another system, you should be using db:schema:load, not running
+# all the migrations from scratch. The latter is a flawed and unsustainable approach (the more migrations
+# you'll amass, the slower it'll run and the greater likelihood for issues).
+#
+# It's strongly recommended to check this file into your version control system.
+
 ActiveRecord::Schema.define(:version => 20090427225739) do
->>>>>>> 84c0e447829df9c1d3fb8871cbc170e47e9321eb:db/schema.rb
 
   create_table "areas", :force => true do |t|
     t.string   "descricao"
@@ -180,30 +187,30 @@ ActiveRecord::Schema.define(:version => 20090427225739) do
     t.string   "numero_selo"
     t.string   "numero_serie"
     t.string   "cliente_id"
+    t.decimal  "percentual_icms"
     t.date     "emissao"
+    t.decimal  "total_mercadoria"
+    t.decimal  "valor_frete"
     t.string   "cfop"
     t.string   "natureza_operacao"
+    t.decimal  "valor_ipi"
+    t.decimal  "valor_desconto"
+    t.decimal  "valor_acrescimo"
+    t.decimal  "total_nota"
     t.string   "status"
+    t.decimal  "base_calculo_icms"
+    t.decimal  "valor_icms"
     t.integer  "qtde_volumes"
     t.datetime "entrada"
     t.datetime "saida"
     t.integer  "transportadora_id"
+    t.decimal  "percentual_desconto"
     t.text     "observacao"
+    t.decimal  "base_calculo_icms_substituicao_tributaria"
+    t.decimal  "percentual_icms_substituicao_tributaria"
+    t.decimal  "valor_icms_substituicao_tributaria"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "valor_icms",                                :precision => 12, :scale => 2
-    t.decimal  "valor_ipi",                                 :precision => 12, :scale => 2
-    t.decimal  "valor_desconto",                            :precision => 12, :scale => 2
-    t.decimal  "valor_acrescimo",                           :precision => 12, :scale => 2
-    t.decimal  "valor_icms_substituicao_tributaria",        :precision => 12, :scale => 2
-    t.decimal  "valor_frete",                               :precision => 12, :scale => 2
-    t.decimal  "total_nota",                                :precision => 12, :scale => 2
-    t.decimal  "total_mercadoria",                          :precision => 12, :scale => 2
-    t.decimal  "base_calculo_icms",                         :precision => 12, :scale => 2
-    t.decimal  "base_calculo_icms_substituicao_tributaria", :precision => 12, :scale => 2
-    t.decimal  "percentual_icms",                           :precision => 6,  :scale => 2
-    t.decimal  "percentual_icms_substituicao_tributaria",   :precision => 6,  :scale => 2
-    t.decimal  "percentual_desconto",                       :precision => 6,  :scale => 2
   end
 
   create_table "pedidos", :force => true do |t|

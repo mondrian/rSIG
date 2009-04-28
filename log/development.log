@@ -492,3 +492,1129 @@ Migrating to AlterarColunaNotaFiscal (20090427230903)
   [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090427230903')[0m
   [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
   [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePedidos (20090424125922)
+Migrating to CreateClientes (20090424184002)
+Migrating to CreateProdutos (20090424195513)
+Migrating to CreateGrupos (20090424195522)
+Migrating to CreateFuncionarios (20090424195642)
+Migrating to CreateCores (20090424200003)
+Migrating to CreateRoteiros (20090427135556)
+Migrating to CreateAreas (20090427135631)
+Migrating to CreateCidades (20090427135712)
+Migrating to CreateRegiaos (20090427135726)
+Migrating to CreateMetaProdutos (20090427140058)
+Migrating to CreateExpedicaos (20090427140326)
+Migrating to CreateItemPedidos (20090427180121)
+Migrating to CreateNotasfiscais (20090427194625)
+Migrating to CreateItensnotasfiscais (20090427194739)
+Migrating to AlterarFuncionarioTipo (20090427215555)
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (222.7ms)[0m   [0;1mALTER TABLE "funcionarios" ALTER COLUMN "tipo" TYPE character varying(1)[0m
+  [4;35;1mSQL (13.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090427215555')[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateMinutas (20090427220350)
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (70.8ms)[0m   [0;1mCREATE TABLE "minutas" ("id" serial primary key, "data" date, "fechamento" date, "operador_fechamento_id" integer, "saida" date, "obs" text, "veiculo_id" integer, "fechamento_financeiro" date, "funcionario_fechamento_financeiro_id" integer, "roteiro_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090427220350')[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateItensMinutas (20090427220624)
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (25.0ms)[0m   [0;1mCREATE TABLE "itens_minutas" ("id" serial primary key, "produto_id" integer, "qtde" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090427220624')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCOMMIT[0m
+Migrating to CorrigeExpedicao (20090427224059)
+  [4;35;1mSQL (0.8ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (4.6ms)[0m   [0;1mDROP TABLE "expedicaos"[0m
+  [4;35;1mSQL (12.7ms)[0m   [0mCREATE TABLE "expedicoes" ("id" serial primary key, "minuta_id" integer, "produto_id" integer, "numero_do_volume" character varying(255), "qtd_carregada" decimal, "qtd_minuta" decimal, "vidro" boolean, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090427224059')[0m
+  [4;35;1mSQL (3.4ms)[0m   [0mCOMMIT[0m
+Migrating to CorrigeRegioes (20090427225739)
+  [4;36;1mSQL (1.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mDROP TABLE "regiaos"[0m
+  [4;36;1mSQL (10.5ms)[0m   [0;1mCREATE TABLE "regioes" ("id" serial primary key, "descricao" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090427225739')[0m
+  [4;36;1mSQL (3.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (10.3ms)[0m   [0mCREATE TABLE "areas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "cidade_id" integer, "roteiro_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (5.4ms)[0m   [0mCREATE TABLE "cidades" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (6.3ms)[0m   [0mCREATE TABLE "clientes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipo_cliente" varchar(1), "cpf_cnpj" varchar(14), "razao_social" varchar(255), "nome_fantasia" varchar(255), "documento" varchar(255), "endereco" varchar(255), "complemento" varchar(255), "cidade_id" integer, "uf_id" integer, "cep" varchar(255), "referencia" varchar(255), "fone_pessoal" varchar(255), "fone_comercial" varchar(255), "fone_celular" varchar(255), "endereco_entrega" varchar(255), "regiao_entrega_id" integer, "cidade_entrega_id" varchar(255), "area_id" varchar(255), "referencias_bancaria" text, "referencias_comerciais" text, "observacao" text, "info_serasa" text, "data_nascimento" date, "nome_comprador" varchar(255), "vendas_suspensas" boolean, "observacao_suspensao_venda" text, "limite_credito" decimal(12,2), "saldo_devedor" decimal(12,2), "status" varchar(255), "prazo_medio_maximo" integer, "data_inclusao_prazo_medio" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (15.2ms)[0m   [0mCREATE TABLE "cores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.4ms)[0m   [0mCREATE TABLE "expedicoes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "minuta_id" integer, "produto_id" integer, "numero_do_volume" varchar(255), "qtd_carregada" decimal, "qtd_minuta" decimal, "vidro" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (23.0ms)[0m   [0mCREATE TABLE "funcionarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipo" varchar(1), "nome" varchar(255), "endereco" varchar(255), "complemento" varchar(255), "cep" varchar(255), "cidade_id" integer, "uf" varchar(255), "fone" varchar(255), "cpf" varchar(255), "rg" varchar(255), "pai" varchar(255), "mae" varchar(255), "numero_carteira_trabalho" varchar(255), "serie_carteira_trabalho" varchar(255), "titulo_eleitor" varchar(255), "zona_eleitoral" varchar(255), "admissao" date, "registro" date, "nascimento" date, "naturalidade" varchar(255), "estado_civil" varchar(255), "grau_instrucao" varchar(255), "cadastro_pis" date, "numero_pis" varchar(255), "cod_banco_pis" varchar(255), "nome_banco_pis" varchar(255), "cod_agencia_pis" varchar(255), "nome_agencia_pis" varchar(255), "endereco_banco_pis" varchar(255), "demissao" date, "observacao" text, "aci" text, "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (17.1ms)[0m   [0mCREATE TABLE "grupos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "margem_lucro" decimal, "unificado" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (17.2ms)[0m   [0mCREATE TABLE "item_pedidos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "kit_id" integer, "quantidade" decimal, "valor_tabela" decimal, "valor_venda" decimal, "desconto" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (29.9ms)[0m   [0mCREATE TABLE "itens_minutas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "produto_id" integer, "qtde" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (16.9ms)[0m   [0mCREATE TABLE "itensnotasfiscais" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "numero_nota" integer, "produto_id" integer, "unidade_medida" varchar(255), "quantidade" decimal, "valor_item_faturado" decimal, "valor_item_original" decimal, "situacao_tributaria_item" varchar(255), "percentual_icms_item" decimal, "percentual_ipi_item" decimal, "peso_liquido" decimal, "cod_emissao_nf" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (21.8ms)[0m   [0mCREATE TABLE "meta_produtos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mes" integer, "ano" integer, "qdt_dias_uteis" integer, "data_ini" date, "data_fim" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (16.3ms)[0m   [0mCREATE TABLE "minutas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "data" date, "fechamento" date, "operador_fechamento_id" integer, "saida" date, "obs" text, "veiculo_id" integer, "fechamento_financeiro" date, "funcionario_fechamento_financeiro_id" integer, "roteiro_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (13.4ms)[0m   [0mCREATE TABLE "notasfiscais" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "numero_nota" integer, "numero_pedido_id" integer, "numero_selo" varchar(255), "numero_serie" varchar(255), "cliente_id" varchar(255), "percentual_icms" decimal, "emissao" date, "total_mercadoria" decimal, "valor_frete" decimal, "cfop" varchar(255), "natureza_operacao" varchar(255), "valor_ipi" decimal, "valor_desconto" decimal, "valor_acrescimo" decimal, "total_nota" decimal, "status" varchar(255), "base_calculo_icms" decimal, "valor_icms" decimal, "qtde_volumes" integer, "entrada" datetime, "saida" datetime, "transportadora_id" integer, "percentual_desconto" decimal, "observacao" text, "base_calculo_icms_substituicao_tributaria" decimal, "percentual_icms_substituicao_tributaria" decimal, "valor_icms_substituicao_tributaria" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (19.2ms)[0m   [0mCREATE TABLE "pedidos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "oficial" boolean, "data" date, "previsao_entrega" date, "entrega" date, "programacao" date, "cliente_id" integer, "valor" decimal(8,2), "preco_tabela" decimal(8,2), "acrescimo" decimal(3,2), "desconto" decimal(3,2), "transportadora_id" integer, "nome_comprador" varchar(255), "observacao" text, "vendedor_id" integer, "operador_id" integer, "telemarketing_id" integer, "plano_pagamento_id" integer, "endereco_entrega" varchar(255), "minuta_id" integer, "area_id" integer, "preco_especial" boolean, "status" varchar(255), "estorno" date, "funcionario_estorno_id" integer, "comissao_vendedor" decimal(3,2), "comissao_telemarketing" decimal(3,2), "venda_externa" boolean, "desconto_complementar" decimal(3,2), "autorizador_desconto_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (22.8ms)[0m   [0mCREATE TABLE "produtos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "cor_id" integer, "valor_especial" decimal, "valor_normal" decimal, "classe_id" integer, "grupo_id" integer, "status" boolean, "situacao_tributaria" integer, "preco_minimo_nota_fiscal" decimal, "ipi" decimal, "classificacao_fiscal" integer, "peso_liquido" integer, "cod_emissao_nota_fiscal" integer, "descricao_nota_fiscal" varchar(255), "preco_normal_zona1" decimal, "preco_especial_zona1" decimal, "funcionario_id" integer, "emissao_relatorio" boolean, "custo" decimal, "cadastro_custo" date, "kit" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.5ms)[0m   [0mCREATE TABLE "regioes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.5ms)[0m   [0mCREATE TABLE "roteiros" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "funcionario_id" integer, "regiao_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (19.8ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (7.9ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (19.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427225739')[0m
+  [4;36;1mSQL (10.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424195513')[0m
+  [4;35;1mSQL (10.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090424200003')[0m
+  [4;36;1mSQL (10.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427135631')[0m
+  [4;35;1mSQL (10.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427220624')[0m
+  [4;36;1mSQL (10.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427224059')[0m
+  [4;35;1mSQL (10.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427135556')[0m
+  [4;36;1mSQL (10.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424195522')[0m
+  [4;35;1mSQL (10.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427180121')[0m
+  [4;36;1mSQL (10.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427135712')[0m
+  [4;35;1mSQL (10.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427135726')[0m
+  [4;36;1mSQL (3.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424184002')[0m
+  [4;35;1mSQL (7.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427194625')[0m
+  [4;36;1mSQL (10.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427194739')[0m
+  [4;35;1mSQL (10.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427220350')[0m
+  [4;36;1mSQL (10.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427140326')[0m
+  [4;35;1mSQL (10.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090424195642')[0m
+  [4;36;1mSQL (10.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427215555')[0m
+  [4;35;1mSQL (10.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427140058')[0m
+  [4;36;1mSQL (10.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424125922')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (12.2ms)[0m   [0mCREATE TABLE "areas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "cidade_id" integer, "roteiro_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.8ms)[0m   [0mCREATE TABLE "cidades" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (5.9ms)[0m   [0mCREATE TABLE "clientes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipo_cliente" varchar(1), "cpf_cnpj" varchar(14), "razao_social" varchar(255), "nome_fantasia" varchar(255), "documento" varchar(255), "endereco" varchar(255), "complemento" varchar(255), "cidade_id" integer, "uf_id" integer, "cep" varchar(255), "referencia" varchar(255), "fone_pessoal" varchar(255), "fone_comercial" varchar(255), "fone_celular" varchar(255), "endereco_entrega" varchar(255), "regiao_entrega_id" integer, "cidade_entrega_id" varchar(255), "area_id" varchar(255), "referencias_bancaria" text, "referencias_comerciais" text, "observacao" text, "info_serasa" text, "data_nascimento" date, "nome_comprador" varchar(255), "vendas_suspensas" boolean, "observacao_suspensao_venda" text, "limite_credito" decimal(12,2), "saldo_devedor" decimal(12,2), "status" varchar(255), "prazo_medio_maximo" integer, "data_inclusao_prazo_medio" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (5.9ms)[0m   [0mCREATE TABLE "cores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.6ms)[0m   [0mCREATE TABLE "expedicoes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "minuta_id" integer, "produto_id" integer, "numero_do_volume" varchar(255), "qtd_carregada" decimal, "qtd_minuta" decimal, "vidro" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.3ms)[0m   [0mCREATE TABLE "funcionarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipo" varchar(1), "nome" varchar(255), "endereco" varchar(255), "complemento" varchar(255), "cep" varchar(255), "cidade_id" integer, "uf" varchar(255), "fone" varchar(255), "cpf" varchar(255), "rg" varchar(255), "pai" varchar(255), "mae" varchar(255), "numero_carteira_trabalho" varchar(255), "serie_carteira_trabalho" varchar(255), "titulo_eleitor" varchar(255), "zona_eleitoral" varchar(255), "admissao" date, "registro" date, "nascimento" date, "naturalidade" varchar(255), "estado_civil" varchar(255), "grau_instrucao" varchar(255), "cadastro_pis" date, "numero_pis" varchar(255), "cod_banco_pis" varchar(255), "nome_banco_pis" varchar(255), "cod_agencia_pis" varchar(255), "nome_agencia_pis" varchar(255), "endereco_banco_pis" varchar(255), "demissao" date, "observacao" text, "aci" text, "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.7ms)[0m   [0mCREATE TABLE "grupos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "margem_lucro" decimal, "unificado" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.7ms)[0m   [0mCREATE TABLE "item_pedidos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "kit_id" integer, "quantidade" decimal, "valor_tabela" decimal, "valor_venda" decimal, "desconto" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (16.7ms)[0m   [0mCREATE TABLE "itens_minutas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "produto_id" integer, "qtde" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (6.4ms)[0m   [0mCREATE TABLE "itensnotasfiscais" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "numero_nota" integer, "produto_id" integer, "unidade_medida" varchar(255), "quantidade" decimal, "valor_item_faturado" decimal, "valor_item_original" decimal, "situacao_tributaria_item" varchar(255), "percentual_icms_item" decimal, "percentual_ipi_item" decimal, "peso_liquido" decimal, "cod_emissao_nf" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.4ms)[0m   [0mCREATE TABLE "meta_produtos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mes" integer, "ano" integer, "qdt_dias_uteis" integer, "data_ini" date, "data_fim" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.7ms)[0m   [0mCREATE TABLE "minutas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "data" date, "fechamento" date, "operador_fechamento_id" integer, "saida" date, "obs" text, "veiculo_id" integer, "fechamento_financeiro" date, "funcionario_fechamento_financeiro_id" integer, "roteiro_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (12.9ms)[0m   [0mCREATE TABLE "notasfiscais" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "numero_nota" integer, "numero_pedido_id" integer, "numero_selo" varchar(255), "numero_serie" varchar(255), "cliente_id" varchar(255), "percentual_icms" decimal, "emissao" date, "total_mercadoria" decimal, "valor_frete" decimal, "cfop" varchar(255), "natureza_operacao" varchar(255), "valor_ipi" decimal, "valor_desconto" decimal, "valor_acrescimo" decimal, "total_nota" decimal, "status" varchar(255), "base_calculo_icms" decimal, "valor_icms" decimal, "qtde_volumes" integer, "entrada" datetime, "saida" datetime, "transportadora_id" integer, "percentual_desconto" decimal, "observacao" text, "base_calculo_icms_substituicao_tributaria" decimal, "percentual_icms_substituicao_tributaria" decimal, "valor_icms_substituicao_tributaria" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (13.2ms)[0m   [0mCREATE TABLE "pedidos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "oficial" boolean, "data" date, "previsao_entrega" date, "entrega" date, "programacao" date, "cliente_id" integer, "valor" decimal(8,2), "preco_tabela" decimal(8,2), "acrescimo" decimal(3,2), "desconto" decimal(3,2), "transportadora_id" integer, "nome_comprador" varchar(255), "observacao" text, "vendedor_id" integer, "operador_id" integer, "telemarketing_id" integer, "plano_pagamento_id" integer, "endereco_entrega" varchar(255), "minuta_id" integer, "area_id" integer, "preco_especial" boolean, "status" varchar(255), "estorno" date, "funcionario_estorno_id" integer, "comissao_vendedor" decimal(3,2), "comissao_telemarketing" decimal(3,2), "venda_externa" boolean, "desconto_complementar" decimal(3,2), "autorizador_desconto_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (21.4ms)[0m   [0mCREATE TABLE "produtos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "cor_id" integer, "valor_especial" decimal, "valor_normal" decimal, "classe_id" integer, "grupo_id" integer, "status" boolean, "situacao_tributaria" integer, "preco_minimo_nota_fiscal" decimal, "ipi" decimal, "classificacao_fiscal" integer, "peso_liquido" integer, "cod_emissao_nota_fiscal" integer, "descricao_nota_fiscal" varchar(255), "preco_normal_zona1" decimal, "preco_especial_zona1" decimal, "funcionario_id" integer, "emissao_relatorio" boolean, "custo" decimal, "cadastro_custo" date, "kit" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.3ms)[0m   [0mCREATE TABLE "regioes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.9ms)[0m   [0mCREATE TABLE "roteiros" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "funcionario_id" integer, "regiao_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (9.0ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (7.3ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (1.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (30.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427225739')[0m
+  [4;36;1mSQL (12.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424195513')[0m
+  [4;35;1mSQL (7.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090424200003')[0m
+  [4;36;1mSQL (8.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427135631')[0m
+  [4;35;1mSQL (15.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427220624')[0m
+  [4;36;1mSQL (11.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427224059')[0m
+  [4;35;1mSQL (7.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427135556')[0m
+  [4;36;1mSQL (7.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424195522')[0m
+  [4;35;1mSQL (7.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427180121')[0m
+  [4;36;1mSQL (8.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427135712')[0m
+  [4;35;1mSQL (11.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427135726')[0m
+  [4;36;1mSQL (11.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424184002')[0m
+  [4;35;1mSQL (7.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427194625')[0m
+  [4;36;1mSQL (29.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427194739')[0m
+  [4;35;1mSQL (11.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427220350')[0m
+  [4;36;1mSQL (9.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427140326')[0m
+  [4;35;1mSQL (8.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090424195642')[0m
+  [4;36;1mSQL (10.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427215555')[0m
+  [4;35;1mSQL (11.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427140058')[0m
+  [4;36;1mSQL (6.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424125922')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.6ms)[0m   [0mCREATE TABLE "areas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "cidade_id" integer, "roteiro_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.4ms)[0m   [0mCREATE TABLE "cidades" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (12.7ms)[0m   [0mCREATE TABLE "clientes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipo_cliente" varchar(1), "cpf_cnpj" varchar(14), "razao_social" varchar(255), "nome_fantasia" varchar(255), "documento" varchar(255), "endereco" varchar(255), "complemento" varchar(255), "cidade_id" integer, "uf_id" integer, "cep" varchar(255), "referencia" varchar(255), "fone_pessoal" varchar(255), "fone_comercial" varchar(255), "fone_celular" varchar(255), "endereco_entrega" varchar(255), "regiao_entrega_id" integer, "cidade_entrega_id" varchar(255), "area_id" varchar(255), "referencias_bancaria" text, "referencias_comerciais" text, "observacao" text, "info_serasa" text, "data_nascimento" date, "nome_comprador" varchar(255), "vendas_suspensas" boolean, "observacao_suspensao_venda" text, "limite_credito" decimal(12,2), "saldo_devedor" decimal(12,2), "status" varchar(255), "prazo_medio_maximo" integer, "data_inclusao_prazo_medio" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (5.4ms)[0m   [0mCREATE TABLE "cores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.2ms)[0m   [0mCREATE TABLE "expedicoes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "minuta_id" integer, "produto_id" integer, "numero_do_volume" varchar(255), "qtd_carregada" decimal, "qtd_minuta" decimal, "vidro" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (28.2ms)[0m   [0mCREATE TABLE "funcionarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipo" varchar(1), "nome" varchar(255), "endereco" varchar(255), "complemento" varchar(255), "cep" varchar(255), "cidade_id" integer, "uf" varchar(255), "fone" varchar(255), "cpf" varchar(255), "rg" varchar(255), "pai" varchar(255), "mae" varchar(255), "numero_carteira_trabalho" varchar(255), "serie_carteira_trabalho" varchar(255), "titulo_eleitor" varchar(255), "zona_eleitoral" varchar(255), "admissao" date, "registro" date, "nascimento" date, "naturalidade" varchar(255), "estado_civil" varchar(255), "grau_instrucao" varchar(255), "cadastro_pis" date, "numero_pis" varchar(255), "cod_banco_pis" varchar(255), "nome_banco_pis" varchar(255), "cod_agencia_pis" varchar(255), "nome_agencia_pis" varchar(255), "endereco_banco_pis" varchar(255), "demissao" date, "observacao" text, "aci" text, "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (9.1ms)[0m   [0mCREATE TABLE "grupos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "margem_lucro" decimal, "unificado" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (19.6ms)[0m   [0mCREATE TABLE "item_pedidos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "kit_id" integer, "quantidade" decimal, "valor_tabela" decimal, "valor_venda" decimal, "desconto" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.5ms)[0m   [0mCREATE TABLE "itens_minutas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "produto_id" integer, "qtde" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (6.7ms)[0m   [0mCREATE TABLE "itensnotasfiscais" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "numero_nota" integer, "produto_id" integer, "unidade_medida" varchar(255), "quantidade" decimal, "valor_item_faturado" decimal, "valor_item_original" decimal, "situacao_tributaria_item" varchar(255), "percentual_icms_item" decimal, "percentual_ipi_item" decimal, "peso_liquido" decimal, "cod_emissao_nf" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.6ms)[0m   [0mCREATE TABLE "meta_produtos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mes" integer, "ano" integer, "qdt_dias_uteis" integer, "data_ini" date, "data_fim" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (14.6ms)[0m   [0mCREATE TABLE "minutas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "data" date, "fechamento" date, "operador_fechamento_id" integer, "saida" date, "obs" text, "veiculo_id" integer, "fechamento_financeiro" date, "funcionario_fechamento_financeiro_id" integer, "roteiro_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (10.4ms)[0m   [0mCREATE TABLE "notasfiscais" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "numero_nota" integer, "numero_pedido_id" integer, "numero_selo" varchar(255), "numero_serie" varchar(255), "cliente_id" varchar(255), "percentual_icms" decimal, "emissao" date, "total_mercadoria" decimal, "valor_frete" decimal, "cfop" varchar(255), "natureza_operacao" varchar(255), "valor_ipi" decimal, "valor_desconto" decimal, "valor_acrescimo" decimal, "total_nota" decimal, "status" varchar(255), "base_calculo_icms" decimal, "valor_icms" decimal, "qtde_volumes" integer, "entrada" datetime, "saida" datetime, "transportadora_id" integer, "percentual_desconto" decimal, "observacao" text, "base_calculo_icms_substituicao_tributaria" decimal, "percentual_icms_substituicao_tributaria" decimal, "valor_icms_substituicao_tributaria" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (20.9ms)[0m   [0mCREATE TABLE "pedidos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "oficial" boolean, "data" date, "previsao_entrega" date, "entrega" date, "programacao" date, "cliente_id" integer, "valor" decimal(8,2), "preco_tabela" decimal(8,2), "acrescimo" decimal(3,2), "desconto" decimal(3,2), "transportadora_id" integer, "nome_comprador" varchar(255), "observacao" text, "vendedor_id" integer, "operador_id" integer, "telemarketing_id" integer, "plano_pagamento_id" integer, "endereco_entrega" varchar(255), "minuta_id" integer, "area_id" integer, "preco_especial" boolean, "status" varchar(255), "estorno" date, "funcionario_estorno_id" integer, "comissao_vendedor" decimal(3,2), "comissao_telemarketing" decimal(3,2), "venda_externa" boolean, "desconto_complementar" decimal(3,2), "autorizador_desconto_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (11.5ms)[0m   [0mCREATE TABLE "produtos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "cor_id" integer, "valor_especial" decimal, "valor_normal" decimal, "classe_id" integer, "grupo_id" integer, "status" boolean, "situacao_tributaria" integer, "preco_minimo_nota_fiscal" decimal, "ipi" decimal, "classificacao_fiscal" integer, "peso_liquido" integer, "cod_emissao_nota_fiscal" integer, "descricao_nota_fiscal" varchar(255), "preco_normal_zona1" decimal, "preco_especial_zona1" decimal, "funcionario_id" integer, "emissao_relatorio" boolean, "custo" decimal, "cadastro_custo" date, "kit" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.0ms)[0m   [0mCREATE TABLE "regioes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.5ms)[0m   [0mCREATE TABLE "roteiros" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "funcionario_id" integer, "regiao_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (6.7ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (11.0ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (8.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427225739')[0m
+  [4;36;1mSQL (9.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424195513')[0m
+  [4;35;1mSQL (11.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090424200003')[0m
+  [4;36;1mSQL (10.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427135631')[0m
+  [4;35;1mSQL (7.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427220624')[0m
+  [4;36;1mSQL (7.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427224059')[0m
+  [4;35;1mSQL (16.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427135556')[0m
+  [4;36;1mSQL (11.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424195522')[0m
+  [4;35;1mSQL (11.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427180121')[0m
+  [4;36;1mSQL (7.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427135712')[0m
+  [4;35;1mSQL (8.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427135726')[0m
+  [4;36;1mSQL (3.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424184002')[0m
+  [4;35;1mSQL (12.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427194625')[0m
+  [4;36;1mSQL (11.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427194739')[0m
+  [4;35;1mSQL (6.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427220350')[0m
+  [4;36;1mSQL (4.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427140326')[0m
+  [4;35;1mSQL (7.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090424195642')[0m
+  [4;36;1mSQL (12.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427215555')[0m
+  [4;35;1mSQL (11.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427140058')[0m
+  [4;36;1mSQL (11.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424125922')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (6.2ms)[0m   [0mCREATE TABLE "areas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "cidade_id" integer, "roteiro_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (16.2ms)[0m   [0mCREATE TABLE "cidades" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (13.3ms)[0m   [0mCREATE TABLE "clientes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipo_cliente" varchar(1), "cpf_cnpj" varchar(14), "razao_social" varchar(255), "nome_fantasia" varchar(255), "documento" varchar(255), "endereco" varchar(255), "complemento" varchar(255), "cidade_id" integer, "uf_id" integer, "cep" varchar(255), "referencia" varchar(255), "fone_pessoal" varchar(255), "fone_comercial" varchar(255), "fone_celular" varchar(255), "endereco_entrega" varchar(255), "regiao_entrega_id" integer, "cidade_entrega_id" varchar(255), "area_id" varchar(255), "referencias_bancaria" text, "referencias_comerciais" text, "observacao" text, "info_serasa" text, "data_nascimento" date, "nome_comprador" varchar(255), "vendas_suspensas" boolean, "observacao_suspensao_venda" text, "limite_credito" decimal(12,2), "saldo_devedor" decimal(12,2), "status" varchar(255), "prazo_medio_maximo" integer, "data_inclusao_prazo_medio" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (5.3ms)[0m   [0mCREATE TABLE "cores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.4ms)[0m   [0mCREATE TABLE "expedicoes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "minuta_id" integer, "produto_id" integer, "numero_do_volume" varchar(255), "qtd_carregada" decimal, "qtd_minuta" decimal, "vidro" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (13.0ms)[0m   [0mCREATE TABLE "funcionarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipo" varchar(1), "nome" varchar(255), "endereco" varchar(255), "complemento" varchar(255), "cep" varchar(255), "cidade_id" integer, "uf" varchar(255), "fone" varchar(255), "cpf" varchar(255), "rg" varchar(255), "pai" varchar(255), "mae" varchar(255), "numero_carteira_trabalho" varchar(255), "serie_carteira_trabalho" varchar(255), "titulo_eleitor" varchar(255), "zona_eleitoral" varchar(255), "admissao" date, "registro" date, "nascimento" date, "naturalidade" varchar(255), "estado_civil" varchar(255), "grau_instrucao" varchar(255), "cadastro_pis" date, "numero_pis" varchar(255), "cod_banco_pis" varchar(255), "nome_banco_pis" varchar(255), "cod_agencia_pis" varchar(255), "nome_agencia_pis" varchar(255), "endereco_banco_pis" varchar(255), "demissao" date, "observacao" text, "aci" text, "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.8ms)[0m   [0mCREATE TABLE "grupos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "margem_lucro" decimal, "unificado" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.0ms)[0m   [0mCREATE TABLE "item_pedidos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "kit_id" integer, "quantidade" decimal, "valor_tabela" decimal, "valor_venda" decimal, "desconto" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.3ms)[0m   [0mCREATE TABLE "itens_minutas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "produto_id" integer, "qtde" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (14.3ms)[0m   [0mCREATE TABLE "itensnotasfiscais" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "numero_nota" integer, "produto_id" integer, "unidade_medida" varchar(255), "quantidade" decimal, "valor_item_faturado" decimal, "valor_item_original" decimal, "situacao_tributaria_item" varchar(255), "percentual_icms_item" decimal, "percentual_ipi_item" decimal, "peso_liquido" decimal, "cod_emissao_nf" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.4ms)[0m   [0mCREATE TABLE "meta_produtos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mes" integer, "ano" integer, "qdt_dias_uteis" integer, "data_ini" date, "data_fim" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (6.7ms)[0m   [0mCREATE TABLE "minutas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "data" date, "fechamento" date, "operador_fechamento_id" integer, "saida" date, "obs" text, "veiculo_id" integer, "fechamento_financeiro" date, "funcionario_fechamento_financeiro_id" integer, "roteiro_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.7ms)[0m   [0mCREATE TABLE "notasfiscais" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "numero_nota" integer, "numero_pedido_id" integer, "numero_selo" varchar(255), "numero_serie" varchar(255), "cliente_id" varchar(255), "percentual_icms" decimal, "emissao" date, "total_mercadoria" decimal, "valor_frete" decimal, "cfop" varchar(255), "natureza_operacao" varchar(255), "valor_ipi" decimal, "valor_desconto" decimal, "valor_acrescimo" decimal, "total_nota" decimal, "status" varchar(255), "base_calculo_icms" decimal, "valor_icms" decimal, "qtde_volumes" integer, "entrada" datetime, "saida" datetime, "transportadora_id" integer, "percentual_desconto" decimal, "observacao" text, "base_calculo_icms_substituicao_tributaria" decimal, "percentual_icms_substituicao_tributaria" decimal, "valor_icms_substituicao_tributaria" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (9.5ms)[0m   [0mCREATE TABLE "pedidos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "oficial" boolean, "data" date, "previsao_entrega" date, "entrega" date, "programacao" date, "cliente_id" integer, "valor" decimal(8,2), "preco_tabela" decimal(8,2), "acrescimo" decimal(3,2), "desconto" decimal(3,2), "transportadora_id" integer, "nome_comprador" varchar(255), "observacao" text, "vendedor_id" integer, "operador_id" integer, "telemarketing_id" integer, "plano_pagamento_id" integer, "endereco_entrega" varchar(255), "minuta_id" integer, "area_id" integer, "preco_especial" boolean, "status" varchar(255), "estorno" date, "funcionario_estorno_id" integer, "comissao_vendedor" decimal(3,2), "comissao_telemarketing" decimal(3,2), "venda_externa" boolean, "desconto_complementar" decimal(3,2), "autorizador_desconto_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (13.3ms)[0m   [0mCREATE TABLE "produtos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "cor_id" integer, "valor_especial" decimal, "valor_normal" decimal, "classe_id" integer, "grupo_id" integer, "status" boolean, "situacao_tributaria" integer, "preco_minimo_nota_fiscal" decimal, "ipi" decimal, "classificacao_fiscal" integer, "peso_liquido" integer, "cod_emissao_nota_fiscal" integer, "descricao_nota_fiscal" varchar(255), "preco_normal_zona1" decimal, "preco_especial_zona1" decimal, "funcionario_id" integer, "emissao_relatorio" boolean, "custo" decimal, "cadastro_custo" date, "kit" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.0ms)[0m   [0mCREATE TABLE "regioes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (20.2ms)[0m   [0mCREATE TABLE "roteiros" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "funcionario_id" integer, "regiao_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (18.0ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (6.2ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (8.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427225739')[0m
+  [4;36;1mSQL (11.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424195513')[0m
+  [4;35;1mSQL (10.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090424200003')[0m
+  [4;36;1mSQL (7.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427135631')[0m
+  [4;35;1mSQL (6.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427220624')[0m
+  [4;36;1mSQL (4.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427224059')[0m
+  [4;35;1mSQL (12.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427135556')[0m
+  [4;36;1mSQL (11.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424195522')[0m
+  [4;35;1mSQL (11.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427180121')[0m
+  [4;36;1mSQL (7.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427135712')[0m
+  [4;35;1mSQL (12.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427135726')[0m
+  [4;36;1mSQL (11.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424184002')[0m
+  [4;35;1mSQL (11.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427194625')[0m
+  [4;36;1mSQL (7.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427194739')[0m
+  [4;35;1mSQL (12.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427220350')[0m
+  [4;36;1mSQL (11.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427140326')[0m
+  [4;35;1mSQL (11.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090424195642')[0m
+  [4;36;1mSQL (11.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427215555')[0m
+  [4;35;1mSQL (8.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427140058')[0m
+  [4;36;1mSQL (11.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424125922')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (16.0ms)[0m   [0mCREATE TABLE "areas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "cidade_id" integer, "roteiro_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (6.3ms)[0m   [0mCREATE TABLE "cidades" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (6.4ms)[0m   [0mCREATE TABLE "clientes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipo_cliente" varchar(1), "cpf_cnpj" varchar(14), "razao_social" varchar(255), "nome_fantasia" varchar(255), "documento" varchar(255), "endereco" varchar(255), "complemento" varchar(255), "cidade_id" integer, "uf_id" integer, "cep" varchar(255), "referencia" varchar(255), "fone_pessoal" varchar(255), "fone_comercial" varchar(255), "fone_celular" varchar(255), "endereco_entrega" varchar(255), "regiao_entrega_id" integer, "cidade_entrega_id" varchar(255), "area_id" varchar(255), "referencias_bancaria" text, "referencias_comerciais" text, "observacao" text, "info_serasa" text, "data_nascimento" date, "nome_comprador" varchar(255), "vendas_suspensas" boolean, "observacao_suspensao_venda" text, "limite_credito" decimal(12,2), "saldo_devedor" decimal(12,2), "status" varchar(255), "prazo_medio_maximo" integer, "data_inclusao_prazo_medio" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.7ms)[0m   [0mCREATE TABLE "cores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.3ms)[0m   [0mCREATE TABLE "expedicoes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "minuta_id" integer, "produto_id" integer, "numero_do_volume" varchar(255), "qtd_carregada" decimal, "qtd_minuta" decimal, "vidro" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (40.6ms)[0m   [0mCREATE TABLE "funcionarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipo" varchar(1), "nome" varchar(255), "endereco" varchar(255), "complemento" varchar(255), "cep" varchar(255), "cidade_id" integer, "uf" varchar(255), "fone" varchar(255), "cpf" varchar(255), "rg" varchar(255), "pai" varchar(255), "mae" varchar(255), "numero_carteira_trabalho" varchar(255), "serie_carteira_trabalho" varchar(255), "titulo_eleitor" varchar(255), "zona_eleitoral" varchar(255), "admissao" date, "registro" date, "nascimento" date, "naturalidade" varchar(255), "estado_civil" varchar(255), "grau_instrucao" varchar(255), "cadastro_pis" date, "numero_pis" varchar(255), "cod_banco_pis" varchar(255), "nome_banco_pis" varchar(255), "cod_agencia_pis" varchar(255), "nome_agencia_pis" varchar(255), "endereco_banco_pis" varchar(255), "demissao" date, "observacao" text, "aci" text, "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.8ms)[0m   [0mCREATE TABLE "grupos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "margem_lucro" decimal, "unificado" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.8ms)[0m   [0mCREATE TABLE "item_pedidos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "kit_id" integer, "quantidade" decimal, "valor_tabela" decimal, "valor_venda" decimal, "desconto" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.6ms)[0m   [0mCREATE TABLE "itens_minutas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "produto_id" integer, "qtde" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (22.3ms)[0m   [0mCREATE TABLE "itensnotasfiscais" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "numero_nota" integer, "produto_id" integer, "unidade_medida" varchar(255), "quantidade" decimal, "valor_item_faturado" decimal, "valor_item_original" decimal, "situacao_tributaria_item" varchar(255), "percentual_icms_item" decimal, "percentual_ipi_item" decimal, "peso_liquido" decimal, "cod_emissao_nf" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.3ms)[0m   [0mCREATE TABLE "meta_produtos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mes" integer, "ano" integer, "qdt_dias_uteis" integer, "data_ini" date, "data_fim" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (9.7ms)[0m   [0mCREATE TABLE "minutas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "data" date, "fechamento" date, "operador_fechamento_id" integer, "saida" date, "obs" text, "veiculo_id" integer, "fechamento_financeiro" date, "funcionario_fechamento_financeiro_id" integer, "roteiro_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.3ms)[0m   [0mCREATE TABLE "notasfiscais" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "numero_nota" integer, "numero_pedido_id" integer, "numero_selo" varchar(255), "numero_serie" varchar(255), "cliente_id" varchar(255), "percentual_icms" decimal, "emissao" date, "total_mercadoria" decimal, "valor_frete" decimal, "cfop" varchar(255), "natureza_operacao" varchar(255), "valor_ipi" decimal, "valor_desconto" decimal, "valor_acrescimo" decimal, "total_nota" decimal, "status" varchar(255), "base_calculo_icms" decimal, "valor_icms" decimal, "qtde_volumes" integer, "entrada" datetime, "saida" datetime, "transportadora_id" integer, "percentual_desconto" decimal, "observacao" text, "base_calculo_icms_substituicao_tributaria" decimal, "percentual_icms_substituicao_tributaria" decimal, "valor_icms_substituicao_tributaria" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (13.2ms)[0m   [0mCREATE TABLE "pedidos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "oficial" boolean, "data" date, "previsao_entrega" date, "entrega" date, "programacao" date, "cliente_id" integer, "valor" decimal(8,2), "preco_tabela" decimal(8,2), "acrescimo" decimal(3,2), "desconto" decimal(3,2), "transportadora_id" integer, "nome_comprador" varchar(255), "observacao" text, "vendedor_id" integer, "operador_id" integer, "telemarketing_id" integer, "plano_pagamento_id" integer, "endereco_entrega" varchar(255), "minuta_id" integer, "area_id" integer, "preco_especial" boolean, "status" varchar(255), "estorno" date, "funcionario_estorno_id" integer, "comissao_vendedor" decimal(3,2), "comissao_telemarketing" decimal(3,2), "venda_externa" boolean, "desconto_complementar" decimal(3,2), "autorizador_desconto_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (12.8ms)[0m   [0mCREATE TABLE "produtos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "cor_id" integer, "valor_especial" decimal, "valor_normal" decimal, "classe_id" integer, "grupo_id" integer, "status" boolean, "situacao_tributaria" integer, "preco_minimo_nota_fiscal" decimal, "ipi" decimal, "classificacao_fiscal" integer, "peso_liquido" integer, "cod_emissao_nota_fiscal" integer, "descricao_nota_fiscal" varchar(255), "preco_normal_zona1" decimal, "preco_especial_zona1" decimal, "funcionario_id" integer, "emissao_relatorio" boolean, "custo" decimal, "cadastro_custo" date, "kit" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mCREATE TABLE "regioes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.4ms)[0m   [0mCREATE TABLE "roteiros" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "funcionario_id" integer, "regiao_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.4ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (7.8ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (7.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427225739')[0m
+  [4;36;1mSQL (19.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424195513')[0m
+  [4;35;1mSQL (27.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090424200003')[0m
+  [4;36;1mSQL (11.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427135631')[0m
+  [4;35;1mSQL (10.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427220624')[0m
+  [4;36;1mSQL (10.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427224059')[0m
+  [4;35;1mSQL (10.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427135556')[0m
+  [4;36;1mSQL (10.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424195522')[0m
+  [4;35;1mSQL (10.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427180121')[0m
+  [4;36;1mSQL (10.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427135712')[0m
+  [4;35;1mSQL (10.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427135726')[0m
+  [4;36;1mSQL (10.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424184002')[0m
+  [4;35;1mSQL (3.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427194625')[0m
+  [4;36;1mSQL (7.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427194739')[0m
+  [4;35;1mSQL (10.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427220350')[0m
+  [4;36;1mSQL (10.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427140326')[0m
+  [4;35;1mSQL (10.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090424195642')[0m
+  [4;36;1mSQL (10.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427215555')[0m
+  [4;35;1mSQL (10.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427140058')[0m
+  [4;36;1mSQL (10.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424125922')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (19.1ms)[0m   [0mCREATE TABLE "areas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "cidade_id" integer, "roteiro_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (13.2ms)[0m   [0mCREATE TABLE "cidades" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (14.5ms)[0m   [0mCREATE TABLE "clientes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipo_cliente" varchar(1), "cpf_cnpj" varchar(14), "razao_social" varchar(255), "nome_fantasia" varchar(255), "documento" varchar(255), "endereco" varchar(255), "complemento" varchar(255), "cidade_id" integer, "uf_id" integer, "cep" varchar(255), "referencia" varchar(255), "fone_pessoal" varchar(255), "fone_comercial" varchar(255), "fone_celular" varchar(255), "endereco_entrega" varchar(255), "regiao_entrega_id" integer, "cidade_entrega_id" varchar(255), "area_id" varchar(255), "referencias_bancaria" text, "referencias_comerciais" text, "observacao" text, "info_serasa" text, "data_nascimento" date, "nome_comprador" varchar(255), "vendas_suspensas" boolean, "observacao_suspensao_venda" text, "limite_credito" decimal(12,2), "saldo_devedor" decimal(12,2), "status" varchar(255), "prazo_medio_maximo" integer, "data_inclusao_prazo_medio" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (5.2ms)[0m   [0mCREATE TABLE "cores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.3ms)[0m   [0mCREATE TABLE "expedicoes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "minuta_id" integer, "produto_id" integer, "numero_do_volume" varchar(255), "qtd_carregada" decimal, "qtd_minuta" decimal, "vidro" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (33.5ms)[0m   [0mCREATE TABLE "funcionarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipo" varchar(1), "nome" varchar(255), "endereco" varchar(255), "complemento" varchar(255), "cep" varchar(255), "cidade_id" integer, "uf" varchar(255), "fone" varchar(255), "cpf" varchar(255), "rg" varchar(255), "pai" varchar(255), "mae" varchar(255), "numero_carteira_trabalho" varchar(255), "serie_carteira_trabalho" varchar(255), "titulo_eleitor" varchar(255), "zona_eleitoral" varchar(255), "admissao" date, "registro" date, "nascimento" date, "naturalidade" varchar(255), "estado_civil" varchar(255), "grau_instrucao" varchar(255), "cadastro_pis" date, "numero_pis" varchar(255), "cod_banco_pis" varchar(255), "nome_banco_pis" varchar(255), "cod_agencia_pis" varchar(255), "nome_agencia_pis" varchar(255), "endereco_banco_pis" varchar(255), "demissao" date, "observacao" text, "aci" text, "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.7ms)[0m   [0mCREATE TABLE "grupos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "margem_lucro" decimal, "unificado" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.7ms)[0m   [0mCREATE TABLE "item_pedidos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "kit_id" integer, "quantidade" decimal, "valor_tabela" decimal, "valor_venda" decimal, "desconto" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.7ms)[0m   [0mCREATE TABLE "itens_minutas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "produto_id" integer, "qtde" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (6.2ms)[0m   [0mCREATE TABLE "itensnotasfiscais" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "numero_nota" integer, "produto_id" integer, "unidade_medida" varchar(255), "quantidade" decimal, "valor_item_faturado" decimal, "valor_item_original" decimal, "situacao_tributaria_item" varchar(255), "percentual_icms_item" decimal, "percentual_ipi_item" decimal, "peso_liquido" decimal, "cod_emissao_nf" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.4ms)[0m   [0mCREATE TABLE "meta_produtos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mes" integer, "ano" integer, "qdt_dias_uteis" integer, "data_ini" date, "data_fim" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (6.4ms)[0m   [0mCREATE TABLE "minutas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "data" date, "fechamento" date, "operador_fechamento_id" integer, "saida" date, "obs" text, "veiculo_id" integer, "fechamento_financeiro" date, "funcionario_fechamento_financeiro_id" integer, "roteiro_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.3ms)[0m   [0mCREATE TABLE "notasfiscais" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "numero_nota" integer, "numero_pedido_id" integer, "numero_selo" varchar(255), "numero_serie" varchar(255), "cliente_id" varchar(255), "percentual_icms" decimal, "emissao" date, "total_mercadoria" decimal, "valor_frete" decimal, "cfop" varchar(255), "natureza_operacao" varchar(255), "valor_ipi" decimal, "valor_desconto" decimal, "valor_acrescimo" decimal, "total_nota" decimal, "status" varchar(255), "base_calculo_icms" decimal, "valor_icms" decimal, "qtde_volumes" integer, "entrada" datetime, "saida" datetime, "transportadora_id" integer, "percentual_desconto" decimal, "observacao" text, "base_calculo_icms_substituicao_tributaria" decimal, "percentual_icms_substituicao_tributaria" decimal, "valor_icms_substituicao_tributaria" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.2ms)[0m   [0mCREATE TABLE "pedidos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "oficial" boolean, "data" date, "previsao_entrega" date, "entrega" date, "programacao" date, "cliente_id" integer, "valor" decimal(8,2), "preco_tabela" decimal(8,2), "acrescimo" decimal(3,2), "desconto" decimal(3,2), "transportadora_id" integer, "nome_comprador" varchar(255), "observacao" text, "vendedor_id" integer, "operador_id" integer, "telemarketing_id" integer, "plano_pagamento_id" integer, "endereco_entrega" varchar(255), "minuta_id" integer, "area_id" integer, "preco_especial" boolean, "status" varchar(255), "estorno" date, "funcionario_estorno_id" integer, "comissao_vendedor" decimal(3,2), "comissao_telemarketing" decimal(3,2), "venda_externa" boolean, "desconto_complementar" decimal(3,2), "autorizador_desconto_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (14.8ms)[0m   [0mCREATE TABLE "produtos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "cor_id" integer, "valor_especial" decimal, "valor_normal" decimal, "classe_id" integer, "grupo_id" integer, "status" boolean, "situacao_tributaria" integer, "preco_minimo_nota_fiscal" decimal, "ipi" decimal, "classificacao_fiscal" integer, "peso_liquido" integer, "cod_emissao_nota_fiscal" integer, "descricao_nota_fiscal" varchar(255), "preco_normal_zona1" decimal, "preco_especial_zona1" decimal, "funcionario_id" integer, "emissao_relatorio" boolean, "custo" decimal, "cadastro_custo" date, "kit" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.8ms)[0m   [0mCREATE TABLE "regioes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.2ms)[0m   [0mCREATE TABLE "roteiros" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "funcionario_id" integer, "regiao_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (29.0ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (7.1ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (35.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427225739')[0m
+  [4;36;1mSQL (11.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424195513')[0m
+  [4;35;1mSQL (16.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090424200003')[0m
+  [4;36;1mSQL (8.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427135631')[0m
+  [4;35;1mSQL (6.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427220624')[0m
+  [4;36;1mSQL (7.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427224059')[0m
+  [4;35;1mSQL (7.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427135556')[0m
+  [4;36;1mSQL (3.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424195522')[0m
+  [4;35;1mSQL (7.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427180121')[0m
+  [4;36;1mSQL (8.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427135712')[0m
+  [4;35;1mSQL (6.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427135726')[0m
+  [4;36;1mSQL (3.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424184002')[0m
+  [4;35;1mSQL (7.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427194625')[0m
+  [4;36;1mSQL (8.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427194739')[0m
+  [4;35;1mSQL (6.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427220350')[0m
+  [4;36;1mSQL (7.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427140326')[0m
+  [4;35;1mSQL (7.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090424195642')[0m
+  [4;36;1mSQL (7.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427215555')[0m
+  [4;35;1mSQL (7.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427140058')[0m
+  [4;36;1mSQL (7.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424125922')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (9.7ms)[0m   [0mCREATE TABLE "areas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "cidade_id" integer, "roteiro_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (14.7ms)[0m   [0mCREATE TABLE "cidades" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (17.4ms)[0m   [0mCREATE TABLE "clientes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipo_cliente" varchar(1), "cpf_cnpj" varchar(14), "razao_social" varchar(255), "nome_fantasia" varchar(255), "documento" varchar(255), "endereco" varchar(255), "complemento" varchar(255), "cidade_id" integer, "uf_id" integer, "cep" varchar(255), "referencia" varchar(255), "fone_pessoal" varchar(255), "fone_comercial" varchar(255), "fone_celular" varchar(255), "endereco_entrega" varchar(255), "regiao_entrega_id" integer, "cidade_entrega_id" varchar(255), "area_id" varchar(255), "referencias_bancaria" text, "referencias_comerciais" text, "observacao" text, "info_serasa" text, "data_nascimento" date, "nome_comprador" varchar(255), "vendas_suspensas" boolean, "observacao_suspensao_venda" text, "limite_credito" decimal(12,2), "saldo_devedor" decimal(12,2), "status" varchar(255), "prazo_medio_maximo" integer, "data_inclusao_prazo_medio" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (5.3ms)[0m   [0mCREATE TABLE "cores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.2ms)[0m   [0mCREATE TABLE "expedicoes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "minuta_id" integer, "produto_id" integer, "numero_do_volume" varchar(255), "qtd_carregada" decimal, "qtd_minuta" decimal, "vidro" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.1ms)[0m   [0mCREATE TABLE "funcionarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipo" varchar(1), "nome" varchar(255), "endereco" varchar(255), "complemento" varchar(255), "cep" varchar(255), "cidade_id" integer, "uf" varchar(255), "fone" varchar(255), "cpf" varchar(255), "rg" varchar(255), "pai" varchar(255), "mae" varchar(255), "numero_carteira_trabalho" varchar(255), "serie_carteira_trabalho" varchar(255), "titulo_eleitor" varchar(255), "zona_eleitoral" varchar(255), "admissao" date, "registro" date, "nascimento" date, "naturalidade" varchar(255), "estado_civil" varchar(255), "grau_instrucao" varchar(255), "cadastro_pis" date, "numero_pis" varchar(255), "cod_banco_pis" varchar(255), "nome_banco_pis" varchar(255), "cod_agencia_pis" varchar(255), "nome_agencia_pis" varchar(255), "endereco_banco_pis" varchar(255), "demissao" date, "observacao" text, "aci" text, "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (17.1ms)[0m   [0mCREATE TABLE "grupos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "margem_lucro" decimal, "unificado" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.2ms)[0m   [0mCREATE TABLE "item_pedidos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "kit_id" integer, "quantidade" decimal, "valor_tabela" decimal, "valor_venda" decimal, "desconto" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.4ms)[0m   [0mCREATE TABLE "itens_minutas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "produto_id" integer, "qtde" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (18.5ms)[0m   [0mCREATE TABLE "itensnotasfiscais" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "numero_nota" integer, "produto_id" integer, "unidade_medida" varchar(255), "quantidade" decimal, "valor_item_faturado" decimal, "valor_item_original" decimal, "situacao_tributaria_item" varchar(255), "percentual_icms_item" decimal, "percentual_ipi_item" decimal, "peso_liquido" decimal, "cod_emissao_nf" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.5ms)[0m   [0mCREATE TABLE "meta_produtos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mes" integer, "ano" integer, "qdt_dias_uteis" integer, "data_ini" date, "data_fim" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (6.8ms)[0m   [0mCREATE TABLE "minutas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "data" date, "fechamento" date, "operador_fechamento_id" integer, "saida" date, "obs" text, "veiculo_id" integer, "fechamento_financeiro" date, "funcionario_fechamento_financeiro_id" integer, "roteiro_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (16.0ms)[0m   [0mCREATE TABLE "notasfiscais" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "numero_nota" integer, "numero_pedido_id" integer, "numero_selo" varchar(255), "numero_serie" varchar(255), "cliente_id" varchar(255), "percentual_icms" decimal, "emissao" date, "total_mercadoria" decimal, "valor_frete" decimal, "cfop" varchar(255), "natureza_operacao" varchar(255), "valor_ipi" decimal, "valor_desconto" decimal, "valor_acrescimo" decimal, "total_nota" decimal, "status" varchar(255), "base_calculo_icms" decimal, "valor_icms" decimal, "qtde_volumes" integer, "entrada" datetime, "saida" datetime, "transportadora_id" integer, "percentual_desconto" decimal, "observacao" text, "base_calculo_icms_substituicao_tributaria" decimal, "percentual_icms_substituicao_tributaria" decimal, "valor_icms_substituicao_tributaria" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (11.7ms)[0m   [0mCREATE TABLE "pedidos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "oficial" boolean, "data" date, "previsao_entrega" date, "entrega" date, "programacao" date, "cliente_id" integer, "valor" decimal(8,2), "preco_tabela" decimal(8,2), "acrescimo" decimal(3,2), "desconto" decimal(3,2), "transportadora_id" integer, "nome_comprador" varchar(255), "observacao" text, "vendedor_id" integer, "operador_id" integer, "telemarketing_id" integer, "plano_pagamento_id" integer, "endereco_entrega" varchar(255), "minuta_id" integer, "area_id" integer, "preco_especial" boolean, "status" varchar(255), "estorno" date, "funcionario_estorno_id" integer, "comissao_vendedor" decimal(3,2), "comissao_telemarketing" decimal(3,2), "venda_externa" boolean, "desconto_complementar" decimal(3,2), "autorizador_desconto_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (6.3ms)[0m   [0mCREATE TABLE "produtos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "cor_id" integer, "valor_especial" decimal, "valor_normal" decimal, "classe_id" integer, "grupo_id" integer, "status" boolean, "situacao_tributaria" integer, "preco_minimo_nota_fiscal" decimal, "ipi" decimal, "classificacao_fiscal" integer, "peso_liquido" integer, "cod_emissao_nota_fiscal" integer, "descricao_nota_fiscal" varchar(255), "preco_normal_zona1" decimal, "preco_especial_zona1" decimal, "funcionario_id" integer, "emissao_relatorio" boolean, "custo" decimal, "cadastro_custo" date, "kit" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.6ms)[0m   [0mCREATE TABLE "regioes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (17.2ms)[0m   [0mCREATE TABLE "roteiros" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "funcionario_id" integer, "regiao_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (17.8ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (10.0ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (7.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427225739')[0m
+  [4;36;1mSQL (7.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424195513')[0m
+  [4;35;1mSQL (31.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090424200003')[0m
+  [4;36;1mSQL (7.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427135631')[0m
+  [4;35;1mSQL (27.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427220624')[0m
+  [4;36;1mSQL (7.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427224059')[0m
+  [4;35;1mSQL (7.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427135556')[0m
+  [4;36;1mSQL (7.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424195522')[0m
+  [4;35;1mSQL (7.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427180121')[0m
+  [4;36;1mSQL (3.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427135712')[0m
+  [4;35;1mSQL (3.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427135726')[0m
+  [4;36;1mSQL (8.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424184002')[0m
+  [4;35;1mSQL (7.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427194625')[0m
+  [4;36;1mSQL (8.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427194739')[0m
+  [4;35;1mSQL (7.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427220350')[0m
+  [4;36;1mSQL (8.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427140326')[0m
+  [4;35;1mSQL (7.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090424195642')[0m
+  [4;36;1mSQL (10.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427215555')[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427140058')[0m
+  [4;36;1mSQL (6.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424125922')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (6.8ms)[0m   [0mCREATE TABLE "areas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "cidade_id" integer, "roteiro_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (16.3ms)[0m   [0mCREATE TABLE "cidades" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (13.1ms)[0m   [0mCREATE TABLE "clientes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipo_cliente" varchar(1), "cpf_cnpj" varchar(14), "razao_social" varchar(255), "nome_fantasia" varchar(255), "documento" varchar(255), "endereco" varchar(255), "complemento" varchar(255), "cidade_id" integer, "uf_id" integer, "cep" varchar(255), "referencia" varchar(255), "fone_pessoal" varchar(255), "fone_comercial" varchar(255), "fone_celular" varchar(255), "endereco_entrega" varchar(255), "regiao_entrega_id" integer, "cidade_entrega_id" varchar(255), "area_id" varchar(255), "referencias_bancaria" text, "referencias_comerciais" text, "observacao" text, "info_serasa" text, "data_nascimento" date, "nome_comprador" varchar(255), "vendas_suspensas" boolean, "observacao_suspensao_venda" text, "limite_credito" decimal(12,2), "saldo_devedor" decimal(12,2), "status" varchar(255), "prazo_medio_maximo" integer, "data_inclusao_prazo_medio" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (5.3ms)[0m   [0mCREATE TABLE "cores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (3.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (22.1ms)[0m   [0mCREATE TABLE "expedicoes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "minuta_id" integer, "produto_id" integer, "numero_do_volume" varchar(255), "qtd_carregada" decimal, "qtd_minuta" decimal, "vidro" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (17.8ms)[0m   [0mCREATE TABLE "funcionarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipo" varchar(1), "nome" varchar(255), "endereco" varchar(255), "complemento" varchar(255), "cep" varchar(255), "cidade_id" integer, "uf" varchar(255), "fone" varchar(255), "cpf" varchar(255), "rg" varchar(255), "pai" varchar(255), "mae" varchar(255), "numero_carteira_trabalho" varchar(255), "serie_carteira_trabalho" varchar(255), "titulo_eleitor" varchar(255), "zona_eleitoral" varchar(255), "admissao" date, "registro" date, "nascimento" date, "naturalidade" varchar(255), "estado_civil" varchar(255), "grau_instrucao" varchar(255), "cadastro_pis" date, "numero_pis" varchar(255), "cod_banco_pis" varchar(255), "nome_banco_pis" varchar(255), "cod_agencia_pis" varchar(255), "nome_agencia_pis" varchar(255), "endereco_banco_pis" varchar(255), "demissao" date, "observacao" text, "aci" text, "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (18.5ms)[0m   [0mCREATE TABLE "grupos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "margem_lucro" decimal, "unificado" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.6ms)[0m   [0mCREATE TABLE "item_pedidos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "kit_id" integer, "quantidade" decimal, "valor_tabela" decimal, "valor_venda" decimal, "desconto" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (16.8ms)[0m   [0mCREATE TABLE "itens_minutas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "produto_id" integer, "qtde" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (18.6ms)[0m   [0mCREATE TABLE "itensnotasfiscais" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "numero_nota" integer, "produto_id" integer, "unidade_medida" varchar(255), "quantidade" decimal, "valor_item_faturado" decimal, "valor_item_original" decimal, "situacao_tributaria_item" varchar(255), "percentual_icms_item" decimal, "percentual_ipi_item" decimal, "peso_liquido" decimal, "cod_emissao_nf" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.2ms)[0m   [0mCREATE TABLE "meta_produtos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mes" integer, "ano" integer, "qdt_dias_uteis" integer, "data_ini" date, "data_fim" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (9.4ms)[0m   [0mCREATE TABLE "minutas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "data" date, "fechamento" date, "operador_fechamento_id" integer, "saida" date, "obs" text, "veiculo_id" integer, "fechamento_financeiro" date, "funcionario_fechamento_financeiro_id" integer, "roteiro_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.1ms)[0m   [0mCREATE TABLE "notasfiscais" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "numero_nota" integer, "numero_pedido_id" integer, "numero_selo" varchar(255), "numero_serie" varchar(255), "cliente_id" varchar(255), "percentual_icms" decimal, "emissao" date, "total_mercadoria" decimal, "valor_frete" decimal, "cfop" varchar(255), "natureza_operacao" varchar(255), "valor_ipi" decimal, "valor_desconto" decimal, "valor_acrescimo" decimal, "total_nota" decimal, "status" varchar(255), "base_calculo_icms" decimal, "valor_icms" decimal, "qtde_volumes" integer, "entrada" datetime, "saida" datetime, "transportadora_id" integer, "percentual_desconto" decimal, "observacao" text, "base_calculo_icms_substituicao_tributaria" decimal, "percentual_icms_substituicao_tributaria" decimal, "valor_icms_substituicao_tributaria" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (12.0ms)[0m   [0mCREATE TABLE "pedidos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "oficial" boolean, "data" date, "previsao_entrega" date, "entrega" date, "programacao" date, "cliente_id" integer, "valor" decimal(8,2), "preco_tabela" decimal(8,2), "acrescimo" decimal(3,2), "desconto" decimal(3,2), "transportadora_id" integer, "nome_comprador" varchar(255), "observacao" text, "vendedor_id" integer, "operador_id" integer, "telemarketing_id" integer, "plano_pagamento_id" integer, "endereco_entrega" varchar(255), "minuta_id" integer, "area_id" integer, "preco_especial" boolean, "status" varchar(255), "estorno" date, "funcionario_estorno_id" integer, "comissao_vendedor" decimal(3,2), "comissao_telemarketing" decimal(3,2), "venda_externa" boolean, "desconto_complementar" decimal(3,2), "autorizador_desconto_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (6.6ms)[0m   [0mCREATE TABLE "produtos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "cor_id" integer, "valor_especial" decimal, "valor_normal" decimal, "classe_id" integer, "grupo_id" integer, "status" boolean, "situacao_tributaria" integer, "preco_minimo_nota_fiscal" decimal, "ipi" decimal, "classificacao_fiscal" integer, "peso_liquido" integer, "cod_emissao_nota_fiscal" integer, "descricao_nota_fiscal" varchar(255), "preco_normal_zona1" decimal, "preco_especial_zona1" decimal, "funcionario_id" integer, "emissao_relatorio" boolean, "custo" decimal, "cadastro_custo" date, "kit" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.6ms)[0m   [0mCREATE TABLE "regioes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.7ms)[0m   [0mCREATE TABLE "roteiros" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "funcionario_id" integer, "regiao_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.7ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (20.1ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (1.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (6.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427225739')[0m
+  [4;36;1mSQL (3.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424195513')[0m
+  [4;35;1mSQL (7.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090424200003')[0m
+  [4;36;1mSQL (11.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427135631')[0m
+  [4;35;1mSQL (11.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427220624')[0m
+  [4;36;1mSQL (7.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427224059')[0m
+  [4;35;1mSQL (7.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427135556')[0m
+  [4;36;1mSQL (7.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424195522')[0m
+  [4;35;1mSQL (7.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427180121')[0m
+  [4;36;1mSQL (3.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427135712')[0m
+  [4;35;1mSQL (7.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427135726')[0m
+  [4;36;1mSQL (7.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424184002')[0m
+  [4;35;1mSQL (12.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427194625')[0m
+  [4;36;1mSQL (11.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427194739')[0m
+  [4;35;1mSQL (10.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427220350')[0m
+  [4;36;1mSQL (7.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427140326')[0m
+  [4;35;1mSQL (11.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090424195642')[0m
+  [4;36;1mSQL (8.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427215555')[0m
+  [4;35;1mSQL (7.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427140058')[0m
+  [4;36;1mSQL (3.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424125922')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mCREATE TABLE "areas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "cidade_id" integer, "roteiro_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.5ms)[0m   [0mCREATE TABLE "cidades" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (5.9ms)[0m   [0mCREATE TABLE "clientes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipo_cliente" varchar(1), "cpf_cnpj" varchar(14), "razao_social" varchar(255), "nome_fantasia" varchar(255), "documento" varchar(255), "endereco" varchar(255), "complemento" varchar(255), "cidade_id" integer, "uf_id" integer, "cep" varchar(255), "referencia" varchar(255), "fone_pessoal" varchar(255), "fone_comercial" varchar(255), "fone_celular" varchar(255), "endereco_entrega" varchar(255), "regiao_entrega_id" integer, "cidade_entrega_id" varchar(255), "area_id" varchar(255), "referencias_bancaria" text, "referencias_comerciais" text, "observacao" text, "info_serasa" text, "data_nascimento" date, "nome_comprador" varchar(255), "vendas_suspensas" boolean, "observacao_suspensao_venda" text, "limite_credito" decimal(12,2), "saldo_devedor" decimal(12,2), "status" varchar(255), "prazo_medio_maximo" integer, "data_inclusao_prazo_medio" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (20.7ms)[0m   [0mCREATE TABLE "cores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.3ms)[0m   [0mCREATE TABLE "expedicoes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "minuta_id" integer, "produto_id" integer, "numero_do_volume" varchar(255), "qtd_carregada" decimal, "qtd_minuta" decimal, "vidro" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (14.0ms)[0m   [0mCREATE TABLE "funcionarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipo" varchar(1), "nome" varchar(255), "endereco" varchar(255), "complemento" varchar(255), "cep" varchar(255), "cidade_id" integer, "uf" varchar(255), "fone" varchar(255), "cpf" varchar(255), "rg" varchar(255), "pai" varchar(255), "mae" varchar(255), "numero_carteira_trabalho" varchar(255), "serie_carteira_trabalho" varchar(255), "titulo_eleitor" varchar(255), "zona_eleitoral" varchar(255), "admissao" date, "registro" date, "nascimento" date, "naturalidade" varchar(255), "estado_civil" varchar(255), "grau_instrucao" varchar(255), "cadastro_pis" date, "numero_pis" varchar(255), "cod_banco_pis" varchar(255), "nome_banco_pis" varchar(255), "cod_agencia_pis" varchar(255), "nome_agencia_pis" varchar(255), "endereco_banco_pis" varchar(255), "demissao" date, "observacao" text, "aci" text, "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (6.2ms)[0m   [0mCREATE TABLE "grupos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "margem_lucro" decimal, "unificado" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.7ms)[0m   [0mCREATE TABLE "item_pedidos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "kit_id" integer, "quantidade" decimal, "valor_tabela" decimal, "valor_venda" decimal, "desconto" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.4ms)[0m   [0mCREATE TABLE "itens_minutas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "produto_id" integer, "qtde" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (12.8ms)[0m   [0mCREATE TABLE "itensnotasfiscais" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "numero_nota" integer, "produto_id" integer, "unidade_medida" varchar(255), "quantidade" decimal, "valor_item_faturado" decimal, "valor_item_original" decimal, "situacao_tributaria_item" varchar(255), "percentual_icms_item" decimal, "percentual_ipi_item" decimal, "peso_liquido" decimal, "cod_emissao_nf" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.4ms)[0m   [0mCREATE TABLE "meta_produtos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mes" integer, "ano" integer, "qdt_dias_uteis" integer, "data_ini" date, "data_fim" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (10.3ms)[0m   [0mCREATE TABLE "minutas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "data" date, "fechamento" date, "operador_fechamento_id" integer, "saida" date, "obs" text, "veiculo_id" integer, "fechamento_financeiro" date, "funcionario_fechamento_financeiro_id" integer, "roteiro_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.6ms)[0m   [0mCREATE TABLE "notasfiscais" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "numero_nota" integer, "numero_pedido_id" integer, "numero_selo" varchar(255), "numero_serie" varchar(255), "cliente_id" varchar(255), "percentual_icms" decimal, "emissao" date, "total_mercadoria" decimal, "valor_frete" decimal, "cfop" varchar(255), "natureza_operacao" varchar(255), "valor_ipi" decimal, "valor_desconto" decimal, "valor_acrescimo" decimal, "total_nota" decimal, "status" varchar(255), "base_calculo_icms" decimal, "valor_icms" decimal, "qtde_volumes" integer, "entrada" datetime, "saida" datetime, "transportadora_id" integer, "percentual_desconto" decimal, "observacao" text, "base_calculo_icms_substituicao_tributaria" decimal, "percentual_icms_substituicao_tributaria" decimal, "valor_icms_substituicao_tributaria" decimal, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.1ms)[0m   [0mCREATE TABLE "pedidos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "oficial" boolean, "data" date, "previsao_entrega" date, "entrega" date, "programacao" date, "cliente_id" integer, "valor" decimal(8,2), "preco_tabela" decimal(8,2), "acrescimo" decimal(3,2), "desconto" decimal(3,2), "transportadora_id" integer, "nome_comprador" varchar(255), "observacao" text, "vendedor_id" integer, "operador_id" integer, "telemarketing_id" integer, "plano_pagamento_id" integer, "endereco_entrega" varchar(255), "minuta_id" integer, "area_id" integer, "preco_especial" boolean, "status" varchar(255), "estorno" date, "funcionario_estorno_id" integer, "comissao_vendedor" decimal(3,2), "comissao_telemarketing" decimal(3,2), "venda_externa" boolean, "desconto_complementar" decimal(3,2), "autorizador_desconto_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (20.6ms)[0m   [0mCREATE TABLE "produtos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "cor_id" integer, "valor_especial" decimal, "valor_normal" decimal, "classe_id" integer, "grupo_id" integer, "status" boolean, "situacao_tributaria" integer, "preco_minimo_nota_fiscal" decimal, "ipi" decimal, "classificacao_fiscal" integer, "peso_liquido" integer, "cod_emissao_nota_fiscal" integer, "descricao_nota_fiscal" varchar(255), "preco_normal_zona1" decimal, "preco_especial_zona1" decimal, "funcionario_id" integer, "emissao_relatorio" boolean, "custo" decimal, "cadastro_custo" date, "kit" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (18.1ms)[0m   [0mCREATE TABLE "regioes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.9ms)[0m   [0mCREATE TABLE "roteiros" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "funcionario_id" integer, "regiao_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (9.0ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (11.2ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (18.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427225739')[0m
+  [4;36;1mSQL (8.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424195513')[0m
+  [4;35;1mSQL (10.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090424200003')[0m
+  [4;36;1mSQL (4.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427135631')[0m
+  [4;35;1mSQL (7.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427220624')[0m
+  [4;36;1mSQL (7.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427224059')[0m
+  [4;35;1mSQL (7.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427135556')[0m
+  [4;36;1mSQL (7.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424195522')[0m
+  [4;35;1mSQL (7.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427180121')[0m
+  [4;36;1mSQL (7.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427135712')[0m
+  [4;35;1mSQL (7.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427135726')[0m
+  [4;36;1mSQL (8.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424184002')[0m
+  [4;35;1mSQL (6.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427194625')[0m
+  [4;36;1mSQL (7.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427194739')[0m
+  [4;35;1mSQL (7.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427220350')[0m
+  [4;36;1mSQL (7.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427140326')[0m
+  [4;35;1mSQL (8.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090424195642')[0m
+  [4;36;1mSQL (7.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090427215555')[0m
+  [4;35;1mSQL (7.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090427140058')[0m
+  [4;36;1mSQL (28.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090424125922')[0m
