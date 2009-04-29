@@ -1,7 +1,6 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  nota_fiscal_id: 1
   produto_id: 1
   unidade_medida: MyString
   quantidade: 9.99
@@ -12,9 +11,9 @@ one:
   percentual_ipi_item: 9.99
   peso_liquido: 9.99
   cod_emissao_nf: 1
+  nota_fiscal_id: 1
 
 two:
-  nota_fiscal_id: 1
   produto_id: 1
   unidade_medida: MyString
   quantidade: 9.99
@@ -25,3 +24,4 @@ two:
   percentual_ipi_item: 9.99
   peso_liquido: 9.99
   cod_emissao_nf: 1
+  nota_fiscal_id: 1

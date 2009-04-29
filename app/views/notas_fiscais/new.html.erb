@@ -1,6 +1,6 @@
-<h1>Editing notafiscal</h1>
+<h1>New nota_fiscal</h1>
 
-<% form_for(@notafiscal) do |f| %>
+<% form_for(@nota_fiscal) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -8,16 +8,16 @@
     <%= f.text_field :numero_nota %>
   </p>
   <p>
-    <%= f.label :numero_pedido_id %><br />
-    <%= f.text_field :numero_pedido_id %>
+    <%= f.label :pedido_id %><br />
+    <%= f.text_field :pedido_id %>
   </p>
   <p>
-    <%= f.label :numero_selo %><br />
-    <%= f.text_field :numero_selo %>
+    <%= f.label :selo %><br />
+    <%= f.text_field :selo %>
   </p>
   <p>
-    <%= f.label :numero_serie %><br />
-    <%= f.text_field :numero_serie %>
+    <%= f.label :serie %><br />
+    <%= f.text_field :serie %>
   </p>
   <p>
     <%= f.label :cliente_id %><br />
@@ -56,10 +56,6 @@
     <%= f.text_field :valor_desconto %>
   </p>
   <p>
-    <%= f.label :valor_acrescimo %><br />
-    <%= f.text_field :valor_acrescimo %>
-  </p>
-  <p>
     <%= f.label :total_nota %><br />
     <%= f.text_field :total_nota %>
   </p>
@@ -81,11 +77,11 @@
   </p>
   <p>
     <%= f.label :entrada %><br />
-    <%= f.datetime_select :entrada %>
+    <%= f.date_select :entrada %>
   </p>
   <p>
     <%= f.label :saida %><br />
-    <%= f.datetime_select :saida %>
+    <%= f.date_select :saida %>
   </p>
   <p>
     <%= f.label :transportadora_id %><br />
@@ -112,9 +108,8 @@
     <%= f.text_field :valor_icms_substituicao_tributaria %>
   </p>
   <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit 'Create' %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @notafiscal %> |
-<%= link_to 'Back', notasfiscais_path %>
+<%= link_to 'Back', notas_fiscais_path %>

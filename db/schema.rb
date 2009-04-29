@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090428230809) do
+ActiveRecord::Schema.define(:version => 20090429135918) do
 
   create_table "areas", :force => true do |t|
     t.string   "descricao"
@@ -142,6 +142,22 @@ ActiveRecord::Schema.define(:version => 20090428230809) do
     t.integer  "minuta_id"
   end
 
+  create_table "itens_nota_fiscal", :force => true do |t|
+    t.integer  "produto_id"
+    t.string   "unidade_medida"
+    t.decimal  "quantidade"
+    t.decimal  "valor_item_faturado"
+    t.decimal  "valor_item_original"
+    t.string   "situacao_tributaria_item"
+    t.decimal  "percentual_icms_item"
+    t.decimal  "percentual_ipi_item"
+    t.decimal  "peso_liquido"
+    t.integer  "cod_emissao_nf"
+    t.integer  "nota_fiscal_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "itensnotasfiscais", :force => true do |t|
     t.integer  "produto_id"
     t.string   "unidade_medida"
@@ -178,6 +194,37 @@ ActiveRecord::Schema.define(:version => 20090428230809) do
     t.date     "fechamento_financeiro"
     t.integer  "funcionario_fechamento_financeiro_id"
     t.integer  "roteiro_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "notas_fiscais", :force => true do |t|
+    t.integer  "numero_nota"
+    t.integer  "pedido_id"
+    t.string   "selo"
+    t.string   "serie"
+    t.integer  "cliente_id"
+    t.decimal  "percentual_icms"
+    t.date     "emissao"
+    t.decimal  "total_mercadoria"
+    t.decimal  "valor_frete"
+    t.string   "cfop"
+    t.string   "natureza_operacao"
+    t.decimal  "valor_ipi"
+    t.decimal  "valor_desconto"
+    t.decimal  "total_nota"
+    t.string   "status"
+    t.decimal  "base_calculo_icms"
+    t.decimal  "valor_icms"
+    t.integer  "qtde_volumes"
+    t.date     "entrada"
+    t.date     "saida"
+    t.integer  "transportadora_id"
+    t.decimal  "percentual_desconto"
+    t.text     "observacao"
+    t.decimal  "base_calculo_icms_substituicao_tributaria"
+    t.decimal  "percentual_icms_substituicao_tributaria"
+    t.decimal  "valor_icms_substituicao_tributaria"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

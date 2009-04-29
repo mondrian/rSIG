@@ -1,11 +1,8 @@
-class Itemnotafiscal < ActiveRecord::Base
+class ItemNotaFiscal < ActiveRecord::Base
+  has_one :produto
+  belongs_to :nota_fiscal
 
-  belongs_to :produto
-  belongs_to :notafiscal
-
-  validates_presence_of :nota_fiscal_id
   validates_presence_of :produto_id
-  validates_presence_of :unidade_medida
   validates_presence_of :quantidade
   validates_presence_of :valor_item_faturado
   validates_presence_of :valor_item_original
@@ -14,5 +11,5 @@ class Itemnotafiscal < ActiveRecord::Base
   validates_presence_of :percentual_ipi_item
   validates_presence_of :peso_liquido
   validates_presence_of :cod_emissao_nf
-  
+
 end

@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :notas_fiscais
+
+  map.resources :itens_nota_fiscal
+
   map.resources :planosdepagamento
 
   map.resources :transportadoras
@@ -6,10 +10,6 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :itens_minutas
 
   map.resources :minutas
-
-  map.resources :itensnotasfiscais
-
-  map.resources :notasfiscais
 
   map.resources :item_pedidos
 

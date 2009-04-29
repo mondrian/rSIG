@@ -17,6 +17,6 @@ class ClienteTest < ActiveSupport::TestCase
     c.regiao_entrega = Regiao.find(:first)
     c.cidade_entrega = Cidade.find(:first)
     c.area = Area.find(:first)
-    assert c.save    
+    assert c.save!    
   end
 end

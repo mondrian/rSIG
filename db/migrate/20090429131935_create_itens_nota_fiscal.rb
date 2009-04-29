@@ -1,7 +1,6 @@
-class CreateItensnotasfiscais < ActiveRecord::Migration
+class CreateItensNotaFiscal < ActiveRecord::Migration
   def self.up
-    create_table :itensnotasfiscais do |t|
-      t.integer :numero_nota
+    create_table :itens_nota_fiscal do |t|
       t.integer :produto_id
       t.string :unidade_medida
       t.decimal :quantidade
@@ -12,12 +11,13 @@ class CreateItensnotasfiscais < ActiveRecord::Migration
       t.decimal :percentual_ipi_item
       t.decimal :peso_liquido
       t.integer :cod_emissao_nf
+      t.integer :nota_fiscal_id
 
       t.timestamps
     end
   end
 
   def self.down
-    drop_table :itensnotasfiscais
+    drop_table :itens_nota_fiscal
   end
 end

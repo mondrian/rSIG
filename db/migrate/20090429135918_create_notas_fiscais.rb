@@ -1,11 +1,11 @@
-class CreateNotasfiscais < ActiveRecord::Migration
+class CreateNotasFiscais < ActiveRecord::Migration
   def self.up
-    create_table :notasfiscais do |t|
+    create_table :notas_fiscais do |t|
       t.integer :numero_nota
-      t.integer :numero_pedido_id
-      t.string :numero_selo
-      t.string :numero_serie
-      t.string :cliente_id
+      t.integer :pedido_id
+      t.string :selo
+      t.string :serie
+      t.integer :cliente_id
       t.decimal :percentual_icms
       t.date :emissao
       t.decimal :total_mercadoria
@@ -14,14 +14,13 @@ class CreateNotasfiscais < ActiveRecord::Migration
       t.string :natureza_operacao
       t.decimal :valor_ipi
       t.decimal :valor_desconto
-      t.decimal :valor_acrescimo
       t.decimal :total_nota
       t.string :status
       t.decimal :base_calculo_icms
       t.decimal :valor_icms
       t.integer :qtde_volumes
-      t.datetime :entrada
-      t.datetime :saida
+      t.date :entrada
+      t.date :saida
       t.integer :transportadora_id
       t.decimal :percentual_desconto
       t.text :observacao
@@ -34,6 +33,6 @@ class CreateNotasfiscais < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :notasfiscais
+    drop_table :notas_fiscais
   end
 end

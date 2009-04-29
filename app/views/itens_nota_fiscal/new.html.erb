@@ -1,12 +1,8 @@
-<h1>New itemnotafiscal</h1>
+<h1>New item_nota_fiscal</h1>
 
-<% form_for(@itemnotafiscal) do |f| %>
+<% form_for(@item_nota_fiscal) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :numero_nota %><br />
-    <%= f.text_field :numero_nota %>
-  </p>
   <p>
     <%= f.label :produto_id %><br />
     <%= f.text_field :produto_id %>
@@ -48,8 +44,12 @@
     <%= f.text_field :cod_emissao_nf %>
   </p>
   <p>
+    <%= f.label :nota_fiscal_id %><br />
+    <%= f.text_field :nota_fiscal_id %>
+  </p>
+  <p>
     <%= f.submit 'Create' %>
   </p>
 <% end %>
 
-<%= link_to 'Back', itensnotasfiscais_path %>
+<%= link_to 'Back', itens_nota_fiscal_path %>
