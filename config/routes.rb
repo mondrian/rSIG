@@ -15,7 +15,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :item_pedidos
 
-  map.resources :pedidos. :collection => {:selecionar_cliente => [:get,:post]}
+  map.resources :pedidos, :collection => {:selecionar_cliente => [:get,:post]}
 
   map.resources :funcionarios
 
