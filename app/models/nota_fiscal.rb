@@ -1,5 +1,5 @@
 class NotaFiscal < ActiveRecord::Base
-  has_many :itens_nota_fiscal
+  has_many :itens, :class_name => 'ItemNotaFiscal'
   belongs_to :cliente
   belongs_to :funcionario
 
