@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090429135918) do
+ActiveRecord::Schema.define(:version => 20090429193750) do
 
   create_table "areas", :force => true do |t|
     t.string   "descricao"
@@ -245,6 +245,13 @@ ActiveRecord::Schema.define(:version => 20090429135918) do
     t.integer  "autorizador_desconto_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "tipo"
+    t.string   "comprador"
+    t.boolean  "especial"
+    t.date     "registro"
+    t.integer  "empresa_id"
+    t.integer  "operador_estorno_id"
+    t.integer  "autorizador_id"
   end
 
   create_table "planosdepagamento", :force => true do |t|
