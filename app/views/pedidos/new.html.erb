@@ -5,7 +5,7 @@
 
   <p>
     <%= f.label :tipo %><br />
-    <%= f.check_box :tipo %>
+    <%#= f.check_box :tipo %>
   </p>
   <p>
     <%= f.label :data %><br />
@@ -25,7 +25,8 @@
   </p>
   <p>
     <%= f.label :cliente_id %><br />
-    <%= f.text_field :cliente_id %>
+    <%= f.hidden_field :cliente_id %>
+    <%= text_field_tag 'nome_cliente', @pedido.cliente.razao_social, :disabled => true %>
   </p>
   <p>
     <%= f.label :valor %><br />
@@ -49,7 +50,7 @@
   </p>
   <p>
     <%= f.label :comprador %><br />
-    <%= f.text_field :comprador %>
+    <%#= f.text_field :comprador %>
   </p>
   <p>
     <%= f.label :observacao %><br />
@@ -57,7 +58,7 @@
   </p>
   <p>
     <%= f.label :funcionario_id %><br />
-    <%= f.text_field :funcionario_id %>
+    <%#= f.text_field :funcionario_id %>
   </p>
   <p>
     <%= f.label :endereco_entrega %><br />
@@ -81,15 +82,15 @@
   </p>
   <p>
     <%= f.label :especial %><br />
-    <%= f.check_box :especial %>
+    <%#= f.check_box :especial %>
   </p>
   <p>
     <%= f.label :registro %><br />
-    <%= f.date_select :registro %>
+    <%#= f.date_select :registro %>
   </p>
   <p>
     <%= f.label :empresa_id %><br />
-    <%= f.text_field :empresa_id %>
+    <%#= f.text_field :empresa_id %>
   </p>
   <p>
     <%= f.label :status %><br />
@@ -101,7 +102,7 @@
   </p>
   <p>
     <%= f.label :operador_estorno_id %><br />
-    <%= f.text_field :operador_estorno_id %>
+    <%#= f.text_field :operador_estorno_id %>
   </p>
   <p>
     <%= f.label :comissao_vendedor %><br />
@@ -121,7 +122,7 @@
   </p>
   <p>
     <%= f.label :autorizador_id %><br />
-    <%= f.text_field :autorizador_id %>
+    <%#= f.text_field :autorizador_id %>
   </p>
   <p>
     <%= f.submit 'Create' %>

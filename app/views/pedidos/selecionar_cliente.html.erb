@@ -1,0 +1,8 @@
+<h2>Novo Pedido > Selecionar Cliente</h2>
+<% form_for(:cliente, :action => :new) do |f| %>
+  <p>
+    <%= f.label :Cliente %><br/>
+    <%= f.select :id, Cliente.all.collect { |c| [c.cpf_cnpj + " - " + c.nome_fantasia,c.id] }, :prompt => "" %>
+  </p>
+  <%= f.submit "Abrir Novo Pedido" %>
+<% end %>

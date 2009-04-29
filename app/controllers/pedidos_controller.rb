@@ -3,7 +3,7 @@ class PedidosController < ApplicationController
   # GET /pedidos.xml
   def selecionar_cliente
     if request.post?
-      @cliente = Cliente.find(params[:id])
+      @cliente = Cliente.find(params[:cliente][:id])
       if @cliente
         redirect_to :action => :new, :id => @cliente.id
       end
@@ -36,7 +36,7 @@ class PedidosController < ApplicationController
   # GET /pedidos/new.xml
   def new
     @pedido = Pedido.new
-
+    @pedido.cliente = Cliente.find(params[:id])
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @pedido }
