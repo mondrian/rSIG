@@ -17,6 +17,6 @@ class ItemnotafiscalTest < ActiveSupport::TestCase
     inf.situacao_tributaria_item = 'teste'
     inf.cod_emissao_nf = 1
 
-    assert inf.valid?
+    assert inf.save!
   end
 end
