@@ -1,7 +1,7 @@
 class Itemnotafiscal < ActiveRecord::Base
 
-  has_one :produto
-  has_one :notafiscal
+  belongs_to :produto
+  belongs_to :notafiscal
 
   validates_presence_of :nota_fiscal_id
   validates_presence_of :produto_id
