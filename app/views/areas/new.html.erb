@@ -9,7 +9,7 @@
   </p>
   <p>
     <%= f.label :cidade_id %><br />
-    <%= f.text_field :cidade_id %>
+    <%= select_for(f,:cidade_id,:cidade,:descricao) %>
   </p>
   <p>
     <%= f.label :roteiro_id %><br />
