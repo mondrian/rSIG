@@ -1,4 +1,5 @@
 class Itemnotafiscal < ActiveRecord::Base
+
   has_one :produto
   has_one :notafiscal
 

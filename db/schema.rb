@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20090428230809) do
     t.string   "endereco_entrega"
     t.integer  "regiao_entrega_id"
     t.string   "cidade_entrega_id"
+    t.string   "area_id"
     t.text     "referencias_bancaria"
     t.text     "referencias_comerciais"
     t.text     "observacao"
@@ -58,7 +59,6 @@ ActiveRecord::Schema.define(:version => 20090428230809) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "uf"
-    t.integer  "area_id"
   end
 
   create_table "cores", :force => true do |t|
@@ -187,6 +187,7 @@ ActiveRecord::Schema.define(:version => 20090428230809) do
     t.integer  "numero_pedido_id"
     t.string   "numero_selo"
     t.string   "numero_serie"
+    t.string   "cliente_id"
     t.decimal  "percentual_icms"
     t.date     "emissao"
     t.decimal  "total_mercadoria"
@@ -211,7 +212,6 @@ ActiveRecord::Schema.define(:version => 20090428230809) do
     t.decimal  "valor_icms_substituicao_tributaria"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "cliente_id"
   end
 
   create_table "pedidos", :force => true do |t|
