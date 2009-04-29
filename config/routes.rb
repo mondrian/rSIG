@@ -1,5 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :pedidos
 
   map.resources :notas_fiscais
 
