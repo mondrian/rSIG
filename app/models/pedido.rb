@@ -9,9 +9,9 @@ class Pedido < ActiveRecord::Base
   belongs_to :area
   has_many   :itemPedidos
 
-  validates_presence_of :tipo
-  validates_presence_of :data
-  validates_presence_of :cliente_id
-  validates_presence_of :valor
+  validates_presence_of :tipo, :message => "Informe o Tipo de Pedido"
+  validates_presence_of :data, :message => "Informe a Data do Pedido"
+  validates_presence_of :cliente_id, :message => "Informe o Código do Cliente"
+  validates_presence_of :valor, :message => "Pedido não foi Valorado"
 
 end

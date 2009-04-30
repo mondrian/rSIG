@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :ufs
+
   map.resources :notas_fiscais
 
   map.resources :itens_nota_fiscal

@@ -1,0 +1,7 @@
+Cliente:
+    Copiar Razão Social para Nome de Fantasia no <enter>
+    Checar se foi selecionado cpf ou cnpj e validar a entrada
+    Validar CNPJ
+    Se Pessoa Física, passa sem CPF???
+    Copiar Endereço Residencial para Endereço de Entrega
+    
