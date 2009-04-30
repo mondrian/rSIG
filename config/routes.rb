@@ -1,5 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+<<<<<<< HEAD:config/routes.rb
   map.resources :ufs
+=======
+>>>>>>> 00f411119d1d9f7cbe2d8c8705f10b7a7fa9628a:config/routes.rb
 
   map.resources :notas_fiscais
 
@@ -17,7 +20,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :item_pedidos
 
-  map.resources :pedidos
+  map.resources :pedidos, :collection => {:selecionar_cliente => [:get,:post]}
 
   map.resources :funcionarios
 

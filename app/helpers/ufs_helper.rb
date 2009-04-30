@@ -1,0 +1,2 @@
+module UfsHelper
+end

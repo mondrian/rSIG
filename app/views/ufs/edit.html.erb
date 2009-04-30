@@ -1,0 +1,20 @@
+<h1>Editing uf</h1>
+
+<% form_for(@uf) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :uf %><br />
+    <%= f.text_field :uf %>
+  </p>
+  <p>
+    <%= f.label :descricao %><br />
+    <%= f.text_field :descricao %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @uf %> |
+<%= link_to 'Back', ufs_path %>

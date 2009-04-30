@@ -1,10 +1,17 @@
 # SQLite version 3.x
 #   gem install sqlite3-ruby (not necessary on OS X Leopard)
 development:
+<<<<<<< HEAD:config/database.yml
   adapter: postgresql
   database: rsig
   username: postgres
   password: postgres
+=======
+  adapter: sqlite3 
+  database: db/development.sqlite3
+  username: magno
+  password: zwanzig
+>>>>>>> 00f411119d1d9f7cbe2d8c8705f10b7a7fa9628a:config/database.yml
   host: localhost
 
 # Warning: The database defined as "test" will be erased and

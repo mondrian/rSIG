@@ -1,0 +1,22 @@
+<h1>Listing ufs</h1>
+
+<table>
+  <tr>
+    <th>Uf</th>
+    <th>Descricao</th>
+  </tr>
+
+<% @ufs.each do |uf| %>
+  <tr>
+    <td><%=h uf.uf %></td>
+    <td><%=h uf.descricao %></td>
+    <td><%= link_to 'Show', uf %></td>
+    <td><%= link_to 'Edit', edit_uf_path(uf) %></td>
+    <td><%= link_to 'Destroy', uf, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New uf', new_uf_path %>
