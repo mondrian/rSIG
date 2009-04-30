@@ -2,12 +2,14 @@
 
 <table>
   <tr>
-    <th>Descricao</th>
+    <th>Uf</th>
+    <th>Cidade</th>
   </tr>
 
 <% @cidades.each do |cidade| %>
   <tr>
-    <td><%=h cidade.descricao %></td>
+    <td><%=h cidade.uf %></td>
+    <td><%=h cidade.cidade %></td>
     <td><%= link_to 'Show', cidade %></td>
     <td><%= link_to 'Edit', edit_cidade_path(cidade) %></td>
     <td><%= link_to 'Destroy', cidade, :confirm => 'Are you sure?', :method => :delete %></td>
