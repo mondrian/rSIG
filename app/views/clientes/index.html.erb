@@ -13,7 +13,13 @@
 
 <% for cliente in @clientes %>
   <tr>
-    <td><%=h cliente.tipo_cliente %></td>
+    <td>
+	<%= if cliente.tipo_cliente == "F"
+	 "Pessoa Física"
+	 else "Pessoa Jurídica"
+	end
+	%>
+    </td>
     <td><%=h cliente.cpf_cnpj %></td>
     <td><%=h cliente.razao_social %></td>
     <td><%=h cliente.nome_fantasia %></td>
