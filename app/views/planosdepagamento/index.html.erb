@@ -1,4 +1,4 @@
-<h1>Listing planosdepagamento</h1>
+<h1>Plano de Pagamento</h1>
 
 <table>
   <tr>
@@ -8,13 +8,13 @@
 <% @planosdepagamento.each do |planodepagamento| %>
   <tr>
     <td><%=h planodepagamento.descricao %></td>
-    <td><%= link_to 'Show', planodepagamento %></td>
-    <td><%= link_to 'Edit', edit_planodepagamento_path(planodepagamento) %></td>
-    <td><%= link_to 'Destroy', planodepagamento, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Exibir', planodepagamento %></td>
+    <td><%= link_to 'Editar', edit_planodepagamento_path(planodepagamento) %></td>
+    <td><%= link_to 'Excluir', planodepagamento, :confirm => 'Confirma exclusao de: #{planodepagamento.descricao}?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New planodepagamento', new_planodepagamento_path %>
+<%= link_to 'Incluir Plano de Pagamento', new_planodepagamento_path %>
