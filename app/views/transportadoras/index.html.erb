@@ -1,4 +1,4 @@
-<h1>Listing transportadoras</h1>
+<h1>Transportadoras</h1>
 
 <table>
   <tr>
@@ -8,13 +8,13 @@
 <% @transportadoras.each do |transportadora| %>
   <tr>
     <td><%=h transportadora.razao_social %></td>
-    <td><%= link_to 'Show', transportadora %></td>
-    <td><%= link_to 'Edit', edit_transportadora_path(transportadora) %></td>
-    <td><%= link_to 'Destroy', transportadora, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Exibir', transportadora %></td>
+    <td><%= link_to 'Editar', edit_transportadora_path(transportadora) %></td>
+    <td><%= link_to 'Excluir', transportadora, :confirm => 'Confirma exclusao da transportadora; #{transportadora.razao_social}?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New transportadora', new_transportadora_path %>
+<%= link_to 'Nova Transportadora', new_transportadora_path %>
