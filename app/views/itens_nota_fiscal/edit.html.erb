@@ -1,4 +1,4 @@
-<h1>Editing item_nota_fiscal</h1>
+<h1>Editar Nota Fiscal</h1>
 
 <% form_for(@item_nota_fiscal) do |f| %>
   <%= f.error_messages %>
@@ -6,9 +6,9 @@
   <%= render :partial => 'form', :locals => {:p => p} %>
   
   <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit 'Atualizar' %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @item_nota_fiscal %> |
-<%= link_to 'Back', itens_nota_fiscal_path %>
+<%= link_to 'Exibir', @item_nota_fiscal %> |
+<%= link_to 'Voltar', itens_nota_fiscal_path %>
