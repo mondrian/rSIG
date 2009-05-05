@@ -23,6 +23,10 @@
     <%= f.text_field :endereco %>
   </p>
   <p>
+    <%= f.label :Bairro %><br />
+    <%= f.text_field :bairro %>
+  </p>
+  <p>
     <%= f.label :complemento %><br />
     <%= f.text_field :complemento %>
   </p>
@@ -32,8 +36,9 @@
      %>
   </p>
   <p>
-    <%= f.label :cidade_id %><br />
-    <%= f.text_field :cidade_id %>
+  <div id="div_cidade">
+
+  </div>
   </p>
   <p>
     <%= f.label :cep %><br />
@@ -124,3 +129,8 @@
     <%= f.date_select :data_inclusao_prazo_medio %>
   </p>
   <p>
+<%= observe_field 'cliente_uf',
+  :update => 'div_cidade',
+  :url => {:action => 'cidade'},
+  :with => :uf
+%>

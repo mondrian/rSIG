@@ -2,7 +2,7 @@
 #   gem install sqlite3-ruby (not necessary on OS X Leopard)
 development:
   adapter: postgresql
-  database: rsig
+  database: rsig_development
   username: postgres
   password: postgres
   host: localhost

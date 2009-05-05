@@ -82,4 +82,8 @@ class ClientesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  def cidade
+	render :layout => false
+  end
+
 end
