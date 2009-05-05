@@ -1,16 +1,14 @@
-<h1>Editing transportadora</h1>
+<h1>Editar Transportadora</h1>
 
 <% form_for(@transportadora) do |f| %>
   <%= f.error_messages %>
-
+ 
+  <%= render :partial => 'form', :locals => {:f => f} %> 
+   
   <p>
-    <%= f.label :razao_social %><br />
-    <%= f.text_field :razao_social %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit 'Atualizar' %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @transportadora %> |
-<%= link_to 'Back', transportadoras_path %>
+<%= link_to 'Exibir', @transportadora %> |
+<%= link_to 'Voltar', transportadoras_path %>

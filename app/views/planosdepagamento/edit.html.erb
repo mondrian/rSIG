@@ -1,16 +1,14 @@
-<h1>Editing planodepagamento</h1>
+<h1>Editar Plano de Pagamento</h1>
 
 <% form_for(@planodepagamento) do |f| %>
   <%= f.error_messages %>
 
+  <%= render :partial => 'form', :locals => {:f => f} %>
+  
   <p>
-    <%= f.label :descricao %><br />
-    <%= f.text_field :descricao %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit 'Atualizar' %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @planodepagamento %> |
-<%= link_to 'Back', planosdepagamento_path %>
+<%= link_to 'Exibir', @planodepagamento %> |
+<%= link_to 'Voltar', planosdepagamento_path %>
