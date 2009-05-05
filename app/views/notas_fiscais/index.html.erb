@@ -1,4 +1,4 @@
-<h1>Listing notas_fiscais</h1>
+<h1>Notas Fiscais</h1>
 
 <table>
   <tr>
@@ -58,13 +58,13 @@
     <td><%=h nota_fiscal.base_calculo_icms_substituicao_tributaria %></td>
     <td><%=h nota_fiscal.percentual_icms_substituicao_tributaria %></td>
     <td><%=h nota_fiscal.valor_icms_substituicao_tributaria %></td>
-    <td><%= link_to 'Show', nota_fiscal %></td>
-    <td><%= link_to 'Edit', edit_nota_fiscal_path(nota_fiscal) %></td>
-    <td><%= link_to 'Destroy', nota_fiscal, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Exibir', nota_fiscal %></td>
+    <td><%= link_to 'Editar', edit_nota_fiscal_path(nota_fiscal) %></td>
+    <td><%= link_to 'Excluir', nota_fiscal, :confirm => "Confirma exclusao da Nota: #{nota_fiscal.numero_nota}?", :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New nota_fiscal', new_nota_fiscal_path %>
+<%= link_to 'Incluir Nota Fiscal', new_nota_fiscal_path %>
