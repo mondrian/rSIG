@@ -9,8 +9,8 @@
   <tr>
     <td><%=h planodepagamento.descricao %></td>
     <td><%= link_to 'Exibir', planodepagamento %></td>
-    <td><%= link_to 'Editar', edit_planodepagamento_path(planodepagamento) %></td>
-    <td><%= link_to 'Excluir', planodepagamento, :confirm => 'Confirma exclusao de: #{planodepagamento.descricao}?', :method => :delete %></td>
+    <td><%= link_to 'Alterar', edit_planodepagamento_path(planodepagamento) %></td>
+    <td><%= link_to 'Excluir', planodepagamento, :confirm => "Confirma exclusao do plano #{planodepagamento.descricao}?", :method => :delete %></td>
   </tr>
 <% end %>
 </table>
