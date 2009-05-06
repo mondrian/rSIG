@@ -1,4 +1,5 @@
 class Cliente < ActiveRecord::Base
+  before_save :remove_mascara
   has_many :pedidos
   has_many :notasfiscais
   belongs_to  :cidade
@@ -11,6 +12,7 @@ class Cliente < ActiveRecord::Base
   validates_presence_of :cidade_id, :message => "Informe Cidade do Cliente"
   validates_uniqueness_of :cpf_cnpj, :message => 'CNPJ/CPF duplicado'
 
+
   def cpf_cnpj_formatado
     if self.cpf_cnpj.size == 11 # cpf
       self.cpf_cnpj[0,3]+'.'+self.cpf_cnpj[3,3]+'.'+self.cpf_cnpj[6,3]+'-'+self.cpf_cnpj[9,2]
@@ -21,26 +23,36 @@ class Cliente < ActiveRecord::Base
     end
   end
 
-  def cep_formatado
-    self.cep[0,2]+'.'+self.cep[3,3]+'-'+self.cep[5,3]
-  end
-
-  def celular_formatado
-    '( ' + self.fone_celular[0,2] + ' ) ' + self.fone_celular[2,4] + '-' + self.fone_celular[6,4]
-  end
-
   def fone_pessoal_formatado
-    '( ' + self.fone_pessoal[0,2] + ' ) ' + self.fone_pessoal[2,4] + '-' + self.fone_pessoal[6,4]
+    unless self.fone_pessoal.nil?
+      '(' + self.fone_pessoal[0,2] + ')' + self.fone_pessoal[2,4] + '-' + self.fone_pessoal[6,4]
+    end
   end
-  
+
   def fone_comercial_formatado
-    '( ' + self.fone_comercial[0,2] + ' ) ' + self.fone_comercial[2,4] + '-' + self.fone_comercial[6,4]
+    unless self.fone_comercial.nil?
+      '(' + self.fone_comercial[0,2] + ')' + self.fone_comercial[2,4] + '-' + self.fone_comercial[6,4]
+    end
+  end
+
+  def fone_celular_formatado
+    unless self.fone_celular.nil?
+      '(' + self.fone_celular[0,2] + ')' + self.fone_celular[2,4] + '-' + self.fone_celular[6,4]
+    end
+  end
+
+  def cep_formatado
+    if !self.cep.nil?
+      self.cep[0,2] + '.' + self.cep[2,3] + '-' + self.cep[5,3]
+    end
   end
 
   private
-  def remove_ponto
-    
+  def remove_mascara
+    self.cpf_cnpj.gsub!(/[^0-9]/,'') if !self.cpf_cnpj.nil?
+    self.fone_pessoal.gsub!(/[^0-9]/,'') if !self.fone_pessoal.nil?
+    self.fone_comercial.gsub!(/[^0-9]/,'') if !self.fone_comercial.nil?
+    self.fone_celular.gsub!(/[^0-9]/,'') if !self.fone_celular.nil?
+    self.cep.gsub!(/[^0-9]/,'') if !self.cep.nil?
   end
-end
-
 end
