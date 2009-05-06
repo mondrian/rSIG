@@ -9,8 +9,8 @@
   <tr>
     <td><%=h transportadora.razao_social %></td>
     <td><%= link_to 'Exibir', transportadora %></td>
-    <td><%= link_to 'Editar', edit_transportadora_path(transportadora) %></td>
-    <td><%= link_to 'Excluir', transportadora, :confirm => 'Confirma exclusao da transportadora; #{transportadora.razao_social}?', :method => :delete %></td>
+    <td><%= link_to 'Alterar', edit_transportadora_path(transportadora) %></td>
+    <td><%= link_to 'Excluir', transportadora, :confirm => 'Confirma exclusao da transportadora #{transportadora.razao_social}?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
