@@ -1,5 +1,3 @@
-<h1>Clientes Cadastrados</h1>
-
 <table border="1">
   <tr>
     <th>Tipo</th>
@@ -13,25 +11,23 @@
 
 <% for cliente in @clientes %>
   <tr>
-    <td>
-	<%= if cliente.tipo_cliente == "F"
-	 "Pessoa Física"
-	 else "Pessoa Jurídica"
-	end
-	%>
-    </td>
+    <td><%= cliente.tipo_cliente == "F" ? "Pessoa Física" : "Pessoa Jurídica" %></td>
     <td><%=h cliente.cpf_cnpj %></td>
     <td><%=h cliente.razao_social %></td>
     <td><%=h cliente.nome_fantasia %></td>
+    <%if cliente.cidade.nil? then %>
+    <td>Não Definido</td>
+    <% else %>
     <td><%=h cliente.cidade.descricao + '/' + cliente.uf %></td>
-    <td><%=h cliente.status %></td>
-    <td><%= link_to 'Detalhes', cliente %></td>
+    <% end %>
+    <td><%=h cliente.status == "A" ? "Ativo" : "Inativo" %></td>
+    <td><%= link_to 'Exibir', cliente %></td>
     <td><%= link_to 'Alterar', edit_cliente_path(cliente) %></td>
-    <td><%= link_to 'Excluir', cliente, :confirm => 'Tem Certeza?', :method => :delete %></td>
+    <td><%= link_to 'Excluir', cliente, :confirm => "Excluir o Cliente: #{cliente.nome_fantasia} ?", :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'Novo Cliente', new_cliente_path %>
+<%= link_to 'Novo', new_cliente_path %>

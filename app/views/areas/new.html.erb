@@ -3,18 +3,7 @@
 <% form_for(@area) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :descricao %><br />
-    <%= f.text_field :descricao %>
-  </p>
-  <p>
-    <%= f.label :cidade_id %><br />
-    <%= select_for(f,:cidade_id,:cidade,:descricao) %>
-  </p>
-  <p>
-    <%= f.label :roteiro_id %><br />
-    <%= f.text_field :roteiro_id %>
-  </p>
+  <%= render :partial => "form",  :locals => { :f => f} %>
   <p>
     <%= f.submit 'Create' %>
   </p>

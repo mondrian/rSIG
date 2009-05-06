@@ -4,7 +4,7 @@
   </p>
   <p>
     <%= f.label :cpf_cnpj %><br />
-    <%= f.text_field :cpf_cnpj %>
+    <%= f.text_field :cpf_cnpj, :onkeypress => 'mascara(this, cpf_cnpj)'  %>
   </p>
   <p>
     <%= f.label :razao_social %><br />
@@ -37,12 +37,12 @@
   </p>
   <p>
   <div id="div_cidade">
-
+      <%= select_tag('cliente[cidade_id]', "<option>#{@cliente.cidade.descricao}</option>", :disabled => true)%>
   </div>
   </p>
   <p>
     <%= f.label :cep %><br />
-    <%= f.text_field :cep %>
+    <%= f.text_field :cep, :onkeypress => 'mascara(this, cep)'  %>
   </p>
   <p>
     <%= f.label :referencia %><br />
@@ -50,15 +50,15 @@
   </p>
   <p>
     <%= f.label :fone_pessoal %><br />
-    <%= f.text_field :fone_pessoal %>
+    <%= f.text_field :fone_pessoal, :onkeypress => 'mascara(this, telefone)' %>
   </p>
   <p>
     <%= f.label :fone_comercial %><br />
-    <%= f.text_field :fone_comercial %>
+    <%= f.text_field :fone_comercial, :onkeypress => 'mascara(this, telefone)'  %>
   </p>
   <p>
     <%= f.label :fone_celular %><br />
-    <%= f.text_field :fone_celular %>
+    <%= f.text_field :fone_celular, :onkeypress => 'mascara(this, telefone)'  %>
   </p>
   <p>
     <%= f.label :endereco_entrega %><br />
@@ -94,7 +94,7 @@
   </p>
   <p>
     <%= f.label :data_nascimento %><br />
-    <%= f.calendar_date_select :data_nascimento %> 
+    <%= f.calendar_date_select :data_nascimento %>
   </p>
   <p>
     <%= f.label :nome_comprador %><br />
@@ -118,7 +118,7 @@
   </p>
   <p>
     <%= f.label :status %><br />
-    <%= f.text_field :status %>
+    <%= f.select :status,[['ATIVO','A'],['INATIVO','I']] %>
   </p>
   <p>
     <%= f.label :prazo_medio_maximo %><br />
@@ -126,7 +126,7 @@
   </p>
   <p>
     <%= f.label :data_inclusao_prazo_medio %><br />
-    <%= f.date_select :data_inclusao_prazo_medio %>
+    <%= f.calendar_date_select :data_inclusao_prazo_medio %> 
   </p>
   <p>
 <%= observe_field 'cliente_uf',
