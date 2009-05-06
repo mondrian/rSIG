@@ -118,4 +118,3 @@ function site(v){
  v="http://"+dominio+caminho
  return v
 }
-

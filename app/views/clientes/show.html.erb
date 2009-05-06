@@ -1,11 +1,9 @@
 <p>
-  <b>Tipo cliente:</b>
-  <%=h @cliente.tipo_cliente == "F" ? "Pessoa Física" : "Pessoa Jurídica" %>
-</p>
-
-<p>
-  <b>Cpf cnpj:</b>
+  <b>Tipo de Cliente:</b>
+  <%=h @cliente.tipo_cliente == "F" ? "Pessoa Física" : "Pessoa Jurídica" %> - 
+  <b>Cpf ou Cnpj:</b>
   <%=h  @cliente.cpf_cnpj %>
+
 </p>
 
 <p>
@@ -19,18 +17,13 @@
 </p>
 
 <p>
-  <b>Documento:</b>
+  <b>RG ou Inscrição Estadual:</b>
   <%=h @cliente.documento %>
 </p>
 
 <p>
   <b>Endereco:</b>
-  <%=h @cliente.endereco %>
-</p>
-
-<p>
-  <b>Complemento:</b>
-  <%=h @cliente.complemento %>
+  <%=h @cliente.endereco %>, <%=h @cliente.complemento %>
 </p>
 
 <p>
@@ -38,42 +31,17 @@
     <%if @cliente.cidade.nil? then %>
     <td>Cidade Desconhecida</td>
     <% else %>
-    <td><%=h @cliente.cidade.descricao+' / '+@cliente.uf %></td>
-    <% end %>
-</p>
-<p>
-  <b>Bairro:</b>
-  <%=h @cliente.bairro %>
+    <td><%=h @cliente.cidade.descricao + ' / ' + @cliente.uf %></td>
+    <% end %>, <%=h @cliente.referencia %>
 </p>
 
 <p>
-  <b>Uf:</b>
-  <%=h @cliente.uf %>
+  <b>Bairro / CEP:</b>
+  <%=h @cliente.bairro + ' / ' + @cliente.cep %>
 </p>
 
 <p>
-  <b>Cep:</b>
-  <%=h @cliente.cep %>
-</p>
-
-<p>
-  <b>Referencia:</b>
-  <%=h @cliente.referencia %>
-</p>
-
-<p>
-  <b>Fone pessoal:</b>
-  <%=h @cliente.fone_pessoal %>
-</p>
-
-<p>
-  <b>Fone comercial:</b>
-  <%=h @cliente.fone_comercial %>
-</p>
-
-<p>
-  <b>Fone celular:</b>
-  <%=h @cliente.fone_celular %>
+  <b>Telefones:</b><br>Pessoal: <%=h @cliente.fone_pessoal %> Comercial: <%=h @cliente.fone_comercial %> Celular: <%=h @cliente.fone_celular %>
 </p>
 
 <p>
@@ -128,7 +96,7 @@
 
 <p>
   <b>Vendas suspensas:</b>
-  <%=h @cliente.vendas_suspensas %>
+  <%=h @cliente.vendas_suspensas == false ? "Não" : "Sim" %>
 </p>
 
 <p>
@@ -138,17 +106,17 @@
 
 <p>
   <b>Limite credito:</b>
-  <%=h @cliente.limite_credito %>
+  <%=h @cliente.limite_credito.real.real_formatado %>
 </p>
 
 <p>
   <b>Saldo devedor:</b>
-  <%=h @cliente.saldo_devedor %>
+  <%=h @cliente.saldo_devedor.real.real_formatado %>
 </p>
 
 <p>
   <b>Status:</b>
-  <%=h @cliente.status %>
+  <%=h @cliente.status == 'A' ? 'Ativo' : 'Inativo' %>
 </p>
 
 <p>

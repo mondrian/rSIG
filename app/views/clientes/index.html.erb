@@ -16,7 +16,7 @@
     <td><%=h cliente.razao_social %></td>
     <td><%=h cliente.nome_fantasia %></td>
     <%if cliente.cidade.nil? then %>
-    <td>Não Definido</td>
+    <td>Cidade não Cadastrada</td>
     <% else %>
     <td><%=h cliente.cidade.descricao + '/' + cliente.uf %></td>
     <% end %>
