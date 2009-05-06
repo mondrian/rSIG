@@ -1,4 +1,4 @@
-<h1>Editing grupo</h1>
+<h1>Alterando grupo</h1>
 
 <% form_for(@grupo) do |f| %>
   <%= f.error_messages %>
@@ -16,9 +16,9 @@
     <%= f.check_box :unificado %>
   </p>
   <p>
-    <%= f.submit "Update" %>
+    <%= f.submit "Salvar" %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @grupo %> |
-<%= link_to 'Back', grupos_path %>
+<%= link_to 'Exibir', @grupo %> |
+<%= link_to 'Voltar', grupos_path %>

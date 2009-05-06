@@ -1,4 +1,4 @@
-<h1>Listing grupos</h1>
+<h1>Listando grupos</h1>
 
 <table>
   <tr>
@@ -12,13 +12,13 @@
     <td><%=h grupo.descricao %></td>
     <td><%=h grupo.margem_lucro %></td>
     <td><%=h grupo.unificado %></td>
-    <td><%= link_to 'Show', grupo %></td>
-    <td><%= link_to 'Edit', edit_grupo_path(grupo) %></td>
-    <td><%= link_to 'Destroy', grupo, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Exibir', grupo %></td>
+    <td><%= link_to 'Alterar', edit_grupo_path(grupo) %></td>
+    <td><%= link_to 'Excluir', grupo, :confirm => "Confirme exclusão do grupo #{grupo.descricao} ?", :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New grupo', new_grupo_path %>
+<%= link_to 'Novo grupo', new_grupo_path %>

@@ -19,7 +19,7 @@ test:
 
 production:
   adapter: postgresql
-  database: rsig_prod
+  database: rsig_production
   username: postgres
   password: postgres
   host: localhost

@@ -1,4 +1,4 @@
-<h1>Listing itens_minutas</h1>
+<h1>Listando itens de minuta</h1>
 
 <table>
   <tr>
@@ -10,13 +10,13 @@
   <tr>
     <td><%=h itens_minuta.produto_id %></td>
     <td><%=h itens_minuta.qtde %></td>
-    <td><%= link_to 'Show', itens_minuta %></td>
-    <td><%= link_to 'Edit', edit_itens_minuta_path(itens_minuta) %></td>
-    <td><%= link_to 'Destroy', itens_minuta, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Exibir', itens_minuta %></td>
+    <td><%= link_to 'Alterar', edit_itens_minuta_path(itens_minuta) %></td>
+    <td><%= link_to 'Excluir', itens_minuta, :confirm => 'Confirme exclusão do item de minuta #{itens_minuta.id}?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New itens_minuta', new_itens_minuta_path %>
+<%= link_to 'Novo item de minuta', new_itens_minuta_path %>
