@@ -37,4 +37,10 @@ class Cliente < ActiveRecord::Base
     '( ' + self.fone_comercial[0,2] + ' ) ' + self.fone_comercial[2,4] + '-' + self.fone_comercial[6,4]
   end
 
+  private
+  def remove_ponto
+    
+  end
+end
+
 end

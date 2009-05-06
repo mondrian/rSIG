@@ -1,5 +1,3 @@
-<h1>Editing cor</h1>
-
 <% form_for(@cor) do |f| %>
   <%= f.error_messages %>
 
@@ -8,9 +6,9 @@
     <%= f.text_field :descricao %>
   </p>
   <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit 'Salvar' %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @cor %> |
-<%= link_to 'Back', cores_path %>
+<%= link_to 'Exibir', @cor %> |
+<%= link_to 'Voltar', cores_path %>

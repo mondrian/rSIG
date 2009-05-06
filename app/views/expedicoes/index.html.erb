@@ -1,5 +1,3 @@
-<h1>Listing expedicoes</h1>
-
 <table>
   <tr>
     <th>Minuta</th>
@@ -18,13 +16,13 @@
     <td><%=h expedicao.qtd_carregada %></td>
     <td><%=h expedicao.qtd_minuta %></td>
     <td><%=h expedicao.vidro %></td>
-    <td><%= link_to 'Show', expedicao %></td>
-    <td><%= link_to 'Edit', edit_expedicao_path(expedicao) %></td>
-    <td><%= link_to 'Destroy', expedicao, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Exibir', expedicao %></td>
+    <td><%= link_to 'Alterar', edit_expedicao_path(expedicao) %></td>
+    <td><%= link_to 'Excluir', expedicao, :confirm => "Excluir a Expedição #{expedicao.minuta}?", :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New expedicao', new_expedicao_path %>
+<%= link_to 'Nova Expedição', new_expedicao_path %>

@@ -105,7 +105,7 @@ Cidade:
 </p>
 <p>
   <%= f.label :vendas_suspensas %><br />
-  <%= f.check_box :vendas_suspensas %>
+  <%= f.select :vendas_suspensas,[['Sim',true],['Não',false]] %>
 </p>
 <p>
   <%= f.label :observacao_suspensao_venda %><br />
