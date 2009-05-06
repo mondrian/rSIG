@@ -1,11 +1,9 @@
-<h2>Inserindo Novo cliente</h2>
-
 <% form_for(@cliente) do |f| %>
   <%= f.error_messages %>
 
 <%= render :partial => "form", :locals => { :f => f} %>
-    <%= f.submit "Incluir" %>
+    <%= f.submit "Salvar" %>
   </p>
 <% end %>
 
-<%= link_to 'Retornar', clientes_path %>
+<%= link_to 'Voltar', clientes_path %>

@@ -1,11 +1,11 @@
 <p>
   <b>Tipo cliente:</b>
-  <%=h @cliente.tipo_cliente %>
+  <%=h @cliente.tipo_cliente == "F" ? "Pessoa Física" : "Pessoa Jurídica" %>
 </p>
 
 <p>
   <b>Cpf cnpj:</b>
-  <%=h @cliente.cpf_cnpj %>
+  <%=h  @cliente.cpf_cnpj %>
 </p>
 
 <p>
@@ -35,7 +35,11 @@
 
 <p>
   <b>Cidade:</b>
-  <%=h @cliente.cidade_id %>
+    <%if @cliente.cidade.nil? then %>
+    <td>Cidade Desconhecida</td>
+    <% else %>
+    <td><%=h @cliente.cidade.descricao+' / '+@cliente.uf %></td>
+    <% end %>
 </p>
 <p>
   <b>Bairro:</b>
@@ -158,5 +162,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_cliente_path(@cliente) %> |
-<%= link_to 'Back', clientes_path %>
+<%= link_to 'Alterar', edit_cliente_path(@cliente) %> |
+<%= link_to 'Retornar', clientes_path %>

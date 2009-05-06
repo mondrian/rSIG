@@ -49,8 +49,8 @@
     <td><%=h produto.cadastro_custo %></td>
     <td><%=h produto.kit %></td>
     <td><%= link_to 'Exibir', produto %></td>
-    <td><%= link_to 'Editar', edit_produto_path(produto) %></td>
-    <td><%= link_to 'Excluir', produto, :confirm => 'Confirma exclusao do produto: #{produto.descricao}?', :method => :delete %></td>
+    <td><%= link_to 'Alterar', edit_produto_path(produto) %></td>
+    <td><%= link_to 'Excluir', produto, :confirm => 'Confirma exclusao do produto #{produto.descricao}?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
