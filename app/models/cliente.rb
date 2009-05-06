@@ -24,26 +24,32 @@ class Cliente < ActiveRecord::Base
   end
 
   def fone_pessoal_formatado
-    unless self.fone_pessoal.nil?
-      '(' + self.fone_pessoal[0,2] + ')' + self.fone_pessoal[2,4] + '-' + self.fone_pessoal[6,4]
+    if (!self.fone_pessoal.nil? && self.fone_pessoal != '')
+     ( '(' + self.fone_pessoal[0,2] + ')' + self.fone_pessoal[2,4] + '-' + self.fone_pessoal[6,4])
     end
   end
 
   def fone_comercial_formatado
-    unless self.fone_comercial.nil?
-      '(' + self.fone_comercial[0,2] + ')' + self.fone_comercial[2,4] + '-' + self.fone_comercial[6,4]
+    if (!self.fone_comercial.nil? && self.fone_comercial != '')
+      '(' << self.fone_comercial[0,2] << ')' << self.fone_comercial[2,4] << '-' << self.fone_comercial[6,4]
+    else
+      ''
     end
   end
 
   def fone_celular_formatado
-    unless self.fone_celular.nil?
+    if (!self.fone_celular.nil? && self.fone_celular != '')
       '(' + self.fone_celular[0,2] + ')' + self.fone_celular[2,4] + '-' + self.fone_celular[6,4]
+    else
+      ''
     end
   end
 
   def cep_formatado
-    if !self.cep.nil?
+    if (!self.cep.nil? && self.cep != '')
       self.cep[0,2] + '.' + self.cep[2,3] + '-' + self.cep[5,3]
+    else
+      ''
     end
   end
 
