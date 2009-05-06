@@ -1,4 +1,4 @@
-<h1>Editing minuta</h1>
+<h1>Alterando minuta</h1>
 
 <% form_for(@minuta) do |f| %>
   <%= f.error_messages %>
@@ -40,9 +40,9 @@
     <%= f.text_field :roteiro_id %>
   </p>
   <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit 'Salvar' %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @minuta %> |
-<%= link_to 'Back', minutas_path %>
+<%= link_to 'Exibir', @minuta %> |
+<%= link_to 'Voltar', minutas_path %>

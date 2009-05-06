@@ -1,4 +1,4 @@
-<h1>Editing itens_minuta</h1>
+<h1>Alterando Itens de Minuta</h1>
 
 <% form_for(@itens_minuta) do |f| %>
   <%= f.error_messages %>
@@ -12,9 +12,9 @@
     <%= f.text_field :qtde %>
   </p>
   <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit 'Salvar' %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @itens_minuta %> |
-<%= link_to 'Back', itens_minutas_path %>
+<%= link_to 'Exibir', @itens_minuta %> |
+<%= link_to 'Voltar', itens_minutas_path %>

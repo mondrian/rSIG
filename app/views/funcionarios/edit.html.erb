@@ -1,4 +1,4 @@
-<h1>Editing funcionario</h1>
+<h1>Alterando funcionario</h1>
 
 <% form_for(@funcionario) do |f| %>
   <%= f.error_messages %>
@@ -69,15 +69,15 @@
   </p>
   <p>
     <%= f.label :admissao %><br />
-    <%= f.date_select :admissao %>
+    <%= f.calendar_date_select :admissao %>
   </p>
   <p>
     <%= f.label :registro %><br />
-    <%= f.date_select :registro %>
+    <%= f.calendar_date_select :registro %>
   </p>
   <p>
     <%= f.label :nascimento %><br />
-    <%= f.date_select :nascimento %>
+    <%= f.calendar_date_select :nascimento %>
   </p>
   <p>
     <%= f.label :naturalidade %><br />
@@ -93,7 +93,7 @@
   </p>
   <p>
     <%= f.label :cadastro_pis %><br />
-    <%= f.date_select :cadastro_pis %>
+    <%= f.calendar_date_select :cadastro_pis %>
   </p>
   <p>
     <%= f.label :numero_pis %><br />
@@ -136,9 +136,9 @@
     <%= f.text_field :email %>
   </p>
   <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit 'Salvar' %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @funcionario %> |
-<%= link_to 'Back', funcionarios_path %>
+<%= link_to 'Exibir', @funcionario %> |
+<%= link_to 'Voltar', funcionarios_path %>
