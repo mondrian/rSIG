@@ -1,16 +1,14 @@
-<h1>Editing cidade</h1>
+<h1>Alterar cidade</h1>
 
 <% form_for(@cidade) do |f| %>
   <%= f.error_messages %>
 
+  <%= render :partial => "form",  :locals => { :f => f} %>
+
   <p>
-    <%= f.label :descricao %><br />
-    <%= f.text_field :descricao %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit 'Salvar' %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @cidade %> |
-<%= link_to 'Back', cidades_path %>
+<%= link_to 'Exibir', @cidade %> |
+<%= link_to 'Voltar', cidades_path %>

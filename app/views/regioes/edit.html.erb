@@ -3,14 +3,12 @@
 <% form_for(@regiao) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :descricao %><br />
-    <%= f.text_field :descricao %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
+  <%= render :partial => "form",  :locals => { :f => f} %>
+
+  <%= f.submit 'Salvar' %>
+
   </p>
 <% end %>
 
-<%= link_to 'Show', @regiao %> |
-<%= link_to 'Back', regioes_path %>
+<%= link_to 'Exibir', @regiao %> |
+<%= link_to 'Voltar', regioes_path %>

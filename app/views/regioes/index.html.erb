@@ -1,4 +1,4 @@
-<h1>Listing regioes</h1>
+<h1>Listagem de regiões</h1>
 
 <table>
   <tr>
@@ -8,13 +8,13 @@
 <% @regioes.each do |regiao| %>
   <tr>
     <td><%=h regiao.descricao %></td>
-    <td><%= link_to 'Show', regiao %></td>
-    <td><%= link_to 'Edit', edit_regiao_path(regiao) %></td>
-    <td><%= link_to 'Destroy', regiao, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Exibir', regiao %></td>
+    <td><%= link_to 'Alterar', edit_regiao_path(regiao) %></td>
+    <td><%= link_to 'Excluir', regiao, :confirm => 'Você Tem certeza Que Quer Excluir a Região ?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New regiao', new_regiao_path %>
+<%= link_to 'Nova Regiao', new_regiao_path %>
