@@ -1,0 +1,142 @@
+<p>    
+  <%= f.check_box :tipo %>
+  <label for="tipo">Externo</label>
+  <br />
+</p>
+<p>
+  <%= f.label :nome %><br />
+  <%= f.text_field :nome %>
+</p>
+<p>
+  <%= f.label :endereco %><br />
+  <%= f.text_field :endereco %>
+</p>
+<p>
+  <%= f.label :complemento %><br />
+  <%= f.text_field :complemento %>
+</p>
+<p>
+  <%= f.label "Estado:" %>
+  <%= f.select :uf, Uf.find(:all).collect { |p| [ p.descricao, p.uf ] }, 
+                 :include_blank => true
+  %>
+</p>
+<p>
+Cidade:
+  <div id="div_cidade">
+    <% if !@funcionario.cidade.nil? then %>
+      <%=  select_tag('funcionario[cidade_id]', "<option>#{@funcionario.cidade.descricao}</option>", :disabled => true) %>
+    <% end %>
+  </div>
+</p>
+
+<p>
+  <%= f.label :cep %><br />
+  <%= f.text_field :cep, :onkeypress => 'mascara(this, cep)' %>
+</p>
+<p>
+  <%= f.label :fone %><br />
+  <%= f.text_field :fone, :onkeypress => 'mascara(this, telefone)' %>
+</p>
+<p>
+  <%= f.label :cpf %><br />
+  <%= f.text_field :cpf, :onkeypress => 'mascara(this, cpf_cnpj)' %>
+</p>
+<p>
+  <%= f.label :rg %><br />
+  <%= f.text_field :rg %>
+</p>
+<p>
+  <%= f.label :pai %><br />
+  <%= f.text_field :pai %>
+</p>
+<p>
+  <%= f.label :mae %><br />
+  <%= f.text_field :mae %>
+</p>
+<p>
+  <%= f.label :numero_carteira_trabalho %><br />
+  <%= f.text_field :numero_carteira_trabalho %>
+</p>
+<p>
+  <%= f.label :serie_carteira_trabalho %><br />
+  <%= f.text_field :serie_carteira_trabalho %>
+</p>
+<p>
+  <%= f.label :titulo_eleitor %><br />
+  <%= f.text_field :titulo_eleitor %>
+</p>
+<p>
+  <%= f.label :zona_eleitoral %><br />
+  <%= f.text_field :zona_eleitoral %>
+</p>
+<p>
+  <%= f.label :admissao %><br />
+  <%= f.calendar_date_select :admissao %>
+</p>
+<p>
+  <%= f.label :nascimento %><br />
+  <%= f.calendar_date_select :nascimento %>
+</p>
+<p>
+  <%= f.label :naturalidade %><br />
+  <%= f.text_field :naturalidade %>
+</p>
+<p>
+  <%= f.label :estado_civil %><br />
+  <%= f.text_field :estado_civil %>
+</p>
+<p>
+  <%= f.label :grau_instrucao %><br />
+  <%= f.text_field :grau_instrucao %>
+</p>
+<p>
+  <%= f.label :cadastro_pis %><br />
+  <%= f.calendar_date_select :cadastro_pis %>
+</p>
+<p>
+  <%= f.label :numero_pis %><br />
+  <%= f.text_field :numero_pis %>
+</p>
+<p>
+  <%= f.label :cod_banco_pis %><br />
+  <%= f.text_field :cod_banco_pis %>
+</p>
+<p>
+  <%= f.label :nome_banco_pis %><br />
+  <%= f.text_field :nome_banco_pis %>
+</p>
+<p>
+  <%= f.label :cod_agencia_pis %><br />
+  <%= f.text_field :cod_agencia_pis %>
+</p>
+<p>
+  <%= f.label :nome_agencia_pis %><br />
+  <%= f.text_field :nome_agencia_pis %>
+</p>
+<p>
+  <%= f.label :endereco_banco_pis %><br />
+  <%= f.text_field :endereco_banco_pis %>
+</p>
+<p>
+  <%= f.label :demissao %><br />
+  <%= f.calendar_date_select :demissao %>
+</p>
+<p>
+  <%= f.label :observacao %><br />
+  <%= f.text_area :observacao %>
+</p>
+<p>
+  <%= f.label :aci %><br />
+  <%= f.text_area :aci %>
+</p>
+<p>
+  <%= f.label :email %><br />
+  <%= f.text_field :email %>
+</p>
+<p>
+<%= observe_field 'funcionario_uf',
+  :update => 'div_cidade',
+  :url => {:action => 'cidade'},
+  :with => :uf
+%>
