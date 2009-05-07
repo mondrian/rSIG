@@ -16,8 +16,17 @@ module ApplicationHelper
   
     def fone_formatado(fone)
       if (!fone.nil? && fone != '')
-      '(' << fone[0,2] << ')' << fone[2,4] << '-' << fone[6,4]
-    else
-      ''
+        '(' << fone[0,2] << ')' << fone[2,4] << '-' << fone[6,4]
+      else
+        ''
+      end
+    end  
+   
+    def cep_formatado (cep)
+      if (!cep.nil? && cep != '')
+         cep[0,2] + '.' + cep[2,3] + '-' + cep[5,3]
+      else
+        ''
+      end
     end
 end
