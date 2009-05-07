@@ -24,13 +24,21 @@ class Cliente < ActiveRecord::Base
   end
 
   def fone_pessoal_formatado
+<<<<<<< HEAD:app/models/cliente.rb
+    if (!self.fone_pessoal.nil? && !self.fone_pessoal == '')
+=======
     if (!self.fone_pessoal.nil? && self.fone_pessoal != '')
+>>>>>>> ea9a1dd11673ad63a988c1f65f24d768c3c09ecb:app/models/cliente.rb
      ( '(' + self.fone_pessoal[0,2] + ')' + self.fone_pessoal[2,4] + '-' + self.fone_pessoal[6,4])
     end
   end
 
   def fone_comercial_formatado
+<<<<<<< HEAD:app/models/cliente.rb
+    if (self.fone_comercial.nil? && self.fone_comercial == '')
+=======
     if (!self.fone_comercial.nil? && self.fone_comercial != '')
+>>>>>>> ea9a1dd11673ad63a988c1f65f24d768c3c09ecb:app/models/cliente.rb
       '(' << self.fone_comercial[0,2] << ')' << self.fone_comercial[2,4] << '-' << self.fone_comercial[6,4]
     else
       ''
@@ -38,7 +46,11 @@ class Cliente < ActiveRecord::Base
   end
 
   def fone_celular_formatado
+<<<<<<< HEAD:app/models/cliente.rb
+    if (!self.fone_celular.nil? && !self.fone_celular == '')
+=======
     if (!self.fone_celular.nil? && self.fone_celular != '')
+>>>>>>> ea9a1dd11673ad63a988c1f65f24d768c3c09ecb:app/models/cliente.rb
       '(' + self.fone_celular[0,2] + ')' + self.fone_celular[2,4] + '-' + self.fone_celular[6,4]
     else
       ''
@@ -46,7 +58,11 @@ class Cliente < ActiveRecord::Base
   end
 
   def cep_formatado
+<<<<<<< HEAD:app/models/cliente.rb
+    if !(self.cep.nil? && self.cep == '')
+=======
     if (!self.cep.nil? && self.cep != '')
+>>>>>>> ea9a1dd11673ad63a988c1f65f24d768c3c09ecb:app/models/cliente.rb
       self.cep[0,2] + '.' + self.cep[2,3] + '-' + self.cep[5,3]
     else
       ''
