@@ -1,5 +1,8 @@
+<<<<<<< HEAD:app/views/cidades/index.html.erb
 <h1>Listagem cidades</h1>
 
+=======
+>>>>>>> b401e73385275422fbcd6134b26e66bb344f60be:app/views/cidades/index.html.erb
 <table>
   <tr>
     <th>Uf</th>
@@ -9,10 +12,17 @@
 <% @cidades.each do |cidade| %>
   <tr>
     <td><%=h cidade.uf %></td>
+<<<<<<< HEAD:app/views/cidades/index.html.erb
     <td><%=h cidade.cidade %></td>
     <td><%= link_to 'Exibir', cidade %></td>
     <td><%= link_to 'Alterar', edit_cidade_path(cidade) %></td>
     <td><%= link_to 'Excluir', cidade, :confirm => 'Você Tem Certeza Que Quer Excluir a Cidade ?', :method => :delete %></td>
+=======
+    <td><%=h cidade.descricao %></td>
+    <td><%= link_to 'Exibir', cidade %></td>
+    <td><%= link_to 'Alterar', edit_cidade_path(cidade) %></td>
+    <td><%= link_to 'Excluir', cidade, :confirm => "Excluir a Cidade #{cidade.descricao}?", :method => :delete %></td>
+>>>>>>> b401e73385275422fbcd6134b26e66bb344f60be:app/views/cidades/index.html.erb
   </tr>
 <% end %>
 </table>
