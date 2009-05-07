@@ -3,8 +3,12 @@
   <%= f.select :tipo_cliente,[['Pessoa Física','F'],['Pessoa Jurídica','J']] %>
 </p>
 <p>
-  <label for="cnpj_cpf">CNPJ ou CPF: </label><br/>
-  <%= f.text_field :cpf_cnpj, :onkeypress => 'mascara(this, cpf_cnpj)'  %>
+  <label for="cpf">CPF: </label><br/>
+  <%= f.text_field :cpf, :onkeypress => 'mascara(this, cpf)'  %>
+</p>
+<p>
+  <label for="cnpj">CNPJ: </label><br/>
+  <%= f.text_field :cnpj, :onkeypress => 'mascara(this, cnpj)'  %>
 </p>
 <p>
   <label for="razao_social">Razão Social: </label><br/>
