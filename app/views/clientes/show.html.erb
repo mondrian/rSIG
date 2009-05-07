@@ -1,17 +1,17 @@
 <p>
   <b>Tipo de Cliente:</b>
-  <%=h @cliente.tipo_cliente == "F" ? "Pessoa Física" : "Pessoa Jurídica" %> - 
+  <%=h @cliente.tipo_cliente == "F" ? "Pessoa Física" : "Pessoa Jurídica" %> -
   <b>Cpf ou Cnpj:</b>
   <%=h  @cliente.cpf_cnpj_formatado %> -  <b>Status:</b>  <%=h @cliente.status == 'A' ? 'Ativo' : 'Inativo' %>
 </p>
 
 <p>
-  <b>Razao social:</b>
+  <b>Razao Social:</b>
   <%=h @cliente.razao_social %>
 </p>
 
 <p>
-  <b>Nome fantasia:</b>
+  <b>Nome de Fantasia:</b>
   <%=h @cliente.nome_fantasia %>
 </p>
 
@@ -27,11 +27,11 @@
 
 <p>
   <b>Cidade:</b>
-    <%if @cliente.cidade.nil? then %>
+  <%if @cliente.cidade.nil? then %>
     <td>Cidade Desconhecida</td>
-    <% else %>
+  <% else %>
     <td><%=h @cliente.cidade.descricao + ' / ' + @cliente.uf %></td>
-    <% end %>, <%=h @cliente.referencia %>
+  <% end %>, <%=h @cliente.referencia %>
 </p>
 
 <p>
@@ -41,21 +41,20 @@
 
 <p>
   <b>Telefones:</b><br>Pessoal: <%=h @cliente.fone_pessoal_formatado %> Comercial: <%=h @cliente.fone_comercial_formatado %> Celular: <%=h @cliente.fone_celular_formatado %><br>
-  <b>Telefones:</b><br>Pessoal: <%=h @cliente.fone_pessoal %> Comercial: <%=h @cliente.fone_comercial %> Celular: <%=h @cliente.fone_celular %>
 </p>
 
 <p>
-  <b>Endereco entrega:</b>
+  <b>Endereco de Entrega:</b>
   <%=h @cliente.endereco_entrega %>
 </p>
 
 <p>
-  <b>Regiao entrega:</b>
+  <b>Regiao de Entrega:</b>
   <%=h @cliente.regiao_entrega_id %>
 </p>
 
 <p>
-  <b>Cidade entrega:</b>
+  <b>Cidade de Entrega:</b>
   <%=h @cliente.cidade_entrega_id %>
 </p>
 
@@ -65,12 +64,12 @@
 </p>
 
 <p>
-  <b>Referencias bancaria:</b>
+  <b>Referencias Bancarias:</b>
   <%=h @cliente.referencias_bancaria %>
 </p>
 
 <p>
-  <b>Referencias comerciais:</b>
+  <b>Referencias Comerciais:</b>
   <%=h @cliente.referencias_comerciais %>
 </p>
 
@@ -80,12 +79,12 @@
 </p>
 
 <p>
-  <b>Info serasa:</b>
+  <b>Informações Serasa:</b>
   <%=h @cliente.info_serasa %>
 </p>
 
 <p>
-  <b>Data nascimento:</b>
+  <b>Data Nascimento:</b>
   <%=h @cliente.data_nascimento.to_s_br %>
 </p>
 

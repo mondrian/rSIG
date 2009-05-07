@@ -1,5 +1,3 @@
-<h1>Listing cidades</h1>
-
 <table>
   <tr>
     <th>Uf</th>
@@ -9,10 +7,10 @@
 <% @cidades.each do |cidade| %>
   <tr>
     <td><%=h cidade.uf %></td>
-    <td><%=h cidade.cidade %></td>
-    <td><%= link_to 'Show', cidade %></td>
-    <td><%= link_to 'Edit', edit_cidade_path(cidade) %></td>
-    <td><%= link_to 'Destroy', cidade, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%=h cidade.descricao %></td>
+    <td><%= link_to 'Exibir', cidade %></td>
+    <td><%= link_to 'Alterar', edit_cidade_path(cidade) %></td>
+    <td><%= link_to 'Excluir', cidade, :confirm => "Excluir a Cidade #{cidade.descricao}?", :method => :delete %></td>
   </tr>
 <% end %>
 </table>
